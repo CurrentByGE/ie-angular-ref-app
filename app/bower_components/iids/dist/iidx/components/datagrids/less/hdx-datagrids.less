@@ -1,0 +1,584 @@
+// Dependencies
+// --------------------------------------------------
+
+@import "ge-bootstrap/less/hdx-bootstrap.less";
+@import "modules/less/hdx-modules.less";
+@import "datatables.less";
+@import "hdx-variables.less";
+@import "datagrids.less";
+
+
+//overrides
+
+// used in cases where sScrollY option is used, and the entire DOM structure of the table changes
+.dataTables_wrapper.no-footer .dataTables_scroll .dataTables_scrollBody {
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.data-row
+{
+    &:last-child
+    {
+        margin-right: 0;
+    }
+
+    white-space: nowrap;
+    margin-bottom: 7px;
+}
+
+
+.data-grid {
+    table {
+        th {
+            background:none;
+            border: 0;
+            text-align:left;
+            color: @gray;
+        }
+        td {
+            border: 0;
+        }
+    }
+}
+
+.data-container {
+    position: relative;
+    border: 1px solid @grayLightest;
+    .border-radius(@borderRadiusSmall - 1);
+    display: inline-block;
+    background-color: @white;
+    margin-right: 7px;
+    &.labs {
+        position: relative;
+        display: inline-block;
+        border: 1px solid @grayLightest;
+        .border-radius(@borderRadiusSmall - 1);
+        font-size: @baseFontSize - 3;//10px;
+        padding: 2px;
+        margin-right: 10px;
+
+        > span.title
+        {
+            display: block;
+            line-height: @baseLineHeight - 8;
+            padding: 2px 0;
+        }
+
+        > ul.result
+        {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+            text-indent: 0;
+
+            > li:before {
+                content: none;
+                margin-right: 0;
+            }
+            margin: 0;
+            padding: 0;
+
+            li
+            {
+                display: block;
+                float: left;
+                height: 5px;
+                width: 7px;
+                margin: 0 1px 0 0;
+                padding: 0;
+                border: 1px solid transparent;
+
+                &:last-child
+                {
+                    margin-right: 0;
+                }
+
+                &.empty
+                {
+                    border-color: @grayLightest;
+                }
+
+                &.ok
+                {
+                    border-color: @successBorder;
+                    background-color: @successBackground;
+                }
+
+                &.warning
+                {
+                    border-color: @errorBorder;
+                    background-color: @errorBackground;
+                }
+            }
+        }
+
+        .labs-status {
+            color: @errorText;
+            font-size: @baseFontSize;// + 2;
+            display: block;
+            position: absolute;
+            top: -4px;
+            right: -7px;
+        }
+
+        &.warning {
+            border-color: @errorBorder;
+            .labs-status
+            {
+            	font-size: @baseFontSize + 2;
+                bottom: 0;
+                right: -8px;
+               // top: auto;
+            }
+        }
+    }
+
+    &.fishbone {
+        font-size: @baseFontSize - 1;
+        padding: 23px 2px 2px 2px;
+
+        .fishbone-label {
+            display: block;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            color: @gray;
+
+            &.right {
+                left: auto;
+                right: 2px;
+            }
+        }
+
+        &.with-status .fishbone-label.right {
+            right: 13px;
+        }
+
+        .values {
+            display: table;
+            white-space: nowrap;
+            font-size: 0;
+
+            > * {
+                display: inline-block;
+                vertical-align: middle;
+                font-size: @baseFontSize - 1;
+                color: @black;
+
+                &.segments {
+                    margin-bottom: 0;
+                }
+
+                &.tail-left,
+                &.tail-right {
+                    position: relative;
+                    background: @white;
+                    height: 25px;
+                    line-height: 25px;
+                    min-width: 34px;
+                    text-align: center;
+
+                    &.warning {
+                        color: @errorText;
+                        font-weight: bold;
+                    }
+                }
+
+                &.tail-left,
+                &.tail-right {
+                    padding-right: 11px;
+
+                    &:after, &:before {
+                        left: 100%;
+                        margin-left: -10px;
+                        border: solid transparent;
+                        content: " ";
+                        height: 0;
+                        width: 0;
+                        position: absolute;
+                        pointer-events: none;
+                        z-index: 0;
+                    }
+
+                    &:after {
+                        border-color: transparent;
+                        border-left-color: @white;
+                        border-width: 10px;
+                        top: 50%;
+                        margin-top: -10px;
+                    }
+
+                    &.warning:after {
+                        border-width: 11px;
+                        top: 50%;
+                        margin-top: -11px;
+                        margin-left: -12px;
+                    }
+
+                    &:before {
+                        border-color: transparent;
+                        border-left-color: @grayLighter;
+                        border-width: 11px;
+                        top: 50%;
+                        margin-top: -11px;
+                    }
+
+                    &.warning:before {
+                        border-left-color: @errorBorder;
+                    }
+                }
+
+                &.tail-right
+                {
+                    padding-right: 0;
+                    padding-left: 10px;
+
+                    &:after, &:before {
+                        left: auto;
+                        right: 100%;
+                        margin-right: -10px;
+                    }
+
+                    &:after {
+                        border-left-color: transparent;
+                        border-right-color: @white;
+                    }
+
+                    &.warning:after {
+                        margin-left: 0;
+                        margin-right: -12px;
+                    }
+
+                    &:before {
+                        border-left-color: transparent;
+                        border-right-color: @grayLighter;
+                    }
+
+                    &.warning:before {
+                        border-left-color: transparent;
+                        border-right-color: @errorBorder;
+                    }
+                }
+            }
+
+            .segments {
+                list-style: none;
+                margin-left: 0;
+                padding-left: 0;
+                text-indent: 0;
+
+                > li:before {
+                    content: none;
+                    margin-right: 0;
+                }
+
+                > .segment {
+                    display: block;
+                    float: left;
+
+                    > .value {
+                        display: block;
+                        position: relative;
+                        padding: 0 5px;
+                        z-index: 0;
+                        text-align: center;
+                        margin-right: -1px;
+                        border-right: 1px solid @grayLighter;
+                        border-left: 1px solid @grayLighter;
+
+                        &.warning {
+                            color: @errorText;
+                            font-weight: bold;
+                            border-color: @errorBorder;
+                            border-width: 2px;
+                            z-index: 1;
+                            padding: 0 4px;
+                        }
+                    }
+
+                    > .top {
+                        border-bottom: 1px solid @grayLighter;
+
+                        &.warning {
+                            border-bottom-color: @errorBorder;
+                            margin: 0 -1px -1px -1px;
+                        }
+                    }
+
+                    > .bottom {
+                        margin-top: -1px;
+                        border-top: 1px solid @grayLighter;
+
+                        &.warning {
+                            border-top-color: @errorBorder;
+                            margin: -1px -1px 0 -1px;
+                        }
+                    }
+
+                    &:last-child > .value {
+                        border-right: none;
+                        margin-right: 0;
+
+                        &.warning {
+                            margin-right: 0;
+                        }
+                    }
+
+                    &:first-child > .value {
+                        border-left: none;
+
+                        &.warning {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .fishbone-status {
+            display: table;
+            line-height: 38px;
+            min-width: 83px;
+            font-style: italic;
+        }
+    }
+
+    &.sparkline {
+        position: relative;
+        border: 1px solid @grayLightest;
+        .border-radius(@borderRadiusSmall - 1);
+        padding: 4px 54px 4px 4px;
+
+        .sparkline-label {
+            font-size: @baseFontSize - 1;
+            color: @gray;
+        }
+
+        .sparkline-value {
+            font-size: @baseFontSize + 7;
+            font-family: @brandFontFamily;
+        }
+
+        .sparkline-label.warning,
+        .sparkline-label .warning,
+        .sparkline-value.warning,
+        .sparkline-value .warning {
+            color: @errorText;
+            font-weight: bold;
+        }
+
+        &.stacked {
+            padding: 10px 4px 0 23px;
+            width: 79px;
+            height: 52px;
+
+            .sparkline-label {
+                color: @successText;
+                line-height: @baseFontSize - 1;
+            }
+
+            .sparkline,
+            .sparkline-generated-container {
+                width: 20px;
+                height: 26px;
+                right: auto;
+                left: 0;
+            }
+        }
+    }
+
+    .status {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        font-size: @baseFontSize + 4;
+
+        &.warning {
+            color: @errorText;
+        }
+    }
+
+    table {
+      margin: 0;
+    }
+    table.table th {
+      background-color: @white;
+      color: @textColor;
+      font-weight: bold;
+      border-top: none;
+    }
+}
+
+.data-container.selected {
+    border-color: @cyan;
+}
+
+.patient-acuity {
+    display: inline-block;
+    vertical-align: middle;
+    .border-radius(@borderRadiusSmall - 1);
+    text-align: center;
+
+    &.critical {
+        width: 28px;
+        height: 28px;
+        line-height: @baseLineHeight + 10;
+        color: @white;
+        font-weight: bold;
+        #gradient > .vertical(lighten(@criticalA, 6%), @criticalA);
+    }
+
+    &.warning {
+        width: 24px;
+        height: 24px;
+        line-height: @baseLineHeight + 6;
+        color: @white;
+        font-weight: bold;
+        #gradient > .vertical(darken(@warningALight, 25%), darken(@warningALight, 15%));
+    }
+
+    &.attention {
+        width: 20px;
+        height: 22px;
+        color: @black;
+        line-height: @baseLineHeight + 4;
+        #gradient > .vertical(lighten(@attentionA, 24%), @attentionA);
+    }
+
+    &.stable {
+        width: 16px;
+        height: 18px;
+        color: @black;
+        line-height: @baseLineHeight;
+        #gradient > .vertical(lighten(@normalALight, 10%), lighten(@normalALight, 2%));
+    }
+
+    &.improving {
+        width: 14px;
+        height: 16px;
+        color: @black;
+        line-height: @baseLineHeight - 2;
+        background-color: @normalBLight;
+    }
+}
+
+table.data-grid {
+
+    &.no-clearance {
+        margin-bottom: 0;
+    }
+
+  > thead > tr > th {
+    padding: 13px;
+  }
+  > tbody > tr > td {
+    padding: 13px;
+  }
+
+  > tbody {
+    > tr > td {
+      background-color: @white;
+
+      h2 {
+        line-height: 1em;
+        margin-bottom: 18px;
+      }
+    }
+
+    &:last-child > tr:last-child {
+      > td:first-child {
+        .border-radius(0 0 0 @baseBorderRadius);
+      }
+
+      > td:last-child {
+        .border-radius(0 0 @baseBorderRadius 0);
+      }
+    }
+  }
+
+  &.table-arrow-selection.table-arrow-selection-first-column.table-bordered > tbody > tr > td {
+    border-left: 0;
+    border-right: 1px solid @grayLightest;
+  }
+
+  &.table-arrow-selection.table-arrow-selection-first-column > tbody > tr > td:first-child {
+    width: 1px;
+    font-family: @brandFontFamily;
+    font-size: @baseFontSize + 3;
+    border-right: 0;
+  }
+
+  &.table-bordered.table > thead > tr > th.alt {
+    background-color: @dataGridbackgroundColor;
+    border-top: 1px solid @grayLighter;
+    border-right: 1px solid @grayLighter;
+    border-left: none;
+
+    &:first-child {
+      border-left: 1px solid @grayLighter;
+      border-right: 0;
+    }
+  }
+}
+
+table.data-grid td.meds {
+    font-size: @baseFontSize + 1;
+
+    .removed {
+        text-decoration: line-through;
+    }
+}
+/*
+.no-touch .pagination ul > li > a:hover {
+  color: @grayDark;
+}
+*/
+table.data-grid table.table-two-column {
+    display: inline-block;
+
+    > tbody > tr > th,
+    > tbody > tr > td {
+        border: none;
+        padding: 3px @baseFontSize;
+    }
+
+    tbody > tr > th {
+        padding-left: 0;
+    }
+
+    margin: 0;
+}
+
+table.dataTable {
+  thead {
+    th {
+      &.sorting {
+        &_asc,
+        &_desc {
+          background-color: @offWhite;
+        }
+        &_asc {
+          background: url('@{componentsPath}/datagrids/img/sort_asc_override_hdx.png') @offWhite no-repeat 98% 50%;
+        }
+        &_desc {
+          background: url('@{componentsPath}/datagrids/img/sort_desc_override_hdx.png') @offWhite no-repeat 98% 50%;
+        }
+      }
+    }
+  }
+}
+
+
+.dataTables_scrollHead {
+  .dataTables_scrollHeadInner {
+    background-color: transparent;
+  }
+  table.dataTable {
+    margin-bottom:0;
+    border-bottom-width: 0;
+  }
+}
+
+table.dataTable.no-footer {
+  border-bottom: 1px solid @borderBottomColor;
+}

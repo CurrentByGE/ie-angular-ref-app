@@ -1,0 +1,25 @@
+{
+  "name": "VideoPlayer",
+  "version": "0.4.0",
+  "author": "General Electric",
+  "main": [
+    "js/videoplayer.js",
+    "less/videoplayer.less",
+    "less/responsive.less"
+  ],
+  "ignore": [
+    ".*",
+    "npm-debug.log",
+    "Gruntfile.js",
+    "package.json",
+    "components",
+    "css",
+    "node_modules",
+    "js/require.config.js"
+  ],
+  "dependencies": {
+    "ge-bootstrap": "git@github.sw.ge.com:DXC/ge-bootstrap#master",
+    "requirejs": "git://github.com/jrburke/requirejs-bower#~2.1.11",
+    "jquery": "git://github.com/components/jquery#~1.10.2"
+  }
+}

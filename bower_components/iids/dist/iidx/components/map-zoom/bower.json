@@ -1,0 +1,15 @@
+{
+  "name": "map-zoom",
+  "version": "0.2.0",
+  "main": "js/map-zoom.js",
+  "author": "General Electric",
+  "private": true,
+  "dependencies": {
+    "map-core": "git@github.sw.ge.com:DXC/map-core#~0.3.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}

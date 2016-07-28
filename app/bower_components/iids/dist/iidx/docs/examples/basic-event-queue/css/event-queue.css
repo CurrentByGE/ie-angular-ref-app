@@ -1,0 +1,207 @@
+/*
+
+Where did these come from? CDX new stuff?
+
+@btnBorderForRealzy:                @grayLightest;
+
+@btnPrimaryText:                    @white;
+
+@btnPrimaryToggle:                  darken(@blue,50%);
+@btnIconColorPrimary:               @white;
+
+@btnInverseText:                    @btnPrimaryText;
+@btnInverseBackground:              @btnPrimaryBackground;
+@btnInverseBackgroundHighlight:     @btnPrimaryBackgroundHighlight;
+@btnInverseIconColor:               @btnIconColorPrimary;
+
+
+// toggle
+
+@btnToggleText:                     @white;
+@btnToggleBackground:               @blue;
+
+
+// faceted / type ahead
+@dropdownFacetedFacetBackground: @grayLightest;sx
+
+
+
+//Declarative-visualizations
+//gradient colors for each severity type
+//-----------------------------------------
+@blue1:           #1483B2;
+@blue2:           #25AAE1;
+@yellow1:         #D8BB27;
+@yellow2:         #FBDA06;
+@orange1:         #D07931;
+@orange2:         #F58624;
+@red1:            #C62F27;
+@red2:            #EE3D2C;
+@BarLightsOnGray: #e7e6e7;
+@meterBgGray:     #e7e5e7;
+
+
+// Datagrids
+//-------------
+
+//@dataTableRowEvenBgrnd:   #749BCD;
+//@dataTableRowHover:       #B7CBE5;
+//@dataGridbackgroundColor: #EEEEEE;
+*/
+body::-webkit-scrollbar {
+  width: 0 !important;
+}
+.module.collapsible {
+  margin-bottom: 5px;
+}
+.module.collapsible .event-main {
+  width: 88%;
+}
+.module.collapsible .event-main .event-titleline {
+  width: 100%;
+  height: 27px;
+  padding-top: 4px;
+  border-bottom: 1px solid #d4d4d4;
+}
+.module.collapsible .event-main .event-titleline .event-title .alert-box {
+  width: 65px;
+}
+.module.collapsible .event-main .event-titleline .event-title:hover {
+  text-decoration: none;
+}
+.module.collapsible .event-main .event-titleline .event-specs {
+  font-size: 12px;
+  color: #868686;
+  line-height: 22px;
+}
+.module.collapsible .event-main .event-titleline .event-specs span {
+  color: #575757;
+  padding-right: 10px;
+}
+.module.collapsible .module-header .voice-brand {
+  width: 12%;
+}
+.module.collapsible .module-body {
+  padding-left: 18px;
+}
+.module.collapsible .module-body .event-main {
+  margin-left: 12%;
+}
+.module.collapsible .module-body .event-main .event-solutionline.odd {
+  background: #f5f5f5;
+}
+.event-block {
+  width: 40%;
+  display: inline-block;
+  position: relative;
+}
+.event-solutionline {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.event-solutionline .event-label {
+  font-size: 12px;
+  line-height: 12px;
+  color: #868686;
+}
+.event-solutionline .event-solution {
+  vertical-align: top;
+}
+.event-solutionline .event-solution .event-label {
+  padding-left: 10px;
+}
+.event-solutionline .event-solution .solution-text {
+  padding-left: 10px;
+  color: #2b2b2b;
+  line-height: 12px;
+}
+.event-solutionline .event-impact {
+  vertical-align: top;
+}
+.event-solutionline .event-impact .impact-text {
+  margin-bottom: 5px;
+  color: #575757;
+  font-size: 12px;
+  line-height: 12px;
+}
+.event-solutionline .event-impact button {
+  position: absolute;
+  right: -120px;
+  top: 50%;
+  margin-top: -13px;
+}
+/*
+
+DETAIL PAGE
+
+*/
+#event-detail-module .sperate-line {
+  border-bottom: 1px solid #d4d4d4;
+}
+#event-detail-module #event-reference {
+  list-style: none;
+  margin: 15px 0px 15px 0px;
+}
+#event-detail-module #event-reference li {
+  display: inline-block;
+  margin-top: 5px;
+  height: 45px;
+  border-left: 2px solid #868686;
+  padding-left: 25px;
+  margin-left: 0px;
+  margin-right: 45px;
+}
+#event-detail-module #event-reference li span {
+  color: #868686;
+  font-size: 12px;
+  line-height: 12px;
+}
+#event-detail-module #event-reference li h2 {
+  line-height: 20px;
+  color: #575757;
+}
+#event-detail-module #event-reference li h2.warning {
+  color: #ff9821;
+}
+#event-detail-module #event-reference li h2.error {
+  color: #de2533;
+}
+#event-detail-module #event-reference li:first-child {
+  border-left: none;
+  padding-left: 0px;
+}
+#event-detail-module #event-impact {
+  float: left;
+  margin-top: 15px;
+  width: 50%;
+  overflow: visible;
+}
+#event-detail-module #event-impact #chart-spiderweb {
+  width: 280px;
+  height: 290px;
+  margin-top: -50px;
+  margin-bottom: 10px;
+}
+#event-detail-module #event-dependencies {
+  float: left;
+  margin-top: 15px;
+  width: 50%;
+}
+#event-detail-module #event-dependencies h4 {
+  line-height: 25px;
+}
+#detail-solutions .module {
+  padding: 0px;
+}
+#detail-solutions .module h3 {
+  padding-top: 10px;
+  margin-left: 20px;
+}
+#detail-solutions .module .solution-text {
+  padding-top: 10px;
+  padding-left: 20px;
+}
+#detail-solutions .event-solutionline.odd {
+  background: #f5f5f5;
+}
+/*# sourceMappingURL=data:application/json,%7B%22version%22%3A3%2C%22sources%22%3A%5B%22..%2Fdocs%2F_templates%2Fbasic-event-queue%2Fless%2Fevent-queue.less%22%5D%2C%22names%22%3A%5B%5D%2C%22mappings%22%3A%22%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3BAAEI%2CIAAoB%3BEAAE%2CQAAA%3B%3BAAKnB%2COAAa%3BEAClB%2CkBAAA%3B%3BAADK%2COAAa%2CYAGN%3BEACV%2CUAAA%3B%3BAAJG%2COAAa%2CYAGN%2CYAEO%3BEACf%2CWAAA%3BEACA%2CYAAA%3BEACA%2CgBAAA%3BEACA%2CgCAAA%3B%3BAATC%2COAAa%2CYAGN%2CYAEO%2CiBAKF%2CaACA%3BEACT%2CWAAA%3B%3BAAED%2COAdW%2CYAGN%2CYAEO%2CiBAKF%2CaAIH%3BEACN%2CqBAAA%3B%3BAAfH%2COAAa%2CYAGN%2CYAEO%2CiBAaF%3BEACX%2CeAAA%3BEACA%2CcAAA%3BEACA%2CiBAAA%3B%3BAArBD%2COAAa%2CYAGN%2CYAEO%2CiBAaF%2CaAIN%3BEACH%2CcAAA%3BEACA%2CmBAAA%3B%3BAAxBH%2COAAa%2CYA8BH%2CeACA%3BEACX%2CUAAA%3B%3BAAhCC%2COAAa%2CYAoCL%3BEACX%2CkBAAA%3B%3BAArCG%2COAAa%2CYAoCL%2CaAEC%3BEACV%2CgBAAA%3B%3BAAEG%2COAzCW%2CYAoCL%2CaAEC%2CYAEU%2CoBACZ%3BEACJ%2CmBAAA%3B%3BAAOG%3BEACX%2CUAAA%3BEACA%2CqBAAA%3BEACA%2CkBAAA%3B%3BAAGkB%3BEAClB%2CgBAAA%3BEACA%2CmBAAA%3B%3BAAFkB%2CmBAGL%3BEACX%2CeAAA%3BEACA%2CiBAAA%3BEACA%2CcAAA%3B%3BAANgB%2CmBAQF%3BEACd%2CmBAAA%3B%3BAATgB%2CmBAQF%2CgBAED%3BEACX%2CkBAAA%3B%3BAAXc%2CmBAQF%2CgBAKC%3BEACb%2CkBAAA%3BEACA%2CcAAA%3BEACA%2CiBAAA%3B%3BAAhBc%2CmBAmBJ%3BEACZ%2CmBAAA%3B%3BAApBgB%2CmBAmBJ%2CcAEC%3BEACX%2CkBAAA%3BEACA%2CcAAA%3BEACA%2CeAAA%3BEACA%2CiBAAA%3B%3BAAzBc%2CmBAmBJ%2CcAQL%3BEACL%2CkBAAA%3BEACA%2CaAAA%3BEACA%2CQAAA%3BEACA%2CiBAAA%3B%3B%3B%3B%3B%3B%3BAAUe%2CoBACL%3BEACZ%2CgCAAA%3B%3BAAFiB%2CoBAIF%3BEACf%2CgBAAA%3BEACA%2CyBAAA%3B%3BAANiB%2CoBAIF%2CiBAGZ%3BEACD%2CqBAAA%3BEACA%2CeAAA%3BEACA%2CYAAA%3BEACA%2C8BAAA%3BEACA%2CkBAAA%3BEACA%2CgBAAA%3BEACA%2CkBAAA%3B%3BAAde%2CoBAIF%2CiBAGZ%2CGAQI%3BEACH%2CcAAA%3BEACA%2CeAAA%3BEACA%2CiBAAA%3B%3BAAlBa%2CoBAIF%2CiBAGZ%2CGAaE%3BEACD%2CiBAAA%3BEACA%2CcAAA%3B%3BAACC%2CoBAnBU%2CiBAGZ%2CGAaE%2CGAGS%3BEACR%2CcAAA%3B%3BAAED%2CoBAtBU%2CiBAGZ%2CGAaE%2CGAMO%3BEACN%2CcAAA%3B%3BAAGH%2CoBA1BY%2CiBAGZ%2CGAuBY%3BEACX%2CiBAAA%3BEACA%2CiBAAA%3B%3BAAhCa%2CoBAmCL%3BEACZ%2CWAAA%3BEACA%2CgBAAA%3BEACA%2CUAAA%3BEACA%2CiBAAA%3B%3BAAvCiB%2CoBAmCL%2CcAKK%3BEACf%2CYAAA%3BEACA%2CaAAA%3BEACA%2CiBAAA%3BEACA%2CmBAAA%3B%3BAA5Ce%2CoBAgDnB%3BEACE%2CWAAA%3BEACA%2CgBAAA%3BEACA%2CUAAA%3B%3BAAnDiB%2CoBAgDnB%2CoBAIK%3BEACD%2CiBAAA%3B%3BAAKY%2CiBACT%3BEACL%2CYAAA%3B%3BAAFc%2CiBACT%2CQAEF%3BEACD%2CiBAAA%3BEACA%2CiBAAA%3B%3BAALY%2CiBACT%2CQAMU%3BEACb%2CiBAAA%3BEACA%2CkBAAA%3B%3BAAID%2CiBADiB%2CoBACZ%3BEACJ%2CmBAAA%22%7D */

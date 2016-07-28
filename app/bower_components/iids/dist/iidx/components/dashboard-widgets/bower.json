@@ -1,0 +1,24 @@
+{
+  "name": "dashboard-widgets",
+  "description": "Collection of common dashboard modules.",
+  "version": "0.10.0",
+  "main": [
+    "less/add-widget.less",
+    "less/snapshot.less",
+    "less/responsive.less"
+  ],
+  "ignore": [
+    "components",
+    "css",
+    "node_modules",
+    "test",
+    ".*",
+    "Gruntfile.js"
+  ],
+  "dependencies": {
+    "requirejs": "https://github.com/jrburke/requirejs-bower.git#~2.1.11",
+    "jquery": "https://github.com/components/jquery.git#~1.10.2",
+    "ge-bootstrap": "git@github.sw.ge.com:DXC/ge-bootstrap#master",
+    "modules": "git@github.sw.ge.com:DXC/modules#v1.0.4"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "charts",
+  "version": "1.3.0",
+  "author": "General Electric",
+  "main": [
+    "js/charts.js",
+    "less/charts.less"
+  ],
+  "ignore": [
+    "components",
+    "css",
+    "node_modules",
+    ".*",
+    "Gruntfile.js"
+  ],
+  "dependencies": {
+      "ge-bootstrap": "git@github.sw.ge.com:DXC/ge-bootstrap#master",
+      "brandkit": "git@github.sw.ge.com:DXC/brandkit#master",
+      "highcharts-amd": "git@github.sw.ge.com:DXC/highcharts-amd#Highchartsv3.0.10-Highstockv1.3.10",
+      "requirejs": "https://github.com/jrburke/requirejs-bower.git#~2.1.11",
+      "jquery": "https://github.com/components/jquery.git#~1.10.2"
+  }
+}

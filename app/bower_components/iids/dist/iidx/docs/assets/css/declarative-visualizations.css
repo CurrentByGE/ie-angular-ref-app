@@ -1,0 +1,214 @@
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 29px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*
+
+Where did these come from? CDX new stuff?
+
+@btnBorderForRealzy:                @grayLightest;
+
+@btnPrimaryText:                    @white;
+
+@btnPrimaryToggle:                  darken(@blue,50%);
+@btnIconColorPrimary:               @white;
+
+@btnInverseText:                    @btnPrimaryText;
+@btnInverseBackground:              @btnPrimaryBackground;
+@btnInverseBackgroundHighlight:     @btnPrimaryBackgroundHighlight;
+@btnInverseIconColor:               @btnIconColorPrimary;
+
+
+// toggle
+
+@btnToggleText:                     @white;
+@btnToggleBackground:               @blue;
+
+
+// faceted / type ahead
+@dropdownFacetedFacetBackground: @grayLightest;sx
+
+
+
+//Declarative-visualizations
+//gradient colors for each severity type
+//-----------------------------------------
+@blue1:           #1483B2;
+@blue2:           #25AAE1;
+@yellow1:         #D8BB27;
+@yellow2:         #FBDA06;
+@orange1:         #D07931;
+@orange2:         #F58624;
+@red1:            #C62F27;
+@red2:            #EE3D2C;
+@BarLightsOnGray: #e7e6e7;
+@meterBgGray:     #e7e5e7;
+
+
+// Datagrids
+//-------------
+
+//@dataTableRowEvenBgrnd:   #749BCD;
+//@dataTableRowHover:       #B7CBE5;
+//@dataGridbackgroundColor: #EEEEEE;
+*/
+.module-data-viz .caption {
+  margin-bottom: 0;
+  font-family: "GE Sans", "ge-sans", "GE Inspira", "ge-inspira", Helvetica, Arial, sans-serif;
+  font-size: 0.85em;
+  color: #575757;
+}
+.module-data-viz .caption.hero {
+  font-family: "GE Inspira", "ge-inspira", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 1.2em;
+  color: #141414;
+}
+.module-data-viz .caption.hero strong {
+  font-size: 2em;
+  font-weight: bold;
+}
+.module-data-viz .subtitle {
+  font-weight: bold;
+}
+.module-data-viz.gauges > div {
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 15px;
+  width: 33.3%;
+}
+.module-data-viz.gauges > div .chart1 path.bg {
+  fill: #46ad00;
+}
+.module-data-viz.gauges > div .chart2 path.bg {
+  fill: #005cb9;
+}
+.module-data-viz.gauges > div .chart3 path.bg {
+  fill: #8669ff;
+}
+.module-data-viz.gauges > div .chart4 path.bg {
+  fill: #de2533;
+}
+.module-data-viz#bars {
+  vertical-align: top;
+}
+.module-data-viz#bars [data-visualization] {
+  margin-bottom: 25px;
+}
+.module-data-viz#bars .subtitle {
+  margin-bottom: 0;
+}
+.module-data-viz svg {
+  width: 100%;
+  height: 100%;
+}
+[data-visualization="speedometer"] {
+  margin-bottom: 20px;
+  width: 200px;
+}
+[data-visualization="speedometer"] path.bg {
+  fill: #e7e5e7;
+}
+[data-visualization="speedometer"] .gradient-color-1 {
+  stop-color: #1483B2;
+}
+[data-visualization="speedometer"] .gradient-color-2 {
+  stop-color: #25AAE1;
+}
+[data-visualization="speedometer"].notice .gradient-color-1 {
+  stop-color: #D8BB27;
+}
+[data-visualization="speedometer"].notice .gradient-color-2 {
+  stop-color: #FBDA06;
+}
+[data-visualization="speedometer"].warning .gradient-color-1 {
+  stop-color: #D07931;
+}
+[data-visualization="speedometer"].warning .gradient-color-2 {
+  stop-color: #F58624;
+}
+[data-visualization="speedometer"].danger .gradient-color-1 {
+  stop-color: #C62F27;
+}
+[data-visualization="speedometer"].danger .gradient-color-2 {
+  stop-color: #EE3D2C;
+}
+[data-visualization="meter"] {
+  float: left;
+  width: 50px;
+  height: 250px;
+}
+[data-visualization="meter"] .label {
+  font-size: 10px;
+  font-weight: normal;
+}
+[data-visualization="meter"] .value {
+  font-size: 17px;
+}
+[data-visualization="meter"] .unit {
+  font-size: 13px;
+}
+[data-visualization="meter"] rect.bg {
+  fill: #e7e5e7;
+}
+[data-visualization="meter"] .gradient-color-1 {
+  stop-color: #1483B2;
+}
+[data-visualization="meter"] .gradient-color-2 {
+  stop-color: #25AAE1;
+}
+[data-visualization="meter"].notice .gradient-color-1 {
+  stop-color: #D8BB27;
+}
+[data-visualization="meter"].notice .gradient-color-2 {
+  stop-color: #FBDA06;
+}
+[data-visualization="meter"].warning .gradient-color-1 {
+  stop-color: #D07931;
+}
+[data-visualization="meter"].warning .gradient-color-2 {
+  stop-color: #F58624;
+}
+[data-visualization="meter"].danger .gradient-color-1 {
+  stop-color: #C62F27;
+}
+[data-visualization="meter"].danger .gradient-color-2 {
+  stop-color: #EE3D2C;
+}
+[data-visualization="meter"] .axis path {
+  stroke: black;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+  fill: none;
+}
+[data-visualization="meter"] .tick line {
+  stroke: black;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+[data-visualization="meter"].no-label .value {
+  display: none;
+}
+@media (max-width: 979px) {
+  .module-data-viz [data-visualization="gauge"] {
+    height: 100px;
+  }
+  .module-data-viz [data-visualization="bar"] {
+    height: 95px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .module-data-viz.gauges > div {
+    float: none;
+    margin-bottom: 25px;
+    padding-right: 0;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=data:application/json,%7B%22version%22%3A3%2C%22sources%22%3A%5B%22..%2Fcomponents%2Fge-bootstrap%2Fless%2Fmixins.less%22%2C%22..%2Fcomponents%2Fbootstrap%2Fless%2Fmixins%2Fvendor-prefixes.less%22%2C%22..%2Fdocs%2Fassets%2Fless%2Fdeclarative-visualizations.less%22%2C%22..%2Fcomponents%2Fbrandkit%2Fless%2Fiidx-variables.less%22%5D%2C%22names%22%3A%5B%5D%2C%22mappings%22%3A%22AAyHmB%3BEACjB%2CcAAA%3BEACA%2CWAAA%3BEACA%2CgBAAA%3BEClDA%2C8BAAA%3BEACG%2C2BAAA%3BEACK%2CsBAAA%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3BACzEO%2CgBACP%3BEACR%2CgBAAA%3BEACA%2CaCqEwB%2CWAAW%2CWAAW%2CcAAc%2C0CDrE5D%3BEACA%2CiBAAA%3BEACA%2CcAAA%3B%3BAACC%2CgBALO%2CSAKD%3BEACN%2CaCuEuB%2CcAAc%2CcAAc%2C8CDvEnD%3BEACA%2CmBAAA%3BEACA%2CgBAAA%3BEACA%2CcAAA%3B%3BAAJA%2CgBALO%2CSAKD%2CKAKC%3BEACN%2CcAAA%3BEACA%2CiBAAA%3B%3BAAba%2CgBAiBN%3BEACT%2CiBAAA%3B%3BAAGA%2CgBAAQ%2COACF%3BEACL%2CWAAA%3BEDgDD%2C8BAAA%3BEACG%2C2BAAA%3BEACK%2CsBAAA%3BEChDP%2CmBAAA%3BEACA%2CYAAA%3B%3BAALD%2CgBAAQ%2COACF%2CMAKG%2CQAAI%2CKAAI%3BEACf%2CaAAA%3B%3BAAPF%2CgBAAQ%2COACF%2CMAQG%2CQAAI%2CKAAI%3BEACf%2CaAAA%3B%3BAAVF%2CgBAAQ%2COACF%2CMAWG%2CQAAI%2CKAAI%3BEACf%2CaAAA%3B%3BAAbF%2CgBAAQ%2COACF%2CMAcG%2CQAAI%2CKAAI%3BEACf%2CaAAA%3B%3BAAIF%2CgBAAM%3BEACN%2CmBAAA%3B%3BAADA%2CgBAAM%2CKAEe%3BEACpB%2CmBAAA%3B%3BAAHD%2CgBAAM%2CKAKI%3BEACT%2CgBAAA%3B%3BAA%2FCc%2CgBAmDZ%3BEACH%2CWAAA%3BEACA%2CYAAA%3B%3BAAIiC%3BEAEjC%2CmBAAA%3BEACA%2CYAAA%3B%3BAAHiC%2CkCAI7B%2CKAAI%3BEACN%2CaAAA%3B%3BAAL%2BB%2CkCAOf%3BEAChB%2CmBAAA%3B%3BAAR%2BB%2CkCAUf%3BEAChB%2CmBAAA%3B%3BAAED%2CkCAAQ%2COACW%3BEAChB%2CmBAAA%3B%3BAAFH%2CkCAAQ%2COAIW%3BEAChB%2CmBAAA%3B%3BAAGH%2CkCAAS%2CQACU%3BEAChB%2CmBAAA%3B%3BAAFH%2CkCAAS%2CQAIU%3BEAChB%2CmBAAA%3B%3BAAGH%2CkCAAQ%2COACW%3BEAChB%2CmBAAA%3B%3BAAFH%2CkCAAQ%2COAIW%3BEAChB%2CmBAAA%3B%3BAAKuB%3BEAC3B%2CWAAA%3BEACA%2CWAAA%3BEACA%2CaAAA%3B%3BAAH2B%2C4BAKpB%3BEACL%2CeAAA%3BEACA%2CmBAAA%3B%3BAAPyB%2C4BAUpB%3BEACL%2CeAAA%3B%3BAAXyB%2C4BAcrB%3BEACJ%2CeAAA%3B%3BAAfyB%2C4BAkBvB%2CKAAI%3BEACN%2CaAAA%3B%3BAAnByB%2C4BAsBT%3BEAChB%2CmBAAA%3B%3BAAvByB%2C4BAyBT%3BEAChB%2CmBAAA%3B%3BAAGD%2C4BAAQ%2COACW%3BEAChB%2CmBAAA%3B%3BAAFH%2C4BAAQ%2COAIW%3BEAChB%2CmBAAA%3B%3BAAIH%2C4BAAS%2CQACU%3BEAChB%2CmBAAA%3B%3BAAFH%2C4BAAS%2CQAIU%3BEAChB%2CmBAAA%3B%3BAAIH%2C4BAAQ%2COACW%3BEAChB%2CmBAAA%3B%3BAAFH%2C4BAAQ%2COAIW%3BEAChB%2CmBAAA%3B%3BAApDuB%2C4BAwDrB%2CMAAK%3BEACT%2CaAAA%3BEACA%2CeAAA%3BEACA%2C2BAAA%3BEACA%2CUAAA%3B%3BAA5DyB%2C4BA%2BDrB%2CMAAK%3BEACT%2CaAAA%3BEACA%2CeAAA%3BEACA%2C2BAAA%3B%3BAAED%2C4BAAU%2CSACH%3BEACN%2CaAAA%3B%3BAAiBH%2CQATyB%3BEACP%2CgBACc%3BIAC3B%2CaAAA%3B%3BEAFa%2CgBAIY%3BIACzB%2CYAAA%3B%3B%3BAAiBL%2CwBAXwC%3BEAEtC%2CgBAAQ%2COACC%3BIACJ%2CWAAA%3BIACA%2CmBAAA%3BIACA%2CgBAAA%3BIACA%2CWAAA%22%7D */

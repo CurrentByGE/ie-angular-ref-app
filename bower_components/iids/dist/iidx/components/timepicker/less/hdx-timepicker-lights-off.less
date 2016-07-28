@@ -1,0 +1,136 @@
+// Dependencies
+// --------------------------------------------------
+//noinspection CssUnknownTarget
+@import "ge-bootstrap/less/hdx-bootstrap-lights-off.less";
+//noinspection CssUnknownTarget
+@import "bootstrap-timepicker/less/timepicker.less";
+//styles
+//----------------------------------------------------
+@import "timepicker.less";
+
+//override default timepicker css
+
+//noinspection CssInvalidPseudoSelector
+input[type=text]::-ms-clear {
+	// X icon issue on IE10
+	display: none;
+}
+
+.bootstrap-timepicker.input-append {
+	input, select, .uneditable-input {
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px 0 0 5px;
+		//border-color: @grayDarker;
+		//noinspection LessUnresolvedVariable
+		background-color: @black;
+	}
+	.add-on:last-child, .btn:last-child, .btn-group:last-child > .bootstrap-timepicker.dropdown-toggle {
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 0px 5px 5px 0px;
+		//border-color:@grayDarker;
+		//background-color:@offWhite;
+	}
+	.add-on:last-child:hover {
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 0px 5px 5px 0px;
+		//noinspection LessUnresolvedVariable
+		background-color: @offBlack;
+		//border-color: @timepickerBorder;
+		//noinspection LessUnresolvedVariable
+		color: @grayLight;
+	}
+}
+
+.bootstrap-timepicker-widget {
+	width: 135px;
+	table td {
+		input {
+			//noinspection LessUnresolvedVariable
+			border-color: @grayDarker;
+			//noinspection LessUnresolvedVariable
+			background-color: @black;
+		}
+		a {
+			text-decoration: none; // firefox, ie10 underline bug fix
+		}
+		a:hover {
+			//noinspection LessUnresolvedVariable
+			background-color: @black; // up-down arrows
+			//border-color:@grayDarker;
+			//noinspection LessUnresolvedVariable
+			color: @white;
+			border: none;
+		}
+	}
+}
+
+// fix to remove pointer from timepicker to make it consistent with other components
+
+.bootstrap-timepicker-widget.dropdown-menu {
+	//noinspection LessUnresolvedVariable
+	border-color: @grayDarker;
+	//noinspection LessUnresolvedVariable
+	background-color: @black;
+}
+
+.bootstrap-timepicker-widget.dropdown-menu:before {
+	//noinspection LessUnresolvedVariable
+	border-bottom: 7px solid @grayDarker;
+	border-left: 0;
+	border-right: 0;
+	content: "";
+	display: inline-block;
+	position: absolute;
+}
+
+.bootstrap-timepicker-widget.dropdown-menu:after {
+	//noinspection LessUnresolvedVariable
+	border-bottom: 6px solid @black;
+	border-left: 0;
+	border-right: 0;
+	content: "";
+	display: inline-block;
+	position: absolute;
+}
+
+.bootstrap-timepicker-widget.timepicker-orient-bottom:after {
+	bottom: -6px;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	content: "";
+	display: inline-block;
+	position: absolute;
+}
+
+.bootstrap-timepicker-widget.timepicker-orient-bottom:before {
+	bottom: -7px;
+	border-top: 0;
+}
+
+.bootstrap-timepicker-widget input {
+	// Fix bug  de68 - text alignment
+	padding: 4px 6px;
+}
+
+.bootstrap-timepicker {
+	input[type="text"] {
+		&:focus {
+			//noinspection LessUnresolvedVariable
+			border-color: @blue; // bug fix DE68 : border blue color
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+		}
+
+		&.error {
+			border-color: @red;
+		}
+		&.error:focus {
+			border-color: darken(@red,10%);
+		}
+	}
+}

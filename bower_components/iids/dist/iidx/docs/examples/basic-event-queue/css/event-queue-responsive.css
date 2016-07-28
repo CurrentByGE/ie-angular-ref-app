@@ -1,0 +1,83 @@
+@media only screen and (max-width: 768px) {
+  .module.collapsible .module-header .voice-brand {
+    width: 100%;
+    display: block;
+    clear: both;
+  }
+  .module.collapsible .module-body .event-main {
+    margin-left: 0;
+  }
+  .module.collapsible .event-main {
+    width: 100%;
+  }
+  .module.collapsible .event-main .event-titleline {
+    height: auto;
+  }
+  .module.collapsible .event-solutionline {
+    margin-left: -10px;
+  }
+  .event-solutionline .event-impact {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .event-solutionline .event-impact button {
+    position: static;
+    right: auto;
+    top: auto;
+    margin: 15px 0;
+  }
+  .event-block {
+    width: auto;
+    display: block;
+    clear: both;
+    margin-top: 15px;
+  }
+  #event-detail-module .module-body {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  #event-detail-module #event-reference li {
+    padding-left: 10px;
+    margin-right: 30px;
+  }
+  #event-detail-module #event-impact,
+  #event-detail-module #event-dependencies {
+    float: none;
+    clear: both;
+    width: 100%;
+  }
+  #event-detail-module #event-impact #chart-spiderweb {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #detail-solutions .module {
+    padding: 15px;
+  }
+  #detail-solutions .module h3 {
+    margin-left: 10px;
+  }
+  #detail-solutions .module .solution-text {
+    padding-left: 0;
+    margin-left: 10px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .module.collapsible .event-main .event-specs {
+    line-height: 20px;
+  }
+  .module.collapsible .event-main .event-specs span {
+    display: block;
+    padding-right: 0;
+  }
+  #event-detail-module #event-impact #chart-spiderweb {
+    width: 250px;
+    height: 260px;
+  }
+  #event-detail-module #event-reference li {
+    display: block;
+    border-left: none;
+    padding-left: 0;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=data:application/json,%7B%22version%22%3A3%2C%22sources%22%3A%5B%22..%2Fdocs%2F_templates%2Fbasic-event-queue%2Fless%2Fevent-queue-responsive.less%22%5D%2C%22names%22%3A%5B%5D%2C%22mappings%22%3A%22AAkFC%2CwBAhFyC%3BEACjC%2COAAa%2CYACH%2CeACA%3BIACX%2CWAAA%3BIACA%2CcAAA%3BIACA%2CWAAA%3B%3BEALC%2COAAa%2CYAQL%2CaACC%3BIACV%2CcAAA%3B%3BEAVC%2COAAa%2CYAaN%3BIACV%2CWAAA%3B%3BEAdG%2COAAa%2CYAaN%2CYAEO%3BIACf%2CYAAA%3B%3BEAhBC%2COAAa%2CYAmBE%3BIAClB%2CkBAAA%3B%3BEAGgB%2CmBACL%3BIACb%2CiBAAA%3BIACA%2CkBAAA%3B%3BEAHkB%2CmBACL%2CcAGF%3BIACP%2CgBAAA%3BIACA%2CWAAA%3BIACA%2CSAAA%3BIACA%2CcAAA%3B%3BEAIO%3BIACX%2CWAAA%3BIACA%2CcAAA%3BIACA%2CWAAA%3BIACA%2CgBAAA%3B%3BEAGmB%2CoBACN%3BIACX%2CgBAAA%3BIACA%2CiBAAA%3B%3BEAHiB%2CoBAKF%2CiBACV%3BIACH%2CkBAAA%3BIACA%2CkBAAA%3B%3BEARe%2CoBAWN%3BEAXM%2CoBAYC%3BIAClB%2CWAAA%3BIACA%2CWAAA%3BIACA%2CWAAA%3B%3BEAfiB%2CoBAiBL%2CcACK%3BIACb%2CiBAAA%3BIACA%2CkBAAA%3B%3BEAKU%2CiBACR%3BIACR%2CaAAA%3B%3BEAFgB%2CiBACR%2CQAEH%3BIACD%2CiBAAA%3B%3BEAJY%2CiBACR%2CQAKS%3BIACb%2CeAAA%3BIACA%2CiBAAA%3B%3B%3BAAoCP%2CwBA7ByC%3BEAClC%2COAAa%2CYACL%2CYACG%3BIACX%2CiBAAA%3B%3BEAHA%2COAAa%2CYACL%2CYACG%2CaAEN%3BIACH%2CcAAA%3BIACA%2CgBAAA%3B%3BEAMa%2CoBACL%2CcACO%3BIACf%2CYAAA%3BIACA%2CaAAA%3B%3BEAJa%2CoBAOF%2CiBACX%3BIACF%2CcAAA%3BIACA%2CiBAAA%3BIACA%2CeAAA%3BIACA%2CWAAA%22%7D */

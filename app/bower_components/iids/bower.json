@@ -1,0 +1,22 @@
+{
+  "name": "iidx",
+  "version": "3.0.0",
+  "authors": [
+    "Predix Experience"
+  ],
+  "description": "Industrial Internet Design Extension",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "iidx"
+  ],
+  "license": "MIT",
+  "homepage": "predix.io",
+  "ignore": [
+    "test"
+  ],
+  "main": [
+    "iids.js"
+  ]
+}

@@ -1,0 +1,4467 @@
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Components</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../components/brandkit/favicon/favicon-144px.png">
+
+    <!-- For iPhone with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../components/brandkit/favicon/favicon-114px.png">
+
+    <!-- For first- and second-generation iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../components/brandkit/favicon/favicon-72px.png">
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="../../components/brandkit/favicon/favicon.png">
+
+    <link rel="icon" href="../../components/brandkit/favicon/favicon.ico">
+    <link href="../../components/prettify/prettify.css" rel="stylesheet">
+    <link href="../assets/css/documentation.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/documentation-responsive.css" rel="stylesheet" type="text/css">
+    <link href="../../css/iids.css" rel="stylesheet" type="text/css">
+    <link href="../../css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="../assets/css/declarative-visualizations.css" rel="stylesheet" type="text/css">
+    	<style>
+	.sdh-wrapper > h2     { border-top: 5px solid #13161a; font-size: 36px; font-weight: normal; margin-top: 30px; margin-bottom: 30px; padding-top: 20px; }
+	.sdh-wrapper > h2:first-child { border-top: 0; margin-top: 0; padding-top: 0; }
+	.sdh-wrapper > h3     { border-top: 2px solid #bfc2c5; font-size: 24px; font-weight: normal; padding-top: 25px; margin-bottom: 30px; margin-top: 30px; }
+	.sdh-wrapper > h3:before { background-color: #08a5e1; content: '.'; border-radius: 16px; display: inline-block; height: 16px; margin-right: 8px; position: relative; text-indent: -9999px; vertical-align: baseline; width: 16px; line-height: 16px; }
+	.sdh-wrapper > h2 + h3 { border-top: 0; margin-top: 0; padding-top: 0; }
+	.sdh-wrapper > p      { color: #5C5F63; font-size: 12px; margin-bottom: 30px; margin-top: -10px; }
+  .contextmenu.test {background-color: #999; text-align: center; vertical-align: middle; padding: 12px; }
+  </style>
+
+    
+    <!--
+      This style hack is to help the bootstrap fixed navbar work.
+      http://twitter.github.io/bootstrap/components.html#navbar
+    -->
+    <style type="text/css">
+      body {
+        background-color: #e1e2e5;
+        padding-top: 120px !important;
+      }
+      .anchor {
+        margin-top: -120px;
+        height: 120px;
+        visibility: hidden;
+        display: block;
+      }
+    
+      @media (max-width: 979px) {
+        body {
+          padding-top: 0 !important;
+        }
+      }
+    </style>
+    
+    <!--[if lt IE 9]>
+      <link id="theme-ie" href="../../css/ie.css" rel="stylesheet" type="text/css">
+    <![endif]-->
+
+    <script src="../../components/modernizr/modernizr.js"></script>
+    <script src="../../components/requirejs/require.js"></script>
+    <script src="../../js/require.config.js"></script>
+    <script type="text/javascript">
+      require.config({ baseUrl: '../../' });
+    </script>
+    <!-- <script src="http://localhost:8080/target/target-script-min.js"></script>
+ -->
+  </head>
+
+  <!--
+  The background color is set to white in this fashion so the SDH website can load
+  individual pieces of the documentation as iframes. When viewing the docs in the IIDX
+  folder, we want the components.html and ui.html pages to have grey backgrounds instead
+  of white ones. As a result components.ejs and ui.ejs will override this style at the
+  top of their .ejs files.
+   -->
+  
+  <body>
+
+<div class="navbar navbar-fixed-top navbar-default">
+
+	<div class="container">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="../index.html"><span class="ge-logo"></span> <span>IIDX - Components<small><i>powered by</i> Bootstrap</small></span></a>
+
+		  <!-- .navbar-toggle for collapsed navbar content -->
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+		    <span class="sr-only">Toggle navigation</span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+		</div>
+	</div>
+
+  	<div class="primary-navbar navbar-collapse">
+		<div class="container">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#complex-buttons">Complex Buttons</a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" href="#" data-toggle="dropdown">Navigation <i class="icon-chevron-down"></i></a>
+					<ul class="dropdown-menu pull-right">
+						<li><a href="#masthead-and-navbar">Masthead &amp; Navigation Bar</a></li>
+						<li><a href="#supplementary-navigation">Supplementary Navigation</a></li>
+                        <li><a href="#secondary-navigation">Secondary Navigation</a></li>
+                        <li><a href="#jump-navigation">Jump Navigation</a></li>
+                        <li><a href="#multi-step-nav">Multi-Step-Navigation</a></li>
+                        <li><a href="#footer">Footer</a></li>
+					</ul>
+				</li>
+				<li><a href="#data-grids">Data Grids</a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" href="#" data-toggle="dropdown">More <i class="icon-chevron-down"></i></a>
+					<ul class="dropdown-menu pull-right">
+						<li><a href="#labels-badges-alerts">Labels, Badges &amp; Alerts</a></li>
+						<li><a href="#tooltips-popovers-modals">Tooltips, Popovers &amp; Modals</a></li>
+						<li><a href="#lists-accordions">Lists &amp; Accordions</a></li>
+						<li><a href="#content-display">Content Display</a></li>
+						<li><a href="#loading-indicators">Loading Indicators</a></li>
+						<li><a href="#search-utilities">Search Utilities</a></li>
+						<li><a href="#filter-controls">Filter Controls</a></li>
+                        <li><a href="#video-player">Video Player</a></li>
+					</ul>
+				</li>
+			</ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+	<div class="page-header voice voice-brand">
+		<h1>Components</h1>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-12 col-md-12">
+
+			<div class="module">
+				<div class="sdh-wrapper module-body">
+
+					<h2 class="voice voice-brand" id="complex-buttons">Complex Buttons</h2>
+<table class="documentation">
+  <thead>
+    <tr>
+      <th>Example</th>
+      <th>Description</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="example">
+        <button data-loading-text="loading..." class="btn btn-primary stateful">Loading State</button>
+      </td>
+      <td class="description">Stateful</td>
+      <td class="usage">
+        <p>Markup:</p>
+<pre class="prettyprint linenums lang-html">
+&lt;button data-loading-text="loading..." class="btn btn-primary stateful"&gt;Button&lt;/button&gt;
+</pre>
+        <p>Script:</p>
+<pre class="prettyprint linenums lang-javascript">
+$(&hellip;).button('loading');
+</pre>
+        <p>Sets button state to loading—disables button and swaps text to loading text. Loading text should be defined on the button element using the data attribute <code>data-loading-text</code>.</p>
+        <p class="note">NOTE: Firefox persists the disabled state across page loads. A workaround for this is to use <code>autocomplete="off"</code>.</p>
+<pre class="prettyprint linenums lang-javascript">
+$(&hellip;).button('reset');
+</pre>
+        <p>Resets button state—swaps text to original text.</p>
+        <div class="alert alert-info">
+          <strong>Script Requirements:</strong>
+          <ul>
+            <li>bootstrap/bootstrap-button</li>
+          </ul>
+        </div>
+    </tr> <!-- /stateful -->
+    <tr>
+      <td class="example">
+        <button class="btn btn-primary" data-toggle="button">Single Toggle</button>
+      </td>
+      <td class="description">Toggle</td>
+      <td class="usage">
+        <p>Markup:</p>
+<pre class="prettyprint linenums lang-html">
+&lt;button class="btn" data-toggle="button"&gt;Single Toggle&lt;/button&gt;
+</pre>
+        <p>Script:</p>
+<pre class="prettyprint linenums lang-javascript">
+$(&hellip;).button('toggle');
+</pre>
+        <p>Toggles push state. Gives the button the appearance that it has been activated.</p>
+        <p>The <code>data-toggle</code> attribute enables auto-toggling.</p>
+        <div class="alert alert-info">
+          <strong>Script Requirements:</strong>
+          <ul>
+            <li>bootstrap/bootstrap-button</li>
+          </ul>
+        </div>
+      </td>
+    </tr> <!-- /toggle -->
+    <tr>
+      <td class="example">
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn">
+            <input type="radio" name="radio-group">Left
+          </label>
+          <label class="btn">
+            <input type="radio" name="radio-group">Middle
+          </label>
+          <label class="btn">
+            <input type="radio" name="radio-group">Right
+          </label>
+        </div>
+      </td>
+      <td class="description">Radio Button Groups</td>
+      <td class="usage">
+        <p>Add <code>data-toggle="buttons"</code> for radio-style toggling on <code>.btn-group</code>.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="btn-group" data-toggle="buttons"&gt;
+  &lt;label class="btn"&gt;
+    &lt;input type="radio" name="radio-group"&gt;Left
+  &lt;/label&gt;
+  &lt;label class="btn"&gt;
+    &lt;input type="radio" name="radio-group"&gt;Middle
+  &lt;/label&gt;
+  &lt;label class="btn"&gt;
+    &lt;input type="radio" name="radio-group"&gt;Right
+  &lt;/label&gt;
+&lt;/div&gt;
+</pre>
+        <div class="alert alert-info">
+          <strong>Script Requirements:</strong>
+          <ul>
+            <li>bootstrap/bootstrap-button</li>
+          </ul>
+        </div>
+      </td>
+    </tr> <!-- /radio button groups -->
+    <tr>
+      <td class="example">
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn">
+            <input type="checkbox" name="checkbox-group">Left
+          </label>
+          <label class="btn">
+            <input type="checkbox" name="checkbox-group">Middle
+          </label>
+          <label class="btn">
+            <input type="checkbox" name="checkbox-group">Right
+          </label>
+        </div>
+      </td>
+      <td class="description">Checkbox Button Groups</td>
+      <td class="usage">
+        <p>Add <code>data-toggle="buttons"</code> for checkbox-style toggling on <code>.btn-group</code>.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="btn-group" data-toggle="buttons"&gt;
+  &lt;label class="btn"&gt;
+    &lt;input type="checkbox" name="checkbox-group"&gt;Left
+  &lt;/label&gt;
+  &lt;label class="btn"&gt;
+    &lt;input type="checkbox" name="checkbox-group"&gt;Middle
+  &lt;/label&gt;
+  &lt;label class="btn"&gt;
+    &lt;input type="checkbox" name="checkbox-group"&gt;Right
+  &lt;/label&gt;
+&lt;/div&gt;
+</pre>
+        <div class="alert alert-info">
+          <strong>Script Requirements:</strong>
+          <ul>
+            <li>bootstrap/bootstrap-button</li>
+          </ul>
+        </div>
+      </td>
+    </tr> <!-- /checkbox button groups -->
+    <tr>
+      <td class="example">
+        <div>
+          <div class="btn-group">
+            <button class="btn dropdown-toggle" data-toggle="dropdown">Action <i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+        </div>
+        <div>
+          <div class="btn-group">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Action <i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+        </div>
+        <div>
+          <div class="btn-group">
+            <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">Info <i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+        </div>
+        <div>
+          <div class="btn-group">
+            <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Success <i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+        </div>
+        <div>
+          <div class="btn-group">
+            <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Warning <i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+        </div>
+        <div>
+          <div class="btn-group">
+            <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">Danger <i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+        </div>
+        <div>
+          <div class="btn-group">
+            <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">Inverse <i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+        </div>
+        <div>
+          <div class="btn-group">
+            <button class="btn dropdown-toggle disabled" data-toggle="dropdown">Disabled <i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+        </div>
+      </td>
+      <td class="description">Button Dropdowns</td>
+      <td class="usage">
+        <p>Use any <code>button</code> to trigger a dropdown menu by placing it within a <code>.btn-group</code> and providing the proper menu markup.</p>
+        <p>To quickly add dropdown functionality to any element just add <code>data-toggle="dropdown"</code> and any valid bootstrap dropdown will automatically be activated.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="btn-group"&gt;
+  &lt;button class="btn dropdown-toggle" data-toggle="dropdown"&gt;Action &lt;i class="icon-chevron-down"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Another action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="divider"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+        <p>You may optionally target a specific dropdown by using <code>data-target="#id"</code> or <code>href="#fat"</code>.</p>
+        <p class="note">NOTE: In some cases—like mobile—dropdown menus will extend outside the viewport. You need to resolve the alignment manually or with custom javascript.</p>
+        <div class="alert alert-info">
+          <strong>Script Requirements:</strong>
+          <ul>
+            <li>bootstrap/bootstrap-dropdown</li>
+          </ul>
+        </div>
+      </td>
+    </tr> <!-- /button dropdowns -->
+    <tr>
+      <td class="example">
+        <div class="btn-group dropup">
+          <button class="btn dropdown-toggle" data-toggle="dropdown">Action <i class="icon-chevron-up"></i></button>
+          <ul class="dropdown-menu">
+            <li><a>Action</a></li>
+            <li><a>Another action</a></li>
+            <li><a>Something else here</a></li>
+            <li class="divider"></li>
+            <li><a>Separated link</a></li>
+          </ul>
+        </div>
+      </td>
+      <td class="description">Button Dropups</td>
+      <td class="usage">
+        <p>Add <code>.dropup</code> to a <code>.btn-group</code> containing a dropdown to switch to a dropup.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="btn-group dropup"&gt;
+  &lt;button class="btn dropdown-toggle" data-toggle="dropdown"&gt;Action &lt;i class="icon-chevron-up"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Another action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="divider"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+        <p class="note">NOTE: If using the original <code>.caret</code> markup from Bootstrap, the <code>.caret</code> will flip automatically for dropups. Otherwise, change the <code>.dropdown-toggle</code> icon to <code>.icon-chevron-up</code>.</p>
+        <div class="alert alert-info">
+          <strong>Script Requirements:</strong>
+          <ul>
+            <li>bootstrap/bootstrap-dropdown</li>
+          </ul>
+        </div>
+      </td>
+    </tr> <!-- /button dropups -->
+    <tr>
+      <td class="example">
+        <div>
+          <div class="btn-group">
+            <button class="btn">Action</button>
+            <button class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+        </div>
+        <div>
+          <div class="btn-group">
+            <button class="btn btn-primary">Action</button>
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+        </div>
+        <div>
+          <div class="btn-group">
+            <button class="btn btn-info">Info</button>
+            <button class="btn btn-info dropdown-toggle" data-toggle="dropdown"><i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="btn-group">
+            <button class="btn btn-success">Success</button>
+            <button class="btn btn-success dropdown-toggle" data-toggle="dropdown"><i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="btn-group">
+            <button class="btn btn-warning">Warning</button>
+            <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown"><i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="btn-group">
+            <button class="btn btn-danger">Danger</button>
+            <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown"><i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+        </div>
+        <div>
+          <div class="btn-group">
+            <button class="btn btn-inverse">Inverse</button>
+            <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"><i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="btn-group">
+            <button class="btn disabled">Disabled</button>
+            <button class="btn dropdown-toggle disabled" data-toggle="dropdown"><i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+      </td>
+      <td class="description">Split-Button Dropdowns</td>
+      <td class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;div class="btn-group"&gt;
+  &lt;button class="btn"&gt;Action&lt;/button&gt;
+  &lt;button class="btn dropdown-toggle" data-toggle="dropdown"&gt;&lt;i class="icon-chevron-down"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;&lt;a&gt;Action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Another action&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="divider"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+        <div class="alert alert-info">
+          <strong>Script Requirements:</strong>
+          <ul>
+            <li>bootstrap/bootstrap-dropdown</li>
+          </ul>
+        </div>
+      </td>
+    </tr> <!-- /split-button dropdown -->
+    <tr>
+      <td class="example">
+        <p>
+            <button class="btn btn-primary btn-icon"><i class="icon-user"></i></button>
+        </p>
+        <div>
+          <div class="btn-group">
+            <button class="btn btn-primary btn-icon dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> <i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="btn-group">
+            <button class="btn btn-primary btn-icon"><i class="icon-user"></i></button>
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="icon-chevron-down"></i></button>
+            <ul class="dropdown-menu">
+              <li><a>Action</a></li>
+              <li><a>Another action</a></li>
+              <li><a>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a>Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+      </td>
+      <td class="description">Icon Buttons</td>
+      <td class="usage">
+        <p>An icon may be used in place of text for a button by adding <code>.btn-icon</code> to any Bootstrap button and including the proper Icon markup.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;button class="btn btn-primary btn-icon dropdown-toggle" data-toggle="dropdown"&gt;&lt;i class="icon-user"&gt;&lt;/i&gt; &lt;i class="icon-chevron-down"&gt;&lt;/i&gt;&lt;/button&gt;
+</pre>
+        <p class="note">NOTE: The icons prefixed <code>.icon-chevron-</code> are always rendered at 12px in <code>.dropdown-toggle</code> buttons.</p>
+        <div class="alert alert-info">
+          <strong>Script Requirements:</strong>
+          <ul>
+            <li>bootstrap/bootstrap-dropdown<br><small>(for dropdown icon buttons only)</small></li>
+          </ul>
+        </div>
+      </td>
+    </tr> <!-- /icon buttons -->
+    <tr>
+      <td class="example">
+        <div style="margin-bottom:1em;">
+          <div class="btn-group btn-filter">
+            <a class="btn">Asset 01</a>
+            <a class="btn btn-remove"><i class="icon-remove"></i></a>
+          </div>
+        </div>
+        <div style="margin-bottom:1em;">
+          <div class="btn-group btn-filter">
+            <a class="btn"><i class="icon-star color-cyan"></i>Asset 02</a>
+            <a class="btn btn-remove"><i class="icon-remove"></i></a>
+          </div>
+        </div>
+        <div style="margin-bottom:1em;">
+          <div class="btn-group btn-filter">
+            <a class="btn"><i class="icon-star color-red"></i>Asset 03</a>
+            <a class="btn btn-remove"><i class="icon-remove"></i></a>
+          </div>
+        </div>
+        <div style="margin-bottom:1em;">
+          <div class="btn-group btn-filter">
+            <a class="btn"><i class="icon-star color-green"></i>Asset 04</a>
+            <a class="btn btn-remove"><i class="icon-remove"></i></a>
+          </div>
+        </div>
+        <div style="margin-bottom:1em;">
+          <div class="btn-group btn-filter">
+            <a class="btn"><i class="icon-star color-orange"></i>Asset 05</a>
+            <a class="btn btn-remove"><i class="icon-remove"></i></a>
+          </div>
+        </div>
+        <div style="margin-bottom:1em;">
+          <div class="btn-group btn-filter">
+            <a class="btn"><i class="icon-star color-purple"></i>Asset 06</a>
+            <a class="btn btn-remove"><i class="icon-remove"></i></a>
+          </div>
+        </div>
+      </td>
+      <td class="description">Filter Label Buttons</td>
+      <td class="usage">
+        <p>Add <code>.btn-filter</code> to a <code>.btn-group</code> to trigger special filter alignment rules.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="btn-group btn-filter"&gt;
+  &lt;a class="btn"&gt;Asset 01&lt;/a&gt;
+  &lt;a class="btn btn-remove"&gt;&lt;i class="icon-remove"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+        <hr>
+        <p>Icons with the prefix <code>.color-</code> specify colors for use within filter buttons. The primary GE Charting Palette is available for usage: <code>cyan</code>, <code>green</code>, <code>orange</code>, <code>purple</code> and <code>red</code>.
+<pre class="prettyprint linenums lang-html">
+&lt;div class="btn-group btn-filter"&gt;
+  &lt;a class="btn"&gt;&lt;i class="icon-star color-red"&gt;&lt;/i&gt;Asset 01&lt;/a&gt;
+  &lt;a class="btn btn-remove"&gt;&lt;i class="icon-remove"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+      </td>
+    </tr> <!-- /filter buttons -->
+</tbody>
+</table>
+
+
+					<a class="anchor" id="navigation"></a>
+					<h2 class="voice voice-brand">Navigation</h2>
+
+					<a class="anchor" id="masthead-and-navbar"></a>
+					<h3 class="voice voice-brand">Masthead &amp; Navigation Bar</h3>
+<dl class="documentation">
+	<dt>Example</dt>
+	<dd class="example">
+		<p><a href="../examples/navigation/masthead-and-primary-navigation.html" target="_blank">Open fullscreen example.</a></p>
+	</dd>
+  <dt>Description</dt>
+	<dd class="description show">Default Masthead &amp; Primary Navigation. <br/><strong>Note: It is recommended that alerts, messages and user dropdowns should link to actual pages on mobile. As a result these dropdowns are disabled on small screens.</strong><br/>
+        <strong>IIDX 2.0 Note: The bottom margin has been removed from the navbar in order to accomodate full screen types of layouts. In situations where a IIDX 1.0 developer was relying on this and using the &quot;container&quot;, the developer should also add the &quot;content&quot; class to the same element. </strong>
+	    <pre class="prettyprint linenums lang-html">&lt;div class="content container"&gt;my content....</pre></dd>
+    <dt>Usage</dt>
+	<dd class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;nav class="navbar navbar-static-top navbar-default" role="navigation"&gt;
+
+  &lt;div class="container"&gt;
+    &lt;!-- Brand and toggle get grouped for better mobile display --&gt;
+    &lt;div class="navbar-header"&gt;
+      &lt;a class="navbar-brand" href="../index.html"&gt;&lt;span class="ge-logo"&gt;&lt;/span&gt; &lt;span&gt;IIDX - Basic UI Elements&lt;small&gt;&lt;i&gt;powered by&lt;/i&gt; Bootstrap&lt;/small&gt;&lt;/span&gt;&lt;/a&gt;
+
+      &lt;!-- .navbar-toggle for collapsed navbar content --&gt;
+      &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse"&gt;
+        &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+        &lt;span class="icon-bar"&gt;&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class="pull-right"&gt;
+      &lt;div class="btn-toolbar pull-left"&gt;
+        &lt;div class="btn-group"&gt;
+          &lt;button class="btn btn-danger dropdown-toggle" rel="tooltip" data-title="Alerts" data-placement="bottom" data-toggle="dropdown" data-original-title="" title=""&gt;&lt;i class="icon-warning-sign"&gt;&lt;/i&gt; 5&lt;/button&gt;
+          &lt;ul class="dropdown-menu pull-right message-list"&gt;
+            &lt;li class="message-item"&gt;
+              &lt;a href="#"&gt;
+                &lt;span class="label label-important pull-left"&gt;Urgent&lt;/span&gt;
+                &lt;h4 class="message-title"&gt;Alert Type and Title&lt;/h4&gt;
+                &lt;p&gt;This is a brief description or summary of the associated event that occured…&lt;br&gt;&lt;time datetime="MM:DD:YYTHH:MM:SS" class="message-time"&gt;MM/DD/YY 12:05&lt;/time&gt;&lt;/p&gt;
+              &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="message-item"&gt;
+              &lt;a href="#"&gt;
+                &lt;span class="label label-warning pull-left"&gt;Moderate&lt;/span&gt;
+                &lt;h4 class="message-title"&gt;Alert Type and Title&lt;/h4&gt;
+                &lt;p&gt;This is a brief description or summary of the associated event that occured…&lt;br&gt;&lt;time datetime="MM:DD:YYTHH:MM:SS" class="message-time"&gt;MM/DD/YY 12:05&lt;/time&gt;&lt;/p&gt;
+              &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class="message-item"&gt;&lt;a href="#"&gt;View all alerts&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class="btn-group"&gt;
+          &lt;button class="btn btn-inverse dropdown-toggle" rel="tooltip" data-title="Messages" data-placement="bottom" data-toggle="dropdown" data-original-title="" title=""&gt;&lt;i class="icon-envelope-alt"&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;ul class="dropdown-menu pull-right message-list"&gt;
+            &lt;li class="message-item empty"&gt;No unread messages&lt;/li&gt;
+            &lt;li class="message-item"&gt;&lt;a href="#"&gt;View all messages&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class="btn-group"&gt;
+          &lt;button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"&gt;&lt;i class="icon-user"&gt;&lt;/i&gt;&lt;span class="user-name"&gt;Tom Edison&lt;/span&gt; &lt;i class="icon-chevron-down"&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;ul class="dropdown-menu pull-right"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="divider"&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;form class="pull-left navbar-form"&gt;
+        &lt;div class="input-group"&gt;
+            &lt;input type="search" class="col-sm-1 search-query form-control" data-toggle="dropdown" data-target=".navbar-search"&gt;
+            &lt;span class="input-group-btn"&gt;
+              &lt;button type="submit" class="btn btn-inverse btn-icon"&gt;&lt;i class="icon-search"&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="typeahead typeahead-faceted dropdown-menu pull-right"&gt;
+          &lt;ul class="list-unstyled"&gt;
+            &lt;li class="facet"&gt;
+              &lt;div class="facet-name"&gt;Top Result&lt;/div&gt;
+              &lt;ul class="facet-results list-unstyled"&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;strong&gt;Ma&lt;/strong&gt;ine&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li class="facet"&gt;
+              &lt;div class="facet-name"&gt;States&lt;/div&gt;
+              &lt;ul class="facet-results list-unstyled"&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;strong&gt;Ma&lt;/strong&gt;ine&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;strong&gt;Ma&lt;/strong&gt;ryland&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;strong&gt;Ma&lt;/strong&gt;ssachusetts&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Alaba&lt;strong&gt;ma&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li class="facet"&gt;
+              &lt;div class="facet-name"&gt;Cities&lt;/div&gt;
+              &lt;ul class="facet-results list-unstyled"&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;strong&gt;Ma&lt;/strong&gt;bleton, GA&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;strong&gt;Ma&lt;/strong&gt;cedon, NY&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;strong&gt;Ma&lt;/strong&gt;cedonia, OH&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;strong&gt;Ma&lt;/strong&gt;chesney Park, IL&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;strong&gt;Ma&lt;/strong&gt;comb, IL&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li class="last"&gt;&lt;a href="#"&gt;View All Results&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="primary-navbar nav-collapse"&gt;
+    &lt;div class="container"&gt;
+      &lt;ul class="nav navbar-nav"&gt;
+
+        &lt;li class="active"&gt;&lt;a href="#"&gt;Dashboard&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="#"&gt;Primary Nav 1&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="#"&gt;Primary Nav 2&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="#"&gt;Primary Nav 3&lt;/a&gt;&lt;/li&gt;
+
+        &lt;li&gt;&lt;a href="#"&gt;Primary Nav 4&lt;/a&gt;&lt;/li&gt;
+
+      &lt;/ul&gt;
+
+    `&lt;div class="btn-group pull-right visible-lg"&gt;
+        &lt;button class="btn dropdown-toggle btn-inverse" data-toggle="dropdown"&gt;&lt;i class="icon-file" style="margin-right: 9px;"&gt;&lt;/i&gt;&lt;i class="icon-chevron-down"&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;ul class="dropdown-menu "&gt;
+          &lt;li class="nav-header"&gt;Recently Closed&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Asset 014&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Asset 015&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="divider"&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Close All Tabs&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/nav&gt;
+</pre>
+		<div class="alert alert-info">
+			<strong>Script Requirements:</strong>
+			<ul>
+				<li>bootstrap/bootstrap-dropdown</li>
+				<li>bootstrap/bootstrap-collapse</li>
+				<li>iids-navbar</li>
+			</ul>
+		</div>
+	</dd><!-- /masthead and primary -->
+	<dt>Example</dt>
+	<dd class="example">
+		<p><a href="../examples/navigation/secondary-and-tertiary-navigation.html" target="_blank">Open fullscreen example.</a></p>
+	</dd>
+	<dt>Description</dt>
+	<dd class="description show">Secondary &amp; Tertiary Navigation <br/><strong>Note: It is recommended that alerts, messages and user dropdowns should link to actual pages on mobile. As a result these dropdowns are disabled on small screens.</strong></dd>
+	<dt>Usage</dt>
+	<dd class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;div class="container content"&gt;
+  &lt;div class="page-header"&gt;
+        &lt;h1 class="voice-brand pull-left"&gt;View Title&lt;/h1&gt;
+        &lt;div class="secondary-nav pull-right"&gt;
+            &lt;ul class=" nav nav-pills pull-left" data-toggle="tab"&gt;
+                &lt;li class="active"&gt;&lt;a href="#" data-toggle="tab"&gt;Secondary Nav 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#" data-toggle="tab"&gt;Secondary Nav 2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#" data-toggle="tab"&gt;Secondary Nav 3&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="btn-group"&gt;
+                    &lt;a class="dropdown-toggle" href="#" data-toggle="dropdown"&gt;More &lt;i class="icon-chevron-down"&gt;&lt;/i&gt;&lt;/a&gt;
+                    &lt;ul class="dropdown-menu pull-right"&gt;
+                        &lt;li&gt;&lt;a href="#" data-toggle="dropdown"&gt;Secondary Nav 4&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#" data-toggle="dropdown"&gt;Secondary Nav 5&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#" data-toggle="dropdown"&gt;Secondary Nav 6&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;         
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+		<div class="alert alert-info">
+			<strong>Script Requirements:</strong>
+			<ul>
+				<li>bootstrap/bootstrap-dropdown</li>
+				<li>bootstrap/bootstrap-collapse</li>
+				<li>iids-navbar</li>
+			</ul>
+		</div>
+	</dd><!-- /secondary and tertiary -->
+	<dt>Example</dt>
+	<dd class="example">
+		<p><a href="../examples/navigation/workspace-navigation.html" target="_blank">Open fullscreen example.</a></p>
+	</dd>
+	<dt>Description</dt>
+	<dd class="description show">Workspace Navigation <br/><strong>Note: It is recommended that alerts, messages and user dropdowns should link to actual pages on mobile. As a result these dropdowns are disabled on small screens.</strong></dd>
+	<dt>Usage</dt>
+	<dd class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;div class="navbar"&gt;
+  &lt;div class="masthead navbar-inner"&gt;
+    &hellip;
+  &lt;/div&gt;
+  &lt;div class="primary-navbar navbar-inner collapse"&gt;
+    &lt;div class="container"&gt;
+      &lt;ul class="nav"&gt;
+        &hellip;
+      &lt;/ul&gt;
+      &lt;div class="workspace-history btn-group pull-right"&gt;
+        &lt;button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"&gt;&lt;i class="icon-file" style="margin-right: 9px;"&gt;&lt;/i&gt;&lt;i class="icon-chevron-down"&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;ul class="dropdown-menu"&gt;
+          &lt;li class="nav-header"&gt;Recently Closed&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Asset 014&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Asset 015&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="divider"&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Close All Tabs&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;div class="workspace-navbar nav-collapse"&gt;
+    &lt;div class="container"&gt;
+      &lt;ul class="nav navbar-nav"&gt;
+
+        &lt;li class="active"&gt;
+          &lt;div class="btn-group btn-filter"&gt;
+            &lt;a href="#" class="btn"&gt;Asset 001&lt;/a&gt;
+            &lt;a href="#" class="btn btn-fade"&gt;&lt;i class="icon-remove"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+
+        &lt;li&gt;
+          &lt;div class="btn-group btn-filter"&gt;
+            &lt;a href="#" class="btn"&gt;Asset 002&lt;/a&gt;
+            &lt;a href="#" class="btn btn-fade"&gt;&lt;i class="icon-remove"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+
+        &lt;li&gt;
+          &lt;div class="btn-group btn-filter"&gt;
+            &lt;a href="#" class="btn"&gt;Asset 003&lt;/a&gt;
+            &lt;a href="#" class="btn btn-fade"&gt;&lt;i class="icon-remove"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+
+        &lt;li&gt;
+          &lt;div class="btn-group btn-filter"&gt;
+            &lt;a href="#" class="btn"&gt;Asset 004&lt;/a&gt;
+            &lt;a href="#" class="btn btn-fade"&gt;&lt;i class="icon-remove"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+
+        &lt;li&gt;
+          &lt;div class="btn-group btn-filter"&gt;
+            &lt;a href="#" class="btn"&gt;Asset 005&lt;/a&gt;
+            &lt;a href="#" class="btn btn-fade"&gt;&lt;i class="icon-remove"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="container"&gt;
+  &lt;div class="page-header"&gt;
+    &hellip;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+		<div class="alert alert-info">
+			<strong>Script Requirements:</strong>
+			<ul>
+				<li>bootstrap/bootstrap-dropdown</li>
+				<li>bootstrap/bootstrap-collapse</li>
+				<li>iids-navbar</li>
+			</ul>
+		</div>
+	</dd><!-- /workspace -->
+	<dt>Example</dt>
+	<dd class="example">
+		<p><a href="../examples/navigation/mega-dropdown.html" target="_blank">Open fullscreen example.</a></p>
+	</dd>
+	<dt>Description</dt>
+	<dd class="description show">Mega-Dropdown <br/><strong>Note: It is recommended that alerts, messages and user dropdowns should link to actual pages on mobile. As a result these dropdowns are disabled on small screens.</strong></dd>
+	<dt>Usage</dt>
+	<dd class="usage">
+		<p>Markup:</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="navbar"&gt;
+  &lt;div class="masthead navbar-inner"&gt;
+    &hellip;
+  &lt;/div&gt;
+  &lt;div class="primary-navbar navbar-inner collapse"&gt;
+    &lt;div class="container"&gt;
+      &lt;ul class="nav"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Dashboard&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="active btn-group"&gt;
+          &lt;a class="dropdown-toggle" href="#" data-toggle="dropdown"&gt;Primary Nav 1&lt;/a&gt;
+          &lt;ul class="dropdown-menu mega-dropdown"&gt;
+            &lt;li&gt;
+              &lt;ul class="nav pull-left"&gt;
+                &lt;li class="nav-header"&gt;&lt;a href="#"&gt;Secondary Nav 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tertiary Nav 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tertiary Nav 2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tertiary Nav 3&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tertiary Nav 4&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tertiary Nav 5&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tertiary Nav 6&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tertiary Nav 7&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Tertiary Nav 8&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/li&gt;
+            &hellip;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &hellip;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+		<p>Script:</p>
+<pre class="prettyprint linenums lang-javascript">
+$('.mega-dropdown').each(
+  function() {
+    var $this = $( this );
+    var $toggle = $this.prev('.dropdown-toggle');
+    $this
+      .css( { left: 0, width: ( $this.parents('.primary-navbar .container').width() ) } )
+      .before( '<span class="mega-dropdown-arrow" style="left: ' + ( $toggle.offset().left - ( $toggle.width() / 2 ) + 2 ) + 'px;"></span>' )
+      .parent('.btn-group').css('position','static');
+  }
+)
+</pre>
+		<p class="note">NOTE: The script portion is required to force the <code>.mega-dropdown</code> to the full grid width.</p>
+		<p>To enable proper responsive behavior, include the following script to force the <code>.mega-dropdown</code> to single-column display at screen sizes less than 480 pixels:</p>
+<pre class="prettyprint linenums lang-javascript">
+$('.mega-dropdown').each(
+  function() {
+    $( this ).css( { left: 0, width: ( $( this ).parents('.primary-navbar .container').width() ) } );
+  }
+)
+</pre>
+		<div class="alert alert-info">
+			<strong>Script Requirements:</strong>
+			<ul>
+				<li>bootstrap/bootstrap-dropdown</li>
+				<li>bootstrap/bootstrap-collapse</li>
+				<li>iids-navbar</li>
+			</ul>
+		</div>
+	</dd><!-- /mega -->
+</dl>
+
+
+                    <a class="anchor" id="secondary-navigation"></a>
+                    <h3 class="voice voice-brand">Secondary Navigation</h3>
+<dl class="documentation">
+    <dt>Example</dt>
+    <dd class="example">
+        <p><a href="../examples/navigation/secondarynav.html" target="_blank">Open fullscreen example.</a></p>
+        <p>
+            <img src="../assets/images/secondarynav_screenshot.jpg" alt="Screenshot of secondary navigation">
+        </p>
+    </dd>
+    <dt>Description</dt>
+    <dd class="description show">Secondary Navigation<br/><strong>A secondary, simple, text based navigation that would appear below a primary navigation</strong></dd>
+    <dt>Usage</dt>
+    <dd class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;div class="container"&gt;
+    &lt;ul class="secondarynav"&gt;
+        &lt;li class="active"&gt;Import from File&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Import from URL&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Create Single&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Create Bulk&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div>
+</pre>
+    </dd>
+</dl>
+
+
+					<a class="anchor" id="supplementary-navigation"></a>
+					<h3 class="voice voice-brand">Supplementary Navigation</h3>
+<table class="documentation">
+	<thead>
+		<tr>
+			<th>Example</th>
+			<th>Description</th>
+			<th>Usage</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="example">
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#tab1" data-toggle="tab">Section 1</a></li>
+					<li><a href="#tab2" data-toggle="tab">Section 2</a></li>
+					<li><a href="#tab3" data-toggle="tab">Section 3</a></li>
+				</ul>
+			</td>
+			<td class="description">Basic Tabs</td>
+			<td class="usage">
+				<p>Markup:</p>
+<pre class="prettyprint linenums lang-html">
+&lt;ul class="nav nav-tabs"&gt;
+  &lt;li class="active"&gt;&lt;a href="#tab1" data-toggle="tab"&gt;Section 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#tab2" data-toggle="tab"&gt;Section 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#tab3" data-toggle="tab"&gt;Section 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				<p>Activate tab navigation without javascript by specifying <code class="prettyprint">data-toggle="tab"</code> on an element. Adding the <code>nav</code> and <code>nav-tabs</code> classes to the tab <code>ul</code> will apply the bootstrap tab styling.
+				<p>To align nav links, use the <code>.pull-left</code> or <code>.pull-right</code> utility classes. Both classes will add a CSS float in the specified direction.</p>
+				<p>Script:</p>
+<pre class="prettyprint linenums lang-javascript">
+$('#myTab a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})
+</pre>
+				<div class="alert alert-info">
+					<strong>Script Requirements:</strong>
+					<ul>
+						<li>bootstrap/bootstrap-tab</li>
+					</ul>
+				</div>
+			</td>
+		</tr> <!-- /basic tabs -->
+		<tr>
+			<td class="example">
+				<ul class="nav nav-tabs nav-stacked">
+					<li class="active"><a href="#tab1" data-toggle="tab">Section 1</a></li>
+					<li><a href="#tab2" data-toggle="tab">Section 2</a></li>
+					<li><a href="#tab3" data-toggle="tab">Section 3</a></li>
+				</ul>
+			</td>
+			<td class="description">Stacked Tabs</td>
+			<td class="usage">
+				<p>Add <code>.nav-stacked</code> to the basic navigation markup.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;ul class="nav nav-tabs nav-stacked"&gt;
+  &lt;li class="active"&gt;&lt;a href="#tab1" data-toggle="tab"&gt;Section 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#tab2" data-toggle="tab"&gt;Section 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#tab3" data-toggle="tab"&gt;Section 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				<div class="alert alert-info">
+					<strong>Script Requirements:</strong>
+					<ul>
+						<li>bootstrap/bootstrap-tab</li>
+					</ul>
+				</div>
+			</td>
+		</tr> <!-- /stacked tabs -->
+		<tr>
+			<td class="example">
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#tab1">Section 1</a></li>
+					<li><a href="#tab2">Section 2</a></li>
+					<li class="dropdown">
+						<a data-toggle="dropdown">Dropdown <i class="icon-chevron-down"></i></a>
+						<ul class="dropdown-menu">
+							<li><a>Action</a></li>
+							<li><a>Another action</a></li>
+							<li><a>Something else here</a></li>
+							<li class="divider"></li>
+							<li><a>Separated link</a></li>
+						</ul>
+					</li>
+				</ul>
+			</td>
+			<td class="description">Tabs with Dropdowns</td>
+			<td class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;ul class="nav nav-tabs"&gt;
+  &lt;li class="active"&gt;&lt;a href="#tab1"&gt;Section 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#tab2"&gt;Section 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="dropdown"&gt;
+    &lt;a data-toggle="dropdown" &gt;Dropdown &lt;i class="icon-chevron-down"&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;ul class="dropdown-menu"&gt;
+      &lt;li&gt;&lt;a &gt;Action&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a &gt;Another action&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a &gt;Something else here&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="divider"&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a &gt;Separated link&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				<p class="note">NOTE: Unlike simple tabs, tabs with dropdowns require javascript initialization.</p>
+				<p class="note">NOTE: See <i>Complex Buttons</i> documentation for more information on dropdown requirements.</p>
+				<div class="alert alert-info">
+					<strong>Script Requirements:</strong>
+					<ul>
+						<li>bootstrap/bootstrap-tab</li>
+						<li>bootstrap/bootstrap-dropdown</li>
+					</ul>
+				</div>
+			</td>
+		</tr> <!-- /tabs with dropdowns -->
+		<tr>
+			<td class="example">
+				<div class="tabbable">
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#tab1" data-toggle="tab">Section 1</a></li>
+						<li><a href="#tab2" data-toggle="tab">Section 2</a></li>
+						<li><a href="#tab3" data-toggle="tab">Section 3</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="tab1">
+							<p>Section 1</p>
+						</div>
+						<div class="tab-pane" id="tab2">
+							<p>Section 2</p>
+						</div>
+						<div class="tab-pane" id="tab3">
+							<p>Section 3</p>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="tabbable tabs-left">
+					<ul class="nav nav-tabs">
+						<li class="active"><a  data-toggle="tab">Section 1</a></li>
+						<li><a  data-toggle="tab">Section 2</a></li>
+						<li><a  data-toggle="tab">Section 3</a></li>
+					</ul>
+					<div class="tab-content"></div>
+				</div>
+				<br>
+				<div class="tabbable tabs-right">
+					<ul class="nav nav-tabs">
+						<li class="active"><a  data-toggle="tab">Section 1</a></li>
+						<li><a  data-toggle="tab">Section 2</a></li>
+						<li><a  data-toggle="tab">Section 3</a></li>
+					</ul>
+					<div class="tab-content"></div>
+				</div>
+				<br>
+				<div class="tabbable tabs-below">
+					<div class="tab-content"></div>
+					<ul class="nav nav-tabs">
+						<li class="active"><a  data-toggle="tab">Section 1</a></li>
+						<li><a  data-toggle="tab">Section 2</a></li>
+						<li><a  data-toggle="tab">Section 3</a></li>
+					</ul>
+				</div>
+			</td>
+			<td class="description">Tabbables</td>
+			<td class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;div class="tabbable"&gt;
+  &lt;ul class="nav nav-tabs"&gt;
+    &lt;li class="active"&gt;&lt;a href="#tab1" data-toggle="tab"&gt;Section 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#tab2" data-toggle="tab"&gt;Section 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#tab3" data-toggle="tab"&gt;Section 3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div class="tab-content"&gt;
+    &lt;div class="tab-pane active" id="tab1"&gt;
+      &lt;p&gt;Section 1&lt;/p&gt;
+    &lt;/div&gt;
+    &hellip;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+				<p>To make tabs fade in, add <code>.fade</code> to each <code>.tab-pane</code>.</p>
+				<hr>
+				<p>Variant positions can be implemented by adding <code>.tabs-left</code>, <code>.tabs-right</code> or <code>.tabs-below</code> to <code>.tabbable</code>.</p>
+				<p>For <code>.tabs-below</code>, <code>.tab-content</code> and <code>.nav-tabs</code> need to be in reverse order.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="tabbable tabs-below"&gt;
+  &lt;div class="tab-content"&gt;
+    &hellip;
+  &lt;/div&gt;
+  &lt;ul class="nav nav-tabs"&gt;
+    &hellip;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+				<div class="alert alert-info">
+					<strong>Script Requirements:</strong>
+					<ul>
+						<li>bootstrap/bootstrap-tab</li>
+					</ul>
+				</div>
+			</td>
+		</tr> <!-- /tabbables -->
+		<tr>
+			<td class="example">
+				<ul class="nav nav-pills">
+					<li class="active"><a>Page 1</a></li>
+					<li><a>Page 2</a></li>
+					<li><a>Page 3</a></li>
+				</ul>
+			</td>
+			<td class="description">Basic Pills</td>
+			<td class="usage">
+				<p>Markup:</p>
+<pre class="prettyprint linenums lang-html">
+&lt;ul class="nav nav-pills"&gt;
+  &lt;li class="active"&gt;&lt;a &gt;Page 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a &gt;Page 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a &gt;Page 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				<p>To align nav links, use the <code>.pull-left</code> or <code>.pull-right</code> utility classes. Both classes will add a CSS float in the specified direction.</p>
+			</td>
+		</tr> <!-- /basic pills -->
+		<tr>
+			<td class="example">
+				<ul class="nav nav-pills nav-stacked">
+					<li class="active"><a>Page 1</a></li>
+					<li><a>Page 2</a></li>
+					<li><a>Page 3</a></li>
+				</ul>
+			</td>
+			<td class="description">Stacked Pills</td>
+			<td class="usage">
+				<p>Add <code>.nav-stacked</code> to the basic navigation markup.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;ul class="nav nav-pills nav-stacked"&gt;
+  &lt;li class="active"&gt;&lt;a &gt;Page 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a &gt;Page 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a &gt;Page 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+			</td>
+		</tr> <!-- /stacked pills -->
+		<tr>
+			<td class="example">
+				<ul class="nav nav-pills">
+					<li class="active"><a>Page 1</a></li>
+					<li><a>Page 2</a></li>
+					<li class="dropdown">
+						<a data-toggle="dropdown">Dropdown <i class="icon-chevron-down"></i></a>
+						<ul class="dropdown-menu">
+							<li><a>Action</a></li>
+							<li><a>Another action</a></li>
+							<li><a>Something else here</a></li>
+							<li class="divider"></li>
+							<li><a>Separated link</a></li>
+						</ul>
+					</li>
+				</ul>
+			</td>
+			<td class="description">Pills with Dropdowns</td>
+			<td class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;ul class="nav nav-pills"&gt;
+  &lt;li class="active"&gt;&lt;a &gt;Page 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a &gt;Page 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="dropdown"&gt;
+    &lt;a data-toggle="dropdown" &gt;Dropdown &lt;i class="icon-chevron-down"&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;ul class="dropdown-menu"&gt;
+      &lt;li&gt;&lt;a &gt;Action&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a &gt;Another action&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a &gt;Something else here&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="divider"&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a &gt;Separated link&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				<p class="note">NOTE: See <i>Complex Buttons</i> documentation for more information on dropdown requirements.</p>
+				<div class="alert alert-info">
+					<strong>Script Requirements:</strong>
+					<ul>
+						<li>bootstrap/bootstrap-dropdown</li>
+					</ul>
+				</div>
+			</td>
+		</tr> <!-- /pills with dropdowns -->
+		<tr>
+			<td class="example">
+				<ul class="nav nav-list">
+					<li class="nav-header">List header</li>
+					<li class="active"><a><i class="icon-white icon-home"></i>Home</a></li>
+					<li><a><i class="icon-book"></i>Library</a></li>
+					<li><a><i class="icon-pencil"></i>Applications</a></li>
+					<li class="nav-header">Another list header</li>
+					<li><a>Profile</a></li>
+					<li><a>Settings</a></li>
+					<li class="divider"></li>
+					<li><a>Help</a></li>
+				</ul>
+			</td>
+			<td class="description">Nav List</td>
+			<td class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;ul class="nav nav-list"&gt;
+  &lt;li class="nav-header"&gt;List header&lt;/li&gt;
+  &lt;li class="active"&gt;&lt;a &gt;&lt;i class="icon-white icon-home"&gt;&lt;/i&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a &gt;&lt;i class="icon-book"&gt;&lt;/i&gt;Library&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a &gt;&lt;i class="icon-pencil"&gt;&lt;/i&gt;Applications&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="nav-header"&gt;Another list header&lt;/li&gt;
+  &lt;li&gt;&lt;a &gt;Profile&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a &gt;Settings&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="divider"&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a &gt;Help&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+			</td>
+		</tr> <!-- /nav list -->
+		<tr>
+			<td class="example">
+				<div>
+					<ul class="pagination">
+						<li class="disabled prev"><a href="#paginationLeft"><i class="icon-arrow-left"></i></a></li>
+						<li class="active"><a href="#" data-toggle="tab">1</a></li>
+						<li><a href="#" data-toggle="tab">2</a></li>
+						<li><a href="#" data-toggle="tab">3</a></li>
+						<li><a href="#" data-toggle="tab">4</a></li>
+						<li class="next"><a href="#" data-toggle="tab"><i class="icon-arrow-right"></i></a></li>
+					</ul>
+				</div>
+				<div>
+					<ul class="pagination">
+						<li class="prev"><a href="#" data-toggle="tab"><i class="icon-arrow-left"></i></a></li>
+						<li><a href="#" data-toggle="tab">10</a></li>
+						<li class="active"><a href="#" data-toggle="tab">11</a></li>
+						<li><a href="#" data-toggle="tab">12</a></li>
+						<li class="next"><a href="#" data-toggle="tab"><i class="icon-arrow-right"></i></a></li>
+					</ul>
+				</div>
+				<div>
+					<ul class="pagination">
+						<li class="prev"><a href="#" data-toggle="tab"><i class="icon-arrow-left"></i></a></li>
+						<li class="active"><a href="#" data-toggle="tab">10</a></li>
+						<li class="disabled"><a href="#paginationMoreDis">...</a></li>
+						<li><a href="#" data-toggle="tab">20</a></li>
+						<li class="next"><a href="#" data-toggle="tab"><i class="icon-arrow-right"></i></a></li>
+					</ul>
+				</div>
+				<div>
+					<ul class="pagination pagination-centered">
+						<li class="active"><a href="#" data-toggle="tab">1</a></li>
+						<li><a href="#" data-toggle="tab">2</a></li>
+						<li><a href="#" data-toggle="tab">3</a></li>
+						<li><a href="#" data-toggle="tab">4</a></li>
+						<li><a href="#" data-toggle="tab">5</a></li>
+					</ul>
+				</div>
+      </td>
+
+
+
+			<td class="description">Pagination</td>
+			<td class="usage">
+<pre class="prettyprint linenums lang-html">
+
+  &lt;ul class="pagination"&gt;
+    &lt;li class="disabled"&gt;&lt;a &gt;&lt;i class="icon-arrow-left"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="active"&gt;&lt;a &gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a &gt;2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a &gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a &gt;4&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a &gt;&lt;i class="icon-arrow-right"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+</pre>
+			</td>
+		</tr> <!-- /pagination -->
+		<tr>
+			<td class="example">
+				<ul class="pager">
+					<li><a>Previous</a></li>
+					<li><a>Next</a></li>
+				</ul>
+				<ul class="pager">
+					<li class="disabled"><a>Previous</a></li>
+					<li class="disabled"><a>Next</a></li>
+				</ul>
+				<ul class="pager">
+					<li class="previous"><a><i class="icon-arrow-left"></i> Older</a></li>
+					<li class="next"><a>Newer <i class="icon-arrow-right"></i></a></li>
+				</ul>
+				<ul class="pager">
+					<li class="previous disabled"><a><i class="icon-arrow-left"></i> Older</a></li>
+					<li class="next disabled"><a>Newer <i class="icon-arrow-right"></i></a></li>
+				</ul>
+			</td>
+			<td class="description">Pager</td>
+			<td class="usage">
+				<p>Centered:</p>
+<pre class="prettyprint linenums lang-html">
+&lt;ul class="pager"&gt;
+  &lt;li&gt;&lt;a &gt;Previous&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a &gt;Next&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+				<p>Left/Right Aligned:</p>
+<pre class="prettyprint linenums lang-html">
+&lt;ul class="pager"&gt;
+  &lt;li class="previous disabled"&gt;&lt;a &gt;&lt;i class="icon-arrow-left"&gt;&lt;/i&gt; Older&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="next"&gt;&lt;a &gt;Newer &lt;i class="icon-arrow-right"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+			</td>
+		</tr> <!-- /pager -->
+            <tr>
+      <td class="example">
+        <ul class="collapsible-list">
+          <li class="nav-header">List Header</li>
+          <li class="collapsible-list-subnav">
+            <a class="collapsible-list-parent">Primary Nav 1</a>
+
+            <ul class="collapsible-list secondary">
+              <li class="collapsible-list-subnav">
+                <a class="collapsible-list-parent">Secondary Nav 1</a>
+
+                <ul class="collapsible-list tertiary">
+                  <li>
+                     <a>Tertiary Nav 1</a>
+                  </li>
+                </ul>
+
+              </li>
+            </ul>
+
+          </li>
+          <li class="collapsible-list-subnav">
+            <a class="collapsible-list-parent">Primary Nav 2</a>
+            <ul class="collapsible-list secondary">
+              <li>
+                <a>Secondary Nav 2</a>
+              </li>
+            </ul>
+          </li>
+          <li><a>Primary Nav 3</a></li>
+          <li class="nav-header">Another List Header</li>
+          <li><a>Primary Nav 4</a></li>
+          <li><a>Primary Nav 5</a></li>
+        </ul>
+      </td>
+      <td class="description">Collapsible List</td>
+      <td class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;ul class="collapsible-list"&gt;
+  &lt;li class="nav-header"&gt;List Header&lt;/li&gt;
+  &lt;li class="collapsible-list-subnav"&gt;
+    &lt;a class="collapsible-list-parent" &gt;Primary Nav 1&lt;/a&gt;
+    &lt;ul class="collapsible-list secondary"&gt;
+      &lt;li class="collapsible-list-subnav"&gt;
+        &lt;a class="collapsible-list-parent" &gt;Secondary Nav 1&lt;/a&gt;
+        &lt;ul class="collapsible-list tertiary"&gt;
+          &lt;li&gt;
+             &lt;a &gt;Tertiary Nav 1&lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li class="collapsible-list-subnav"&gt;
+    &lt;a class="collapsible-list-parent" &gt;Primary Nav 2&lt;/a&gt;
+    &lt;ul class="collapsible-list secondary"&gt;
+      &lt;li&gt;
+        &lt;a &gt;Secondary Nav 2&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a &gt;Primary Nav 3&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="nav-header"&gt;Another List Header&lt;/li&gt;
+  &lt;li&gt;&lt;a &gt;Primary Nav 4&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a &gt;Primary Nav 5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<p>Expand/collapse functionality for List Navigation; limited by design to three levels of navigation. When a significant amount of information is available within a list, and individual items can be grouped under clear headings, it may be preferable to make the groups collapsible in order to save screen real estate and reduce cognitive load.</p>
+ <p>Add <code class="prettyprint">class="collapsible-list"</code> to the toplevel <code>ul</code>.</p>
+  <p>Options:</p>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td><code>collapsible-list-parent</code>
+      </td>
+      <td>add to your anchor tags that have children</td>
+    </tr>
+    <tr>
+      <td><code>nav-header</code>
+      </td>
+      <td>unselectable li item</td>
+    </tr>
+    <tr>
+      <td><code>secondary</code>
+      </td>
+      <td>add to ul to create 2nd level items</td>
+   </tr>
+    <tr>
+      <td><code>tertiary</code>
+      </td>
+      <td>add to ul to create 3rd level items</td>
+     </tr>
+    <tr>
+      <td><code>collapsible-list-subnav</code>
+      </td>
+      <td>add to li to create collapsible item</td>
+    </tr>
+  </table>
+        <div class="alert alert-info">
+          <strong>Script Requirement:</strong>
+          <ul>
+            <li>collapsible-list.js</li>
+          </ul>
+        </div>
+      </td>
+    </tr> <!-- /collapsible list -->
+    <tr>
+      <td class="example">
+        <div class="contextmenu test">Right click in this box</div>
+      </td>
+      <td class="description">Context Menu</td>
+      <td class="usage">
+      <p>Add the <code class="prettypring">contextmenu</code> class to your DOM element.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="contextmenu"&gt;Right click in this box&lt;/div&gt;
+</pre>
+         <p>Then add your data elements to your project's JavaScript:</p>
+<pre class="prettyprint linenums lang-javascript">
+$.contextMenu({
+  // define which elements trigger this menu
+  selector: ".contextmenu",
+  // define the elements of the menu
+  items: {
+    "action1": {"name": "Action"},
+    "action2": {"name": "Another action"},
+    "action3": {"name": "Something else here"},
+    "sep1": "---------",
+    "fold1": {
+        "name": "Separated link",
+        "items": {
+            "fold1-key1": {"name": "Action"},
+            "fold1-key3": {"name": "Another Action"}
+        }
+    }
+  },
+  // handle click actions on your items defined above
+  callback: function(key, options) {
+    ...
+  }
+});
+</pre>
+<p class="note">NOTE: contextmenu does not work on mobile.</p>
+        <div class="alert alert-info">
+          <strong>Script Requirements:</strong>
+          <ul>
+            <li>jQuery-contextMenu/src/jquery.contextMenu.js</li>
+            <li>contextmenu.js</li>
+          </ul>
+        </div>
+      </td>
+    </tr> <!-- /context menu -->
+	</tbody>
+</table>
+
+
+                    <a class="anchor" id="multi-step-nav"></a>
+                    <h3 class="voice voice-brand">Multi-Step-Navigation</h3>
+<table class="documentation">
+	<thead>
+		<tr>
+			<th>Example</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr> <!-- Multi-Step-Navigation -->
+			<td class="example">
+				<div class="multi-step-nav col-sm-8 col-md-8">
+          <div class="navbar navbar-default">
+            <div class="container" style="margin-bottom:20px;">
+							<ul>
+								<li><a href="#tab1" data-toggle="tab"><i class="icon-circle-blank"></i> Step 1: Lorem ipsum dolor</a></li>
+								<li><a href="#tab2" data-toggle="tab"><i class="icon-circle-blank"></i> Step 2: Sit amet adipiscing</a></li>
+								<li><a href="#tab3" data-toggle="tab"><i class="icon-circle-blank"></i> Step 3: Consecteur etud</a></li>
+							</ul>
+            </div>
+          </div>
+          <div class="tab-content">
+            <ul class="pager wizard">
+              <li class="previous"><a>Previous</a></li>
+              <li class="next"><a>Next</a></li>
+              <li class="next finish" style="display:none;"><a href="javascript:;">Finish</a></li>
+            </ul>
+          </div>
+        </div>
+			</td>
+    </tr>
+    <tr>
+			<td class="description">Multi-Step-Navigation is a wizard-style progress pattern based off the twitter-bootstrap-wizard plugin.  Full documentation available <a href="http://vadimg.com/twitter-bootstrap-wizard-example/">here</a></td>
+    </tr>
+    <tr>
+			<td class="usage">
+        <pre class="prettyprint linenums lang-html">
+          &lt;div class=&quot;col-sm-8 col-md-8 multi-step-nav&quot;&gt;
+              &lt;div class=&quot;navbar&quot;&gt;
+                &lt;div class=&quot;navbar-inner&quot;&gt;
+                  &lt;div class=&quot;container&quot; style=&quot;margin: 20px;&quot;&gt;
+                    &lt;ul&gt;
+                      &lt;li&gt;&lt;a href=&quot;#tab1&quot; data-toggle=&quot;tab&quot;&gt;&lt;i class=&quot;icon-circle-blank&quot;&gt;&lt;/i&gt; Step 1: Lorem ipsum dolor&lt;/a&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;a href=&quot;#tab2&quot; data-toggle=&quot;tab&quot;&gt;&lt;i class=&quot;icon-circle-blank&quot;&gt;&lt;/i&gt; Step 2: Sit amet adipiscing&lt;/a&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;a href=&quot;#tab3&quot; data-toggle=&quot;tab&quot;&gt;&lt;i class=&quot;icon-circle-blank&quot;&gt;&lt;/i&gt; Step 3: Consecteur etud&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;tab-content&quot;&gt;
+                &lt;ul class=&quot;pager wizard&quot;&gt;
+                  &lt;li class=&quot;previous&quot;&gt;&lt;a href=&quot;#&quot;&gt;Previous&lt;/a&gt;&lt;/li&gt;
+                  &lt;li class=&quot;next&quot;&gt;&lt;a href=&quot;#&quot;&gt;Next&lt;/a&gt;&lt;/li&gt;
+                  &lt;li class=&quot;next finish&quot; style=&quot;display:none;&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;Finish&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          </pre>
+          <div class="alert alert-info">
+            <strong>Script Requirements:</strong>
+            <ul>
+              <li>multi-step-navigation/js/multi-step-navigation</li>
+            </ul>
+          </div>
+
+		</tr> <!-- /Multi-Step-Navigation -->
+
+
+	</tbody>
+</table>
+
+
+                    <a class="anchor" id="jump-navigation"></a>
+                    <h3 class="voice voice-brand">Jump Navigation</h3>
+<dl class="documentation">
+    <dt>Example</dt>
+    <dd class="example">
+        <p><a href="../examples/navigation/jumpnav.html" target="_blank">Open fullscreen example.</a></p>
+
+        <p>
+            Example with no page scroll
+        </p>
+        <p>
+            <img src="../assets/images/jumpnav_screenshot.jpg" alt="Jumpnav screenshot">
+        </p>
+        <p>
+            Example when page is scrolled and jumpnav sits on the top of the page
+        </p>
+        <p>
+            <img src="../assets/images/jumpnav_screenshot2.jpg" alt="Jumpnav screenshot">
+        </p>
+
+    </dd>
+    <dt>Description</dt>
+    <dd class="description show">Jump Navigation<br/><strong>A navigation that docks at the top of the screen in the context of scrolling, but looks like a normal static navigation when at the top of the page</strong></dd>
+    <dt>Usage</dt>
+    <dd class="usage">
+<pre class="prettyprint linenums lang-html">
+    &lt;div class="jumpnav"&gt;
+        &lt;ul class="clearfix nav"&gt;
+            &lt;li&gt;&lt;a href="#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#chapter1"&gt;Chapter 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#chapter2"&gt;Chapter 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#chapter3"&gt;Chapter 3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#conclusion"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;div class="module"&gt;
+
+        &lt;div class="jumpcontent"&gt;
+            &lt;div id="introduction" class="block"&gt;
+                &lt;h3 class="voice-brand"&gt;Introduction&lt;/h3&gt;
+                &lt;p&gt;Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. &lt;a href="#"&gt;Neque porro quisquam&lt;/a&gt; est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div id="chapter1" class="block"&gt;
+                &lt;h3 class="voice-brand"&gt;Chapter 1&lt;/h3&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis &lt;a href="#"&gt;nostrud exercitation&lt;/a&gt; ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+
+                &lt;p&gt;Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.&lt;/p&gt;
+            &lt;/div&gt;
+            <br /><br />
+            ...
+
+</pre>
+        <div class="alert alert-info">
+            <strong>Script Requirements:</strong>
+            <ul>
+                <li>jumpnav/js/jumpnav</li>
+            </ul>
+        </div>
+    </dd>
+</dl>
+
+
+                    <a class="anchor" id="footer"></a>
+                    <h3 class="voice voice-brand">Footer (small/medium/large)</h3>
+<dl class="documentation">
+<dt>Example</dt>
+<dd class="example">
+    <p><img src="../assets/images/footer_small_screenshot.jpg" alt="Screenshot of small footer"></p>
+    <p><a href="../examples/navigation/small-footer.html" target="_blank">Open fullscreen example.</a></p>
+</dd>
+<dt>Description</dt>
+<dd class="description show">Footer (small version)<br/><strong>A small page footer containing a logo/tagline, navigational links, and copyright information</strong></dd>
+<dt>Usage</dt>
+<dd class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;div class="footer"&gt;
+    &lt;div class="primary"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="brand"&gt;&lt;span class="ge-logo"&gt;&lt;/span&gt;&lt;span&gt;imagination at work&lt;/span&gt;&lt;/div&gt;
+            &lt;div class="block pull-right"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Privacy&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Terms&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Accessibility&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Cookies&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class="copyright"&gt;&copy; 2013 General Electric&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+</dd>
+<dt>Example</dt>
+<dd class="example">
+    <p><img src="../assets/images/footer_medium_screenshot.jpg" alt="Screenshot of medium footer"></p>
+    <p><a href="../examples/navigation/medium-footer.html" target="_blank">Open fullscreen example.</a></p>
+</dd>
+<dt>Description</dt>
+<dd class="description show">Footer (medium version)<br/><strong>A mid-sized footer containing the contents of the small footer (above), plus another sub-footer with categorical/navigational links as well as a &quot;Contact Us&quot; link</strong></dd>
+<dt>Usage</dt>
+<dd class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;div class="footer"&gt;
+    &lt;div class="secondary"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="block pull-left"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Category 1&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Category 2&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Category 3&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Category 4&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="block pull-right"&gt;
+                &lt;a href="#" target="_blank"&gt;Contact Us&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="primary"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="brand"&gt;&lt;span class="ge-logo"&gt;&lt;/span&gt;&lt;span&gt;imagination at work&lt;/span&gt;&lt;/div&gt;
+            &lt;div class="block pull-right"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Privacy&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Terms&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Accessibility&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Cookies&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class="copyright"&gt;&copy; 2013 General Electric&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+</dd>
+<dt>Example</dt>
+<dd class="example">
+    <p><img src="../assets/images/footer_large_screenshot.jpg" alt="Screenshot of large footer"></p>
+    <p><a href="../examples/navigation/large-footer.html" target="_blank">Open fullscreen example.</a></p>
+</dd>
+<dt>Description</dt>
+<dd class="description show">Footer (large version)<br/><strong>A large-sized footer containing the contents of the small and medium footer (above), but also expanded out the category listings into Bootstrap grid layout columns to hold text under the category heading</strong></dd>
+<dt>Usage</dt>
+<dd class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;div class="footer"&gt;
+    &lt;div class="secondary large"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="span2"&gt;
+                    &lt;h4&gt;Category 1&lt;/h4&gt;
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                &lt;/div&gt;
+                &lt;div class="span2"&gt;
+                    &lt;h4&gt;Category 2&lt;/h4&gt;
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                &lt;/div&gt;
+                &lt;div class="span2"&gt;
+                    &lt;h4&gt;Category 3&lt;/h4&gt;
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                &lt;/div&gt;
+                &lt;div class="span2"&gt;
+                    &lt;h4&gt;Category 4&lt;/h4&gt;
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+                &lt;/div&gt;
+                &lt;div class="span2"&gt;&lt;/div&gt;
+                &lt;div class="span2"&gt;
+                    &lt;h4&gt;Contact Us&lt;/h4&gt;
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    &lt;br /&gt;&lt;br /&gt;
+                    1 (800) 727-9268
+                    &lt;br /&gt;&lt;br /&gt;
+                    info@loremipsum.com
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="primary"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="brand"&gt;&lt;span class="ge-logo"&gt;&lt;/span&gt;&lt;span&gt;imagination at work&lt;/span&gt;&lt;/div&gt;
+            &lt;div class="block pull-right"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Privacy&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Terms&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Accessibility&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#" target="_blank"&gt;Cookies&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class="copyright"&gt;&copy; 2013 General Electric&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div>
+</pre>
+</dd>
+</dl>
+
+
+					<a class="anchor" id="labels-badges-alerts"></a>
+					<h2 class="voice voice-brand">Labels, Badges &amp; Alerts</h2>
+<table class="documentation">
+  <thead>
+    <tr>
+      <th>Example</th>
+      <th>Description</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="example">
+        <div style="margin-bottom:9px;">
+          <span class="label">Default</span>
+        </div>
+        <div style="margin-bottom:9px;">
+          <span class="label label-success">Success</span>
+        </div>
+        <div style="margin-bottom:9px;">
+          <span class="label label-warning">Warning</span>
+        </div>
+        <div style="margin-bottom:9px;">
+          <span class="label label-important">Important</span>
+        </div>
+        <div style="margin-bottom:9px;">
+          <span class="label label-info">Info</span>
+        </div>
+        <div>
+          <span class="label label-inverse">Inverse</span>
+        </div>
+      </td>
+      <td class="description">Labels</td>
+      <td class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;span class="label"&gt;Default&lt;/span&gt;
+</pre>
+        <hr>
+        <p>Add one of <code>.label-success</code>, <code>.label-warning</code>, <code>.label-important</code>, <code>.label-info</code> or <code>.label-inverse</code> to colorize the <code>.label</code> for the appropriate context.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;span class="label label-success"&gt;Success&lt;/span&gt;
+</pre>
+        <hr>
+        <p>Use the Bootstrap utility classes <code>.pull-left</code> or <code>.pull-right</code> to make <code>.label</code> float alongside headlines or other block elements.</p>
+      </td>
+    </tr> <!-- /labels -->
+    <tr>
+      <td class="example">
+        <p>
+          <span class="badge">1</span>
+        </p>
+        <p>
+          <span class="badge badge-success">2</span>
+        </p>
+        <p>
+          <span class="badge badge-warning">4</span>
+        </p>
+        <p>
+          <span class="badge badge-important">6</span>
+        </p>
+        <p>
+          <span class="badge badge-info">8</span>
+        </p>
+        <p>
+          <span class="badge badge-inverse">10</span>
+        </p>
+      </td>
+      <td class="description">Badges</td>
+      <td class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;span class="badge"&gt;1&lt;/span&gt;
+</pre>
+        <hr>
+        <p>Add one of <code>.badge-success</code>, <code>.badge-warning</code>, <code>.badge-important</code>, <code>.badge-info</code> or <code>.badge-inverse</code> to colorize the <code>.badge</code> for the appropriate context.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;span class="badge badge-success"&gt;2&lt;/span&gt;
+</pre>
+      </td>
+    </tr> <!-- /badges -->
+    <tr>
+      <td class="example">
+        <div class="alert">
+          <strong>Warning!</strong> Best check yo self.
+        </div>
+        <div class="alert alert-error">
+          <strong>Oh snap!</strong> Change a few things up.
+        </div>
+        <div class="alert alert-success">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <strong>Well done!</strong> You successfully read this.
+        </div>
+        <div class="alert alert-info">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <button class="btn btn-small pull-right">Action</button>
+          <strong>Heads up!</strong> This needs your attention.
+        </div>
+        <div class="alert alert-warning">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <h4 class="alert-heading">Warning!</h4>
+          <p>Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+        </div>
+        <div class="alert alert-error">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <h4 class="alert-heading">Oh Snap!</h4>
+          <p>Change a few things and try submitting again. Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+          <div class="toolbar">
+            <button class="btn">Action</button>
+          </div>
+        </div>
+      </td>
+      <td class="description">Alerts</td>
+      <td class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;div class="alert"&gt;
+  &lt;strong&gt;Warning!&lt;/strong&gt; Best check yo self.
+&lt;/div&gt;
+</pre>
+        <hr>
+        <p>Use one of <code>.alert-success</code>, <code>.alert-info</code> or <code>.alert-error</code> to colorize the <code>.alert</code> for the appropriate context.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="alert alert-success"&gt;
+  &lt;strong&gt;Well done!&lt;/strong&gt; You successfully read this.
+&lt;/div&gt;
+</pre>
+        <p>Add <code>.alert-fixed-top</code> to <code>.alert</code> to fix the position to the top of the browser window and only round the bottom corners.</p>
+        <hr>
+        <p>Add an optional <code>button</code> before the message. Use the attribute <code class="prettyprint">data-dismiss="alert"</code> to automatically enable alert dismissal.</p>
+        <p>Markup:</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="alert alert-error"&gt;
+  &lt;button type="button" class="close" data-dismiss="alert"&gt;×&lt;/button&gt;
+  &lt;strong&gt;Oh snap!&lt;/strong&gt; Change a few things up.
+&lt;/div&gt;
+</pre>
+        <p>Script:</p>
+<pre class="prettyprint linenums lang-javascript">
+$(&hellip;).alert('close');
+</pre>
+        <div class="alert alert-info">
+          <strong>Script Requirements:</strong>
+          <ul>
+            <li>bootstrap/bootstrap-alert</li>
+          </ul>
+        </div>
+      </td>
+    </tr> <!-- /alerts -->
+  </tbody>
+</table>
+
+
+					<a class="anchor" id="tooltips-popovers-modals"></a>
+					<h2 class="voice voice-brand">Tooltips, Popovers &amp; Modals</h2>
+<table class="documentation">
+  <thead>
+    <tr>
+      <th>Example</th>
+      <th>Description</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="example">
+        <div class="well">
+          <p class="muted" style="margin-bottom: 0;">Pants level kale <a class="tooltip-target" data-toggle="tooltip" title="first tooltip">you probably</a> haven't heard of them. Fixie sustainable quinoa 8-bit american apparel <a class="tooltip-target" data-toggle="tooltip" title="Another tooltip">have a</a> terry richardson vinyl chambray. A really ironic artisan <a class="tooltip-target" data-toggle="tooltip" title="Another one here too">whatever keytar</a>, scenester farm-to-table Austin <a class="tooltip-target" data-toggle="tooltip" title="The last tip!">twitter handle</a> freegan cred raw denim single-origin coffee viral.</p>
+        </div>
+      </td>
+      <td class="description">Tooltips</td>
+      <td class="usage">
+        <p>Markup:</p>
+<pre class="prettyprint linenums lang-html">
+Lorem ipsum &lt;a class="tooltip-target" title="tooltip text"&gt;dolor sit&lt;/a&gt; amet.
+</pre>
+        <p>Script:</p>
+<pre class="prettyprint linenums lang-javascript">
+$(&hellip;).tooltip(options);
+</pre>
+        <p>Options:</p>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td><code>animation</code></td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>apply a css fade transition to the tooltip</td>
+          </tr>
+          <tr>
+            <td><code>html</code></td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>Insert html into the tooltip. If false, jquery's <code>text</code> method will be used to insert content into the dom. Use text if you're worried about XSS attacks.</td>
+          </tr>
+          <tr>
+            <td><code>placement</code></td>
+            <td>string|function</td>
+            <td>'top'</td>
+            <td>how to position the tooltip - top | bottom | left | right</td>
+          </tr>
+          <tr>
+            <td><code>selector</code></td>
+            <td>string</td>
+            <td>false</td>
+            <td>If a selector is provided, tooltip objects will be delegated to the specified targets.</td>
+          </tr>
+          <tr>
+            <td><code>title</code></td>
+            <td>string | function</td>
+            <td>''</td>
+            <td>default title value if `title` tag isn't present</td>
+          </tr>
+          <tr>
+            <td><code>trigger</code></td>
+            <td>string</td>
+            <td>'hover focus'</td>
+            <td>how tooltip is triggered - click | hover | focus | manual. Note you case pass trigger mutliple, space seperated, trigger types.</td>
+          </tr>
+          <tr>
+            <td><code>delay</code></td>
+            <td>number | object</td>
+            <td>0</td>
+            <td>
+              <p>delay showing and hiding the tooltip (ms) - does not apply to manual trigger type</p>
+              <p>If a number is supplied, delay is applied to both hide/show</p>
+              <p>Object structure is: <code>delay: { show: 500, hide: 100 }</code></p>
+            </td>
+          </tr>
+          <tr>
+            <td><code>container</code></td>
+            <td>string | false</td>
+            <td>false</td>
+            <td>Appends the tooltip to a specific element <code>container: 'body'</code></td>
+          </tr>
+        </table>
+        <p>All of the above options may be applied independently as <code>data-</code> attributes.</p>
+        <p class="note">NOTE: For performance reasons, tooltips are opt-in. They must be manually initialized to function.</p>
+        <p class="note">NOTE: <code>iids.js</code> disables tooltips on mobile. It is recommended that you follow this practice since most mobile devices do not support <code>hover</code> events well.</p>
+        <div class="alert alert-info">
+          <strong>Script Requirements:</strong>
+          <ul>
+            <li>bootstrap/bootstrap-tooltip</li>
+            <li>bootstrap/bootstrap-transition</li>
+          </ul>
+        </div>
+      </td>
+    </tr> <!-- /tooltips -->
+    <tr>
+      <td class="example">
+        <div class="well">
+          <a class="btn btn-danger popover-target" data-trigger="click" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title">click for popover</a>
+        </div>
+      </td>
+      <td class="description">Popovers</td>
+      <td class="usage">
+        <p>Markup:</p>
+<pre class="prettyprint linenums lang-html">
+&lt;a class="btn popover-target" href="#" data-content="popover content" data-original-title="popover title"&gt;Button&lt;/a&gt;
+</pre>
+        <p>Script:</p>
+<pre class="prettyprint linenums lang-javascript">
+$(&hellip;).popover(options);
+</pre>
+        <p>Options:</p>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td><code>animation</code></td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>apply a css fade transition to the tooltip</td>
+          </tr>
+          <tr>
+            <td><code>html</code></td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>Insert html into the popover. If false, jquery's <code>text</code> method will be used to insert content into the dom. Use text if you're worried about XSS attacks.</td>
+          </tr>
+          <tr>
+            <td><code>placement</code></td>
+            <td>string|function</td>
+            <td>'right'</td>
+            <td>how to position the popover - top | bottom | left | right</td>
+          </tr>
+          <tr>
+            <td><code>selector</code></td>
+            <td>string</td>
+            <td>false</td>
+            <td>if a selector is provided, tooltip objects will be delegated to the specified targets</td>
+          </tr>
+          <tr>
+            <td><code>trigger</code></td>
+            <td>string</td>
+            <td>'click'</td>
+            <td>how popover is triggered - click | hover | focus | manual</td>
+          </tr>
+          <tr>
+            <td><code>title</code></td>
+            <td>string | function</td>
+            <td>''</td>
+            <td>default title value if `title` attribute isn't present</td>
+          </tr>
+          <tr>
+            <td><code>content</code></td>
+            <td>string | function</td>
+            <td>''</td>
+            <td>default content value if `data-content` attribute isn't present</td>
+          </tr>
+          <tr>
+            <td><code>delay</code></td>
+            <td>number | object</td>
+            <td>0</td>
+            <td>
+              <p>delay showing and hiding the popover (ms) - does not apply to manual trigger type</p>
+              <p>If a number is supplied, delay is applied to both hide/show</p>
+              <p>Object structure is: <code>delay: { show: 500, hide: 100 }</code></p>
+            </td>
+          </tr>
+          <tr>
+            <td><code>container</code></td>
+            <td>string | false</td>
+            <td>false</td>
+            <td>Appends the popover to a specific element <code>container: 'body'</code></td>
+          </tr>
+        </table>
+        <p>All of the above options may be applied independently as <code>data-</code> attributes.</p>
+        <p class="note">NOTE: For performance reasons, popovers are opt-in. They must be manually initialized to function.</p>
+        <p class="note">NOTE: <code>iids.js</code> includes additional code snippets to allow easy dismissal of popovers and to prevent default click behaviors.</p>
+        <div class="alert alert-info">
+          <strong>Script Requirements:</strong>
+          <ul>
+            <li>bootstrap/bootstrap-popover</li>
+            <li>bootstrap/bootstrap-transition</li>
+          </ul>
+        </div>
+      </td>
+    </tr> <!-- /popover -->
+
+    <tr>
+      <td class="example">
+        <div class="well">
+          <a id="popover1" class="btn btn-danger rich-popover-target">click for popover 1</a>
+        </div>
+
+        <div id="popover1-content-wrapper" style="display: none">
+          <p><button class="btn btn-small btn-success">success</button> Here's some engaging content. It's very engaging, right?</p>
+          <div class="divider"></div>
+          <p><strong>Lorem ipsum dolor set amet lorem ipsum dolor</strong></p>
+        </div>
+
+        <div class="well">
+          <a id="popover2" class="btn btn-danger rich-popover-target">click for popover 2</a>
+        </div>
+
+        <div id="popover2-content-wrapper" style="display: none">
+          <div class="rich-title rich-title-success">
+            <ul class="list-inline">
+              <li class="vertical-divider">FKY<br/>PORTLAND, OR</li>
+              <li>.98</li>
+            </ul>
+          </div>
+          <p><strong>-18.2</strong>mw<br/>
+          Ideal MW Output: 3947</p>
+          <div class="divider"></div>
+          <p><i class="icon-user"></i> <strong>Tom Smith</strong> Site Manager</p>
+        </div>
+
+      </td>
+      <td class="description">Rich Popovers</td>
+      <td class="usage">
+        <p>Markup:</p>
+<pre class="prettyprint linenums lang-html">
+&lt;a id="popover1" class="btn btn-danger rich-popover-target"&gt;click for popover 1&lt;/a&gt;
+
+&lt;div id="popover1-content-wrapper" style="display: none"&gt;
+  &lt;p&gt;&lt;button class="btn btn-small btn-success"&gt;success&lt;/button&gt; Here's some engaging content. It's very engaging, right?&lt;/p&gt;
+  &lt;div class="divider"&gt;&lt;/div&gt;
+  &lt;p&gt;&lt;strong&gt;Lorem ipsum dolor set amet lorem ipsum dolor&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="prettyprint linenums lang-html">
+&lt;a id="popover2" class="btn btn-danger rich-popover-target"&gt;click for popover 2&lt;/a&gt;
+
+&lt;div id="popover2-content-wrapper" style="display: none"&gt;
+  &lt;div class="rich-title rich-title-success"&gt;
+    &lt;ul class="inline"&gt;
+      &lt;li class="vertical-divider"&gt;FKY&lt;br/&gt;PORTLAND, OR&lt;/li&gt;
+      &lt;li&gt;.98&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;p&gt;&lt;strong&gt;-18.2&lt;/strong&gt;mw&lt;br/&gt;
+  Ideal MW Output: 3947&lt;/p&gt;
+  &lt;div class="divider"&gt;&lt;/div&gt;
+  &lt;p&gt;&lt;i class="icon-user"&gt;&lt;/i&gt; &lt;strong&gt;Tom Smith&lt;/strong&gt; Site Manager&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+        <p>Script:</p>
+<pre class="prettyprint linenums lang-javascript">
+$('#popover1').popover({
+  html: true,
+  title: 'A Title',
+  content: function() {
+    return $('#popover1-content-wrapper').html();
+  }
+}).on('click', function(e) {
+  e.preventDefault();
+});
+</pre>
+<pre class="prettyprint linenums lang-javascript">
+$('#popover2').popover({
+  html: true,
+  placement: 'top',
+  content: function() {
+    return $('#popover2-content-wrapper').html();
+  }
+}).on('click', function(e) {
+  e.preventDefault();
+});
+</pre>
+        <p>Options:</p>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td><code>animation</code></td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>apply a css fade transition to the tooltip</td>
+          </tr>
+          <tr>
+            <td><code>html</code></td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>Insert html into the popover. If false, jquery's <code>text</code> method will be used to insert content into the dom. Use text if you're worried about XSS attacks.</td>
+          </tr>
+          <tr>
+            <td><code>placement</code></td>
+            <td>string|function</td>
+            <td>'right'</td>
+            <td>how to position the popover - top | bottom | left | right</td>
+          </tr>
+          <tr>
+            <td><code>selector</code></td>
+            <td>string</td>
+            <td>false</td>
+            <td>if a selector is provided, tooltip objects will be delegated to the specified targets</td>
+          </tr>
+          <tr>
+            <td><code>trigger</code></td>
+            <td>string</td>
+            <td>'click'</td>
+            <td>how popover is triggered - click | hover | focus | manual</td>
+          </tr>
+          <tr>
+            <td><code>title</code></td>
+            <td>string | function</td>
+            <td>''</td>
+            <td>default title value if `title` attribute isn't present</td>
+          </tr>
+          <tr>
+            <td><code>content</code></td>
+            <td>string | function</td>
+            <td>''</td>
+            <td>default content value if `data-content` attribute isn't present</td>
+          </tr>
+          <tr>
+            <td><code>delay</code></td>
+            <td>number | object</td>
+            <td>0</td>
+            <td>
+              <p>delay showing and hiding the popover (ms) - does not apply to manual trigger type</p>
+              <p>If a number is supplied, delay is applied to both hide/show</p>
+              <p>Object structure is: <code>delay: { show: 500, hide: 100 }</code></p>
+            </td>
+          </tr>
+          <tr>
+            <td><code>container</code></td>
+            <td>string | false</td>
+            <td>false</td>
+            <td>Appends the popover to a specific element <code>container: 'body'</code></td>
+          </tr>
+        </table>
+        <p>All of the above options may be applied independently as <code>data-</code> attributes.</p>
+        <p class="note">NOTE: For performance reasons, popovers are opt-in. They must be manually initialized to function.</p>
+        <div class="alert alert-info">
+          <strong>Script Requirements:</strong>
+          <ul>
+            <li>bootstrap/bootstrap-popover</li>
+            <li>bootstrap/bootstrap-transition</li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="example">
+        <div id="modal-demo" class="modal fade">
+        	<div class="modal-dialog">
+        		<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">×</button>
+								<h3 class="modal-title">Modal Heading</h3>
+							</div>
+							<div class="modal-body">
+								<h4>Text in a modal</h4>
+								<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem.</p>
+								<h4>Popover in a modal</h4>
+								<p>This <a class="btn popover-target" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title">button</a> should trigger a popover on hover.</p>
+								<h4>Tooltips in a modal</h4>
+								<p><a class="tooltip-target" data-original-title="Tooltip">This link</a> and <a class="tooltip-test" data-original-title="Tooltip">that link</a> should have tooltips on hover.</p>
+								<hr>
+								<h4>Overflowing text to show optional scrollbar</h4>
+								<p>We set a fixed <code>max-height</code> on the <code>.modal-body</code>. Watch it overflow with all this extra lorem ipsum text we've included.</p>
+								<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+								<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+								<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+								<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+							</div>
+							<div class="modal-footer">
+								<a class="btn" data-dismiss="modal">Close</a>
+								<a class="btn btn-primary">Save changes</a>
+							</div>
+						</div>
+					</div>
+        </div>
+        <button data-toggle="modal" data-target="#modal-demo" class="btn btn-primary btn-large">Launch Modal</button>
+      </td>
+      <td class="description">Modals</td>
+      <td class="usage">
+        <p>To activate modals, set <code class="prettyprint">data-toggle="modal"</code> on a controller element with a <code class="prettyprint">data-target="#foo"</code> or <code class="prettyprint">href="#foo"</code> which corresponds to a modal element id, and when clicked, it will launch your modal.</p>
+        <p>Options may be added to the modal via script or as <code>data-</code> attributes on either the modal or the control element.</p>
+        <p>To enable fade-in/-out transitions on a modal, include <code>.fade</code> on the <code>.modal</code> element.</p>
+        <p>Markup:</p>
+<pre class="prettyprint linenums lang-html">
+
+
+&lt;div id="modal-demo" class="modal fade in" aria-hidden="true" &gt;
+          &lt;div class="modal-dialog"&gt;
+            &lt;div class="modal-content"&gt;
+              &lt;div class="modal-header"&gt;
+                &lt;button type="button" class="close" data-dismiss="modal"&gt;×&lt;/button&gt;
+                &lt;h3 class="modal-title"&gt;Modal Heading&lt;/h3&gt;
+              &lt;/div&gt;
+              &lt;div class="modal-body"&gt;
+                &lt;h4&gt;Text in a modal&lt;/h4&gt;
+                &lt;p&gt;Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem.&lt;/p&gt;
+                &lt;h4&gt;Popover in a modal&lt;/h4&gt;
+                &lt;p&gt;This &lt;a class="btn popover-target" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title"&gt;button&lt;/a&gt; should trigger a popover on hover.&lt;/p&gt;
+                &lt;h4&gt;Tooltips in a modal&lt;/h4&gt;
+                &lt;p&gt;&lt;a class="tooltip-target" data-original-title="Tooltip"&gt;This link&lt;/a&gt; and &lt;a class="tooltip-test" data-original-title="Tooltip"&gt;that link&lt;/a&gt; should have tooltips on hover.&lt;/p&gt;
+                &lt;hr&gt;
+                &lt;h4&gt;Overflowing text to show optional scrollbar&lt;/h4&gt;
+                &lt;p&gt;We set a fixed &lt;code&gt;max-height&lt;/code&gt; on the &lt;code&gt;.modal-body&lt;/code&gt;. Watch it overflow with all this extra lorem ipsum text we've included.&lt;/p&gt;
+                &lt;p&gt;Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;
+                &lt;p&gt;Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.&lt;/p&gt;
+                &lt;p&gt;Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.&lt;/p&gt;
+                &lt;p&gt;Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;
+                &lt;p&gt;Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.&lt;/p&gt;
+                &lt;p&gt;Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div class="modal-footer"&gt;
+                &lt;a class="btn" data-dismiss="modal"&gt;Close&lt;/a&gt;
+                &lt;a class="btn btn-primary"&gt;Save changes&lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+&lt;button data-toggle="modal" data-target="#modal-demo" class="btn btn-primary btn-large"&gt;Launch Modal&lt;/button&gt;
+
+
+</pre>
+        <p>Options:</p>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td><code>backdrop</code></td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>Includes a modal-backdrop element. Alternatively, specify <code>static</code> for a backdrop which doesn't close the modal on click.</td>
+          </tr>
+          <tr>
+            <td><code>keyboard</code></td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>Closes the modal when escape key is pressed</td>
+          </tr>
+          <tr>
+            <td><code>show</code></td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>Shows the modal when initialized.</td>
+          </tr>
+          <tr>
+            <td><code>remote</code></td>
+            <td>path</td>
+            <td>false</td>
+            <td>If a remote url is provided, content will be loaded via jQuery's <code>load</code> method and injected into the <code>.modal-body</code>. If you're using the data api, you may alternatively use the <code>href</code> tag to specify the remote source. An example of this is shown below:
+<pre>
+&lt;a data-toggle="modal" href="remote.html" data-target="#modal"&gt;click me&lt;/a&gt;
+</pre>
+            </td>
+          </tr>
+        </table>
+        <p class="note">NOTE: See <a href="http://getbootstrap.com/2.3.2/javascript.html#modals" target="_blank">Bootstrap documentation</a> for a full list of options and events for modals.</p>
+        <div class="alert alert-info">
+          <strong>Script Requirements:</strong>
+          <ul>
+            <li>bootstrap/bootstrap-modal</li>
+            <li>bootstrap/bootstrap-transition</li>
+          </ul>
+        </div>
+      </td>
+    </tr> <!-- /tooltips -->
+</tbody>
+</table>
+
+
+					<a class="anchor" id="lists-accordions"></a>
+					<h2 class="voice voice-brand">Lists &amp; Accordions</h2>
+<table class="documentation">
+	<thead>
+		<tr>
+			<th>Example</th>
+			<th>Description</th>
+			<th>Usage</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="example">
+        <ul class="message-list">
+          <li class="message-item">
+            <a>
+              <h4 class="message-title">Michael McDouggal <small class="message-status">Subject Line</small></h4>
+              <p>Lorem ipsum dolor sit adipiscing consecteurest comodo amet prota&hellip;
+                <br>
+                <time class="message-time" datetime="2014-01-01T12:05">01/01/14 12:05</time>
+              </p>
+              </a>
+          </li>
+          <li class="message-item">
+            <a>
+              <h4 class="message-title">Essie Longstreet <small class="message-status">Subject Line</small></h4>
+              <p>Lorem ipsum dolor sit adipiscing consecteurest comodo amet prota&hellip;
+                <br>
+                <time class="message-time" datetime="2014-01-01T12:05">01/01/14 12:05</time>
+              </p>
+            </a>
+          </li>
+          <li class="message-item">
+            <a>
+              <h4 class="message-title">Essie Longstreet <small class="message-status">Subject Line</small></h4>
+              <p>Lorem ipsum dolor sit adipiscing consecteurest comodo amet prota&hellip;
+                <br>
+                <time class="message-time" datetime="2014-01-01T12:05">01/01/14 12:05</time>
+              </p>
+            </a>
+          </li>
+        </ul>
+			</td>
+			<td class="description">Message List</td>
+			<td class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;ul class="message-list"&gt;
+  &lt;li class="message-item"&gt;
+    &lt;a href="#"&gt;
+      &lt;h4 class="message-title"&gt;Michael McDouggal &lt;small class="message-status"&gt;Subject Line&lt;/small&gt;&lt;/h4&gt;
+      &lt;p&gt;Lorem ipsum dolor sit adipiscing consecteurest comodo amet prota&hellip;
+        &lt;br&gt;
+        &lt;time class="message-time" datetime="2014-01-01T12:05"&gt;01/01/14 12:05&lt;/time&gt;
+      &lt;/p&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+			</td>
+		</tr> <!-- /message list -->
+		<tr>
+			<td class="example">
+        <ul class="message-list">
+          <li class="message-item">
+            <a>
+              <span class="label label-important pull-left">Urgent</span><h4 class="message-title">Michael McDouggal <small class="message-status">Subject Line</small></h4>
+              <p>Lorem ipsum dolor sit adipiscing consecteurest comodo amet prota&hellip;
+                <br>
+                <time class="message-time" datetime="2014-01-01T12:05">01/01/14 12:05</time>
+              </p>
+            </a>
+          </li>
+          <li class="message-item">
+            <a>
+              <span class="label label-warning pull-left">Moderate</span><h4 class="message-title">Essie Longstreet <small class="message-status">Subject Line</small></h4>
+              <p>Lorem ipsum dolor sit adipiscing consecteurest comodo amet prota&hellip;
+                <br>
+                <time class="message-time" datetime="2014-01-01T12:05">01/01/14 12:05</time>
+              </p>
+            </a>
+          </li>
+          <li class="message-item">
+            <a>
+              <h4 class="message-title">Essie Longstreet <small class="message-status">Subject Line</small></h4>
+              <p>Lorem ipsum dolor sit adipiscing consecteurest comodo amet prota&hellip;
+                <br>
+                <time class="message-time" datetime="2014-01-01T12:05">01/01/14 12:05</time>
+              </p>
+            </a>
+          </li>
+        </ul>
+			</td>
+			<td class="description">Message List with Status</td>
+			<td class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;ul class="message-list"&gt;
+  &lt;li class="message-item"&gt;
+    &lt;a href="#"&gt;
+      &lt;span class="label label-warning pull-left"&gt;Moderate&lt;/span&gt;&lt;h4 class="message-title"&gt;Michael McDouggal &lt;small class="message-status"&gt;Subject Line&lt;/small&gt;&lt;/h4&gt;
+      &lt;p&gt;Lorem ipsum dolor sit adipiscing consecteurest comodo amet prota&hellip;
+        &lt;br&gt;
+        &lt;time class="message-time" datetime="2014-01-01T12:05"&gt;01/01/14 12:05&lt;/time&gt;
+      &lt;/p&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+			</td>
+		</tr> <!-- /message list with status -->
+        <tr>
+            <td class="example">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a class="panel-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><i class="icon-caret-right"></i>Collapsible Group Item #1</a>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse">
+                            <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a class="panel-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><i class="icon-caret-right"></i>Collapsible Group Item #2</a>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse in">
+                            <div class="panel-body ">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a class="panel-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><i class="icon-caret-right"></i>Collapsible Group Item #3</a>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td class="description">Inspector List (Accordion)</td>
+            <td class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;div class="accordion" id="accordion"&gt;
+    &lt;div class="panel-group" id="accordion"&gt;
+        &lt;div class="panel panel-default"&gt;
+            &lt;div class="panel-heading"&gt;
+                &lt;a class="panel-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"&gt;&lt;i class="icon-ico_chevron_right_lg"&gt;&lt;/i&gt;Collapsible Group Item #1&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div id="collapseOne" class="panel-collapse collapse"&gt;
+                &lt;div class="panel-body"&gt;collapse content goes here&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+                <p>Just add <code>data-toggle="collapse"</code> and a <code>data-target</code> to element to automatically assign control of a collapsible element.
+                    The <code>data-target</code> attribute accepts a css selector to apply the collapse to.
+                    Be sure to add the class <code>collapse</code> to the collapsible element and <code>collapsed</code> to the header link.
+                    If you'd like it to default open, add the additional class <code>in</code> to the collapse body, and remove <code>collapsed</code> from the header.
+
+                <p class="note">NOTE: See <a href="http://getbootstrap.com/javascript/#collapse" target="_blank">Bootstrap documentation</a> for a full list of options, methods and events for controlling collapsibles.</p>
+                <div class="alert alert-info">
+                    <strong>Script Requirements:</strong>
+                    <ul>
+                        <li>bootstrap/bootstrap-collapse</li>
+                        <li>bootstrap/bootstrap-transition</li>
+                    </ul>
+                </div>
+            </td>
+        </tr> <!-- /inspector list -->
+	</tbody>
+</table>
+
+
+					<a class="anchor" id="content-display"></a>
+					<h2 class="voice voice-brand">Content Display</h2>
+<table class="documentation">
+	<thead>
+		<tr>
+			<th>Example</th>
+			<th>Description</th>
+			<th>Usage</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="example">
+				
+				<div>
+					<a class="thumbnail">
+						<img src="http://placehold.it/300x200" alt="">
+					</a>
+				</div>
+				
+
+				<div class="thumbnail">
+					<img src="http://placehold.it/300x200" alt="">
+					<div class="caption">
+						<h5>Thumbnail label</h5>
+						<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+					</div>
+				</div>
+
+				
+				<div class="thumbnail">
+					<img src="http://placehold.it/300x200" alt="">
+					<div class="caption">
+						<h5>Thumbnail label</h5>
+						<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+			            <p><a class="btn">Action</a> <a class="btn btn-primary">Action</a></p>
+					</div>
+				</div>
+
+			</td>
+			<td class="description">Thumbnails</td>
+			<td class="usage">
+				<p>Simple thumbnail:</p>
+<pre class="prettyprint linenums lang-html">
+&lt;a class="thumbnail"&gt;
+  &lt;img src="http://placehold.it/300x200" alt=""&gt;
+&lt;/a&gt;
+</pre>
+				<p>Thumbnails may col-sm-3 col-md-3 as much additional HTML as needed. Use <code>.caption</code> as a wrapper for additional markup.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="thumbnail"&gt;
+  &lt;img src="http://placehold.it/300x200" alt=""&gt;
+  &lt;div class="caption"&gt;
+    &lt;h5&gt;Thumbnail label&lt;/h5&gt;
+    &lt;p&gt;Cras justo odio, dapibus ac facilisis in, egestas eget quam.&lt;/p&gt;
+    &lt;p&gt;&lt;a class="btn"&gt;Action&lt;/a&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+		</tr> <!-- /thumbnail -->
+		<tr>
+			<td class="example">
+				<div class="row">
+					<div class="col-md-6">
+						<a class="thumbnail">
+							<img src="http://placehold.it/140x100" alt="">
+						</a>
+					</div>
+					<div class="col-md-6">
+						<a class="thumbnail">
+							<img src="http://placehold.it/140x100" alt="">
+						</a>
+					</div>
+					<div class="col-sm-12 col-md-12">
+						<a class="thumbnail">
+							<img src="http://placehold.it/300x200" alt="">
+						</a>
+					</div>
+				</div>
+			</td>
+			<td class="description">Thumbnail Grid</td>
+			<td class="usage">
+				<p>The thumbnails component uses existing grid system classes—like <code>.span2</code> or <code>.col-sm-3 col-md-3</code>—for control of thumbnail dimensions.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;ul class="thumbnails"&gt;
+  &lt;li class="span2"&gt;
+    &lt;a class="thumbnail"&gt;
+      &lt;img src="http://placehold.it/140x100" alt=""&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &hellip;
+&lt;/ul&gt;
+</pre>
+			</td>
+		</tr> <!-- /thumbnail grid -->
+		<tr>
+			<td class="example">
+				<div id="myCarousel" class="carousel slide">
+					<div class="carousel-inner">
+						<div class="item">
+							<img src="http://placehold.it/400x300" alt="">
+							<div class="carousel-caption">
+								<h4>First Thumbnail label</h4>
+								<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+							</div>
+						</div>
+						<div class="item active">
+							<img src="http://placehold.it/400x300" alt="">
+							<div class="carousel-caption">
+								<h4>Second Thumbnail label</h4>
+								<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="http://placehold.it/400x300" alt="">
+							<div class="carousel-caption">
+								<h4>Third Thumbnail label</h4>
+								<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+							</div>
+						</div>
+					</div>
+					<a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="icon-arrow-left"></i></a>
+					<a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="icon-arrow-right"></i></a>
+				</div>
+			</td>
+			<td class="description">Carousel</td>
+			<td class="usage">
+				<p>Markup:</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div id="myCarousel" class="carousel slide"&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="item"&gt;
+      &lt;img src="http://placehold.it/400x300" alt=""&gt;
+      &lt;div class="carousel-caption"&gt;
+        &lt;h4&gt;First Thumbnail label&lt;/h4&gt;
+        &lt;p&gt;Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="item active"&gt;
+      &lt;img src="http://placehold.it/400x300" alt=""&gt;
+      &lt;div class="carousel-caption"&gt;
+        &lt;h4&gt;Second Thumbnail label&lt;/h4&gt;
+        &lt;p&gt;Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="item"&gt;
+      &lt;img src="http://placehold.it/400x300" alt=""&gt;
+      &lt;div class="carousel-caption"&gt;
+        &lt;h4&gt;Third Thumbnail label&lt;/h4&gt;
+        &lt;p&gt;Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;a class="left carousel-control" href="#myCarousel" data-slide="prev"&gt;&lt;i class="icon-arrow-left"&gt;&lt;/i&gt;&lt;/a&gt;
+  &lt;a class="right carousel-control" href="#myCarousel" data-slide="next"&gt;&lt;i class="icon-arrow-right"&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+			<p>Script:</p>
+<pre class="prettyprint linenums lang-javascript">
+$(&hellip;).carousel(options);
+</pre>
+			<p>Options:</p>
+			<table>
+				<tr>
+					<th>Name</th>
+					<th>Type</th>
+					<th>Default</th>
+					<th>Description</th>
+				</tr>
+				<tr>
+					<td><code>interval</code></td>
+					<td>number</td>
+					<td>5000</td>
+					<td>The amount of time to delay between automatically cycling an item. If false, carousel will not automatically cycle.</td>
+				</tr>
+				<tr>
+					<td><code>pause</code></td>
+					<td>string</td>
+					<td>"hover"</td>
+					<td>Pauses the cycling of the carousel on mouseenter and resumes the cycling of the carousel on mouseleave.</td>
+				</tr>
+			</table>
+			<p class="note">NOTE: See <a href="http://getbootstrap.com/2.3.2/javascript.html#carousel" target="_blank">Bootstrap documentation</a> for a full list of options and events for carousels.</p>
+			<div class="alert alert-info">
+				<strong>Script Requirements:</strong>
+				<ul>
+					<li>bootstrap/bootstrap-carousel</li>
+					<li>bootstrap/bootstrap-transition</li>
+				</ul>
+			</div>
+		</tr> <!-- /carousel -->
+</tbody>
+</table>
+
+
+					<a class="anchor" id="loading-indicators"></a>
+					<h2 class="voice voice-brand">Loading Indicators</h2>
+<table class="documentation">
+	<thead>
+		<tr>
+			<th>Example</th>
+			<th>Description</th>
+			<th>Usage</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="example">
+				<div class="progress">
+					<div class="progress-bar" style="width: 45%;"></div>
+				</div>
+				<div class="progress progress-success">
+					<div class="progress-bar" style="width: 45%;"></div>
+				</div>
+				<div class="progress progress-info">
+					<div class="progress-bar" style="width: 45%;"></div>
+				</div>
+				<div class="progress progress-warning">
+					<div class="progress-bar" style="width: 45%;"></div>
+				</div>
+				<div class="progress progress-danger">
+					<div class="progress-bar" style="width: 45%;"></div>
+				</div>
+			</td>
+			<td class="description">Progress Bar (Basic)</td>
+			<td class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;div class="progress"&gt;
+  &lt;div class="bar" style="width: 45%;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+				<p>Use a percentage width on <code>.bar</code> to advance progress bars.</p>
+				<hr>
+				<p>Add one of <code>.progress-success</code>, <code>.progress-info</code>, <code>.progress-warning</code> or <code>.progress-danger</code> to colorize <code>.bar</code> according to context.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="progress progress-success"&gt;
+  &lt;div class="bar" style="width: 45%;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+			</td>
+		</tr> <!-- /basic progress bar -->
+		<tr>
+			<td class="example">
+				<div class="progress progress-striped">
+					<div class="progress-bar" style="width: 45%;"></div>
+				</div>
+				<div class="progress progress-success progress-striped">
+					<div class="progress-bar" style="width: 45%;"></div>
+				</div>
+				<div class="progress progress-info progress-striped">
+					<div class="progress-bar" style="width: 45%;"></div>
+				</div>
+				<div class="progress progress-warning progress-striped">
+					<div class="progress-bar" style="width: 45%;"></div>
+				</div>
+				<div class="progress progress-danger progress-striped">
+					<div class="progress-bar" style="width: 45%;"></div>
+				</div>
+			</td>
+			<td class="description">Progress Bar (Striped)</td>
+			<td class="usage">
+				<p>Add <code>.progress-striped</code> to add a striping effect to the progress bar.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="progress progress-striped"&gt;
+  &lt;div class="bar" style="width: 45%;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+			</td>
+		</tr> <!-- /striped progress bar -->
+		<tr>
+			<td class="example">
+				<div class="progress progress-striped active">
+					<div class="progress-bar" style="width: 45%;"></div>
+				</div>
+				<div class="progress progress-success progress-striped active">
+					<div class="progress-bar" style="width: 45%;"></div>
+				</div>
+				<div class="progress progress-info progress-striped active">
+					<div class="progress-bar" style="width: 45%;"></div>
+				</div>
+				<div class="progress progress-warning progress-striped active">
+					<div class="progress-bar" style="width: 45%;"></div>
+				</div>
+				<div class="progress progress-danger progress-striped active">
+					<div class="progress-bar" style="width: 45%;"></div>
+				</div>
+			</td>
+			<td class="description">Progress Bar (Animated)</td>
+			<td class="usage">
+				<p>Add <code>.active</code> to a striped progress bar to trigger animation.</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="progress progress-striped active"&gt;
+  &lt;div class="bar" style="width: 45%;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+			</td>
+		</tr> <!-- /animated progress bar -->
+		<tr>
+			<td class="example">
+                <button class="btn" onclick="$('#spinner').spin()">Start</button><button class="btn" onclick="$('#spinner').spin(false)">Stop</button>
+                <div id="spinner" style="height: 18px;"></div>
+            </td>
+			<td class="description">Activity Indicator (Spinner)</td>
+			<td class="usage">
+				<p>Markup:</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div id="spinner"&gt;&lt;/div&gt;
+</pre>
+				<p>Script:</p>
+<pre class="prettyprint linenums lang-javascript">
+// start spinning
+$(&hellip;).spin();
+
+// stop spinning
+$(&hellip;).spin(false);
+</pre>
+				<p>The size and color of the spinner can be modified by passing options when initializing.</p>
+				<p class="note">NOTE: The options listed in the example are default.</p>
+<pre class="prettyprint linenums lang-javascript">
+var options = {
+  // The number of lines to draw
+  lines: 10,
+  // The length of each line
+  length: 4,
+  // The line thickness 
+  width: 2,
+  // The radius of the inner circle
+  radius: 4, 
+  // The rotation offset
+  rotate: 0, 
+  // #rgb or #rrggbb
+  color: '#313337',
+  // Rounds per second
+  speed: 1.2,
+  // Afterglow percentage 
+  trail: 60, 
+  // Whether to render a shadow
+  shadow: false, 
+  // Whether to use hardware acceleration
+  hwaccel: false, 
+  // The CSS class to assign to the spinner
+  className: 'spinner', 
+  // The z-index (defaults to 2000000000)
+  zIndex: 2e9, 
+  // Top position relative to parent in px
+  top: 'auto', 
+  // Left position relative to parent in px
+  left: 'auto' 
+};
+$(&hellip;).spin(options);
+</pre>
+				<p class="note">NOTE: See <a href="http://fgnass.github.com/spin.js/" target="_blank">spin.js documentation</a> for a full list of configuration options.</p>
+				<div class="alert alert-info">
+					<strong>Script Requirements:</strong>
+					<ul>
+						<li>spinner</li>
+					</ul>
+				</div>
+			</td>
+		</tr> <!-- /animated progress bar -->
+	</tbody>
+</table>
+
+
+					<a class="anchor" id="search-utilities"></a>
+					<h2 class="voice voice-brand">Search Utilities</h2>
+<table class="documentation">
+  <thead>
+    <tr>
+      <th>Example</th>
+      <th>Description</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="example">
+      	<form class="form-search">
+					<div class="input-group">
+						<input type="text" class="form-control" id="typeahead-example">
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-icon"><i class="icon-search"></i></button>
+						</span>
+					</div>
+				</form>
+      </td>
+      <td class="description" id="su-typeahead">Typeahead</td>
+      <td class="usage">
+        <p>Markup:</p>
+        <pre class="prettyprint linenums lang-html">
+            &lt;div class="input-append input-group"&gt;
+              &lt;input type="text" class="form-control " id="typeahead-example"&gt;
+              &lt;span class="input-group-btn"&gt;
+                &lt;button class="btn add-on" type="button"&gt;
+                  &lt;i class="icon-search"&gt;&lt;/i&gt;
+                &lt;/button&gt;
+              &lt;/span&gt;
+            &lt;/div&gt;
+        </pre>
+        <p>Script:</p>
+        <pre class="prettyprint linenums lang-javascript">
+         var states = new Bloodhound({
+              datumTokenizer: function(d) {
+                  return Bloodhound.tokenizers.whitespace(d.val);
+              },
+              queryTokenizer: Bloodhound.tokenizers.whitespace,
+              local: [{ val: 'Alabama' }, { val: 'Alaska' }...... ]
+            });
+
+          states.initialize();
+
+          $('#typeahead-example').typeahead({
+                highlight: true
+            },
+            {
+                displayKey: 'val',
+                source: states.ttAdapter()
+            });
+        </pre>
+        <p class="note">NOTE: See <a href="https://twitter.github.io/typeahead.js/examples/" target="_blank">Bootstrap Typeahead Examples</a> for a full list of options.</p>
+      </td>
+    </tr>
+    <tr>
+      <td class="example">
+        <div class="typeahead typeahead-faceted dropdown-menu" style="display: block; position: relative; width: 90%;">
+          <ul class="list-unstyled">
+            <li class="facet">
+              <div class="facet-name">Top Result</div>
+              <ul class="facet-results list-unstyled">
+                <li><a><strong>Ma</strong>ine</a></li>
+              </ul>
+            </li>
+            <li class="facet">
+              <div class="facet-name">States</div>
+              <ul class="facet-results list-unstyled">
+                <li><a><strong>Ma</strong>ine</a></li>
+                <li><a><strong>Ma</strong>ryland</a></li>
+                <li><a><strong>Ma</strong>ssachusetts</a></li>
+                <li><a>Alaba<strong>ma</strong></a></li>
+              </ul>
+            </li>
+            <li class="facet">
+              <div class="facet-name">Cities</div>
+              <ul class="facet-results list-unstyled">
+                <li><a><strong>Ma</strong>bleton, GA</a></li>
+                <li><a><strong>Ma</strong>cedon, NY</a></li>
+                <li><a><strong>Ma</strong>cedonia, OH</a></li>
+                <li><a><strong>Ma</strong>chesney Park, IL</a></li>
+                <li><a><strong>Ma</strong>comb, IL</a></li>
+              </ul>
+            </li>
+            <li><a>View All Results</a></li>
+          </ul>
+        </div>
+      </td>
+      <td class="description" id="su-faceted-search-results">Faceted search results</td>
+      <td class="usage">
+        <pre class="prettyprint linenums lang-html">
+            &lt;div class="typeahead typeahead-faceted dropdown-menu"&gt;
+              &lt;ul class="list-unstyled"&gt;
+                &lt;li class="facet"&gt;
+                  &lt;div class="facet-name"&gt;Top Result&lt;/div&gt;
+                  &lt;ul class="facet-results list-unstyled"&gt;
+                    &lt;li&gt;&lt;a&gt;&lt;strong&gt;Ma&lt;/strong&gt;ine&lt;/a&gt;&lt;/li&gt;
+                  &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li class="facet"&gt;
+                  &lt;div class="facet-name"&gt;States&lt;/div&gt;
+                  &lt;ul class="facet-results list-unstyled"&gt;
+                    &lt;li&gt;&lt;a&gt;&lt;strong&gt;Ma&lt;/strong&gt;ine&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a&gt;&lt;strong&gt;Ma&lt;/strong&gt;ryland&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a&gt;&lt;strong&gt;Ma&lt;/strong&gt;ssachusetts&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a&gt;Alaba&lt;strong&gt;ma&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+                  &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li class="facet"&gt;
+                  &lt;div class="facet-name"&gt;Cities&lt;/div&gt;
+                  &lt;ul class="facet-results list-unstyled"&gt;
+                    &lt;li&gt;&lt;a&gt;&lt;strong&gt;Ma&lt;/strong&gt;bleton, GA&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a&gt;&lt;strong&gt;Ma&lt;/strong&gt;cedon, NY&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a&gt;&lt;strong&gt;Ma&lt;/strong&gt;cedonia, OH&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a&gt;&lt;strong&gt;Ma&lt;/strong&gt;chesney Park, IL&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a&gt;&lt;strong&gt;Ma&lt;/strong&gt;comb, IL&lt;/a&gt;&lt;/li&gt;
+                  &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a&gt;View All Results&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+        </pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+					<a class="anchor" id="data-grids"></a>
+					<h2 class="voice voice-brand">Data Grids</h2>
+<dl class="documentation">
+  <dt>Example</dt>
+  <dd class="example">
+    <div class="row">
+      <div class="filter-utilities col-md-3 col-md-offset-9" style="padding-bottom: 15px;">
+        <div class="input-group">
+          <input type="text" id="table_filter" class="form-control search-query" data-filter-table="my-table">
+          <span class="input-group-btn">
+            <button class="btn btn-icon" type="button"><i class="icon-search"></i></button>
+          </span>  
+        </div>
+      </div>
+    </div>
+    <table class="table table-bordered" data-table-name="my-table">
+      <thead>
+        <tr>
+          <th class="essential">Site Name</th>
+          <th class="numeric essential">Turbine SN</th>
+          <th class="numeric essential">Average</th>
+          <th class="numeric optional">Median</th>
+          <th class="numeric optional">Standard Deviation</th>
+          <th class="visualization-bar">Percentile</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a>XYZ</a></td>
+          <td>100000</td><td>95.79</td><td>96.70</td><td>4.79</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td><td>200000</td><td>93.98</td>
+          <td>93.90</td><td>7.63</td><td>64</td>
+        </tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>300000</td><td>97.06</td><td>97.04</td>
+          <td>0.47</td><td>76</td></tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>350000</td><td>95.01</td><td class="outlier">45.13</td><td>2.16</td>
+          <td>75</td>
+        </tr>
+        <tr>
+          <td><a>Nob Hill</a></td>
+          <td>400000</td><td>94.18</td><td>94.40</td><td>1.08</td>
+          <td>70</td></tr>
+        <tr>
+          <td><a>Pacific Heights</a></td>
+          <td>600000</td><td>94.01</td><td>93.45</td><td>4.87</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td>
+          <td>100000</td><td>95.79</td><td>96.70</td><td>4.79</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td><td>200000</td><td>93.98</td>
+          <td>93.90</td><td>7.63</td><td>64</td>
+        </tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>300000</td><td>97.06</td><td>97.04</td>
+          <td>0.47</td><td>76</td></tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>350000</td><td class="outlier">54.11</td><td class="outlier">58.53</td><td>2.16</td>
+          <td>75</td>
+        </tr>
+        <tr>
+          <td><a>Nob Hill</a></td>
+          <td>400000</td><td class="outlier">44.17</td><td>94.40</td><td>1.08</td>
+          <td>70</td></tr>
+        <tr>
+          <td><a>Pacific Heights</a></td>
+          <td>600000</td><td>94.01</td><td>93.45</td><td>4.87</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td>
+          <td>100000</td><td>95.79</td><td>96.70</td><td>4.79</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td><td>200000</td><td>93.98</td>
+          <td>93.90</td><td>7.63</td><td>64</td>
+        </tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>300000</td><td>97.06</td><td>97.04</td>
+          <td>0.47</td><td>76</td></tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>350000</td><td>95.01</td><td>95.17</td><td>2.16</td>
+          <td>75</td>
+        </tr>
+        <tr>
+          <td><a>Nob Hill</a></td>
+          <td>400000</td><td>94.18</td><td>94.40</td><td>1.08</td>
+          <td>70</td></tr>
+        <tr>
+          <td><a>Pacific Heights</a></td>
+          <td>600000</td><td>94.01</td><td>93.45</td><td>4.87</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td>
+          <td>100000</td><td>95.79</td><td>96.70</td><td>4.79</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td><td>200000</td><td>93.98</td>
+          <td>93.90</td><td>7.63</td><td>64</td>
+        </tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>300000</td><td>97.06</td><td>97.04</td>
+          <td>0.47</td><td>76</td></tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>350000</td><td>95.01</td><td>95.17</td><td>2.16</td>
+          <td>75</td>
+        </tr>
+        <tr>
+          <td><a>Nob Hill</a></td>
+          <td>400000</td><td>94.18</td><td>94.40</td><td>1.08</td>
+          <td>70</td></tr>
+        <tr>
+          <td><a>Pacific Heights</a></td>
+          <td>600000</td><td>94.01</td><td>93.45</td><td>4.87</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td>
+          <td>100000</td><td>95.79</td><td>96.70</td><td>4.79</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td><td>200000</td><td>93.98</td>
+          <td>93.90</td><td>7.63</td><td>64</td>
+        </tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>300000</td><td>97.06</td><td>97.04</td>
+          <td>0.47</td><td>76</td></tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>350000</td><td>95.01</td><td>95.17</td><td>2.16</td>
+          <td>75</td>
+        </tr>
+        <tr>
+          <td><a>Nob Hill</a></td>
+          <td>400000</td><td>94.18</td><td>94.40</td><td>1.08</td>
+          <td>70</td></tr>
+        <tr>
+          <td><a>Pacific Heights</a></td>
+          <td>600000</td><td>94.01</td><td>93.45</td><td>4.87</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td>
+          <td>100000</td><td>95.79</td><td>96.70</td><td>4.79</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td><td>200000</td><td class="outlier">99.72</td>
+          <td>93.90</td><td>7.63</td><td>64</td>
+        </tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>300000</td><td>97.06</td><td>97.04</td>
+          <td>0.47</td><td>76</td></tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>350000</td><td>95.01</td><td>95.17</td><td>2.16</td>
+          <td>75</td>
+        </tr>
+        <tr>
+          <td><a>Nob Hill</a></td>
+          <td>400000</td><td>94.18</td><td>94.40</td><td>1.08</td>
+          <td>70</td></tr>
+        <tr>
+          <td><a>Pacific Heights</a></td>
+          <td>600000</td><td>94.01</td><td>93.45</td><td>4.87</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td>
+          <td>100000</td><td>95.79</td><td>96.70</td><td>4.79</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td><td>200000</td><td>93.98</td>
+          <td>93.90</td><td>7.63</td><td>64</td>
+        </tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>300000</td><td>97.06</td><td>97.04</td>
+          <td>0.47</td><td>76</td></tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>350000</td><td>95.01</td><td>95.17</td><td>2.16</td>
+          <td>75</td>
+        </tr>
+        <tr>
+          <td><a>Nob Hill</a></td>
+          <td>400000</td><td>94.18</td><td>94.40</td><td>1.08</td>
+          <td>70</td></tr>
+        <tr>
+          <td><a>Pacific Heights</a></td>
+          <td>600000</td><td>94.01</td><td>93.45</td><td>4.87</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td>
+          <td>100000</td><td>95.79</td><td>96.70</td><td>4.79</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td><td>200000</td><td>93.98</td>
+          <td>93.90</td><td>7.63</td><td>64</td>
+        </tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>300000</td><td>97.06</td><td>97.04</td>
+          <td>0.47</td><td>76</td></tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>350000</td><td>95.01</td><td>95.17</td><td>2.16</td>
+          <td>75</td>
+        </tr>
+        <tr>
+          <td><a>Nob Hill</a></td>
+          <td>400000</td><td>94.18</td><td>94.40</td><td>1.08</td>
+          <td>70</td></tr>
+        <tr>
+          <td><a>Pacific Heights</a></td>
+          <td>600000</td><td>94.01</td><td>93.45</td><td>4.87</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td>
+          <td>100000</td><td>95.79</td><td>96.70</td><td>4.79</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td><td>200000</td><td>93.98</td>
+          <td>93.90</td><td>7.63</td><td>64</td>
+        </tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>300000</td><td>97.06</td><td>97.04</td>
+          <td>0.47</td><td>76</td></tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>350000</td><td>95.01</td><td>95.17</td><td>2.16</td>
+          <td>75</td>
+        </tr>
+        <tr>
+          <td><a>Nob Hill</a></td>
+          <td>400000</td><td>94.18</td><td>94.40</td><td>1.08</td>
+          <td>70</td></tr>
+        <tr>
+          <td><a>Pacific Heights</a></td>
+          <td>600000</td><td>94.01</td><td>93.45</td><td>4.87</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td>
+          <td>100000</td><td>95.79</td><td>96.70</td><td>4.79</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td><td>200000</td><td>93.98</td>
+          <td>93.90</td><td>7.63</td><td>64</td>
+        </tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>300000</td><td>97.06</td><td>97.04</td>
+          <td>0.47</td><td>76</td></tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>350000</td><td>95.01</td><td>95.17</td><td>2.16</td>
+          <td>75</td>
+        </tr>
+        <tr>
+          <td><a>Nob Hill</a></td>
+          <td>400000</td><td>94.18</td><td>94.40</td><td>1.08</td>
+          <td>70</td></tr>
+        <tr>
+          <td><a>Pacific Heights</a></td>
+          <td>600000</td><td>94.01</td><td>93.45</td><td>4.87</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td>
+          <td>100000</td><td>95.79</td><td>96.70</td><td>4.79</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td><a>XYZ</a></td><td>200000</td><td>93.98</td>
+          <td>93.90</td><td>7.63</td><td>64</td>
+        </tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>300000</td><td>97.06</td><td>97.04</td>
+          <td>0.47</td><td>76</td></tr>
+        <tr>
+          <td><a>Portrero Hill</a></td>
+          <td>350000</td><td>95.01</td><td>95.17</td><td>2.16</td>
+          <td>75</td>
+        </tr>
+        <tr>
+          <td><a>Nob Hill</a></td>
+          <td>400000</td><td>94.18</td><td>94.40</td><td>1.08</td>
+          <td>70</td></tr>
+        <tr>
+          <td><a>Pacific Heights</a></td>
+          <td>600000</td><td>94.01</td><td>93.45</td><td>4.87</td>
+          <td>70</td>
+        </tr>
+        </tbody>
+      </table>
+  </dd>
+  <dt>Description</dt>
+  <dd class="description">
+    <p>Basic Data Grid. Implemented as the <code>iidsBasicDataGrid</code> jQuery plugin, which uses the <a href="http://datatables.net/" target="_parent">DataTables.net</a> jQuery plugin in its implementation.</p>
+    <div class="alert alert-info">
+      <strong>There's More!</strong> For a comprehensive overview of Datagrids see the Datagrids
+      <a href="../tearsheets/datagrids-data-loading.html" target="_parent">data loading</a> and
+      <a href="../tearsheets/datagrids-plugins.html" target="_parent">settings and plugins</a> example pages.
+    </div>
+  </dd>
+  <dt>Usage</dt>
+  <dd class="usage">
+    <p>Markup:</p>
+<pre class="prettyprint linenums lang-html">
+&lt;input type=&quot;text&quot; id=&quot;table_filter&quot; class=&quot;form-control search-query pull-right&quot; data-filter-table=&quot;my-table&quot;&gt;
+&lt;!-- initially hidden to avoid flash of unstyled content --&gt;
+&lt;table class=&quot;table table-bordered&quot; data-table-name=&quot;my-table&quot; style=&quot;visibility: hidden&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Site Name&lt;/th&gt;
+      &lt;th class=&quot;numeric&quot;&gt;Turbine SN&lt;/th&gt;
+      &lt;th class=&quot;numeric&quot;&gt;Average&lt;/th&gt;
+      &lt;th class=&quot;numeric&quot;&gt;Median&lt;/th&gt;
+      &lt;th class=&quot;numeric&quot;&gt;Standard Deviation&lt;/th&gt;
+      &lt;!-- headers with the class=&quot;visualization-bar&quot; will display as graphical bar charts --&gt;
+      &lt;th class=&quot;visualization-bar&quot;&gt;Percentile&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#&quot;&gt;XYZ&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;100000&lt;/td&gt;&lt;td&gt;95.79&lt;/td&gt;&lt;td&gt;96.70&lt;/td&gt;&lt;td&gt;4.79&lt;/td&gt;
+      &lt;td&gt;60&lt;/td&gt;
+    &lt;/tr&gt;
+    ... (additional rows) ...
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+    <p>Script:</p>
+<pre class="prettyprint linenums lang-javascript">
+require( ['jquery', 'datagrids'], function($) {
+  $(function() {
+    $('table[data-table-name="my-table"]').iidsBasicDataGrid();
+    // avoid flash of unstyled content
+    $('table[data-table-name="my-table"]').css( { visibility: 'visible' } );
+  });
+});
+</pre>
+
+  <p>Notes:</p>
+
+  <ul>
+    <li>Any &lt;input&gt; elements with an attribute <code>data-filter-table=&quot;&lt;table-name&gt;&quot;</code> (where &lt;table-name&gt; is the <code>data-table-name</code> of an IIDS data table) will become filters using the standard datatables.net <code>fnFilter()</code> capability.</li>
+    <li>Links are supported transparently, by adding <code>&lt;a href=&quot;...&quot;&gt;link&lt;/a&gt;</code> to the content of a cell.</li>
+    <li>Add <code>class=&quot;outlier&quot;</code> to <code>&lt;td&gt;</code> elements to mark a cell as an outlier.</li>
+    <li>DataTables <a href="http://www.datatables.net/examples/api/select_single_row.html">does not natively support click events on rows.</a> We've added this functionality so when you click on a row it now adds the class <code>.row_selected</code>, highlights and dispatches the event <code>selected</code>. The <code>selected</code> event contains two attributes: the row that was selected and a collection of all selected rows in the table.</li>
+  </ul>
+
+  <p class="note">See <a href="http://datatables.net/">DataTables.net</a> for more information.</p>
+  <div class="alert alert-info">
+    <strong>Script Requirements:</strong>
+    <ul>
+      <li>datatables</li>
+    </ul>
+  </div>
+
+  </dd>
+</dl>
+
+
+<script>
+
+  require( ['jquery', 'datagrids'], function($) {
+      $(function() {
+        $('table[data-table-name="my-table"]').iidsBasicDataGrid({ isResponsive: true });
+        // avoid flash of unstyled content
+        $('table[data-table-name="my-table"]').css( { visibility: 'visible' } );
+      });
+  });
+
+</script>
+
+
+					<a class="anchor" id="bootstrap-timepicker"></a>
+					<h3 class="voice voice-brand">Bootstrap Time Picker</h3>
+
+<dl class="documentation">
+  <dt>Example</dt>
+  <dd class="example">
+    <div class="input-append col-md-2 input-group bootstrap-timepicker">
+      <input type="text" class="timepicker form-control">
+      <span class="input-group-btn">
+        <button class="btn add-on" type="button"><i class="icon-time"></i></button>
+      </span>
+    </div>
+  </dd>
+  <dt>Description</dt>
+  <dd class="description show">Bootstrap Timepicker</dd>
+  <dt>Usage</dt>
+  <dd class="usage">
+<p>We've added a thin layer around bootstrap-timepicker</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="col-md-2 input-group timepicker"&gt;
+  &lt;input type="text" class="timepicker form-control"&gt;
+  &lt;span class="input-group-btn"&gt;
+    &lt;button class="btn add-on" type="button"&gt;&lt;i class="icon-time"&gt;&lt;/i&gt;&lt;/button&gt;
+  &lt;/span&gt;
+&lt;/div&gt;
+</pre>
+
+<pre class="prettyprint linenums lang-html">
+&lt;script type="text/javascript"&gt;
+    require.config({
+    baseUrl: '../src'
+  });
+
+  require([
+    'jquery',
+    'timepicker'
+  ], function ($) {
+    $('.timepicker').timepicker();
+  });
+&lt;/script&gt;
+</pre>
+
+    <script type="text/javascript">
+        require([
+            'jquery',
+            'timepicker'
+        ], function ($) {
+            $('.timepicker').timepicker();
+        });
+    </script>
+
+    <div class="alert alert-info">
+      <strong>Script Requirements:</strong>
+      <ul>
+        <li>bootstap-timepicker, bootstrap, jquery, require, timepicker</li>
+      </ul>
+    </div>
+  </dd>
+</dl>
+
+
+					<a class="anchor" id="filter-controls"></a>
+					<h2 class="voice voice-brand">Filter Controls</h2>
+
+
+<dl class="documentation">
+
+  <dt>Example</dt>
+  <dd class="example">
+<div class="tray filter-tray top collapse hidden-phone">
+  <div class="tray-inner">
+
+    <div class="filter-rule-group"></div>
+
+    <!-- client-side template -->
+    <script type="text/template" id="filter-rule-template">
+      <form class="inline-form filter-rule">
+        <span class="filter-item col-md-2">
+          <select>
+            <option value="show">Show Only</option>
+            <option value="hide">Hide</option>
+            <option value="highlight">Highlight</option>
+          </select>
+        </span>
+        <span class="filter-item col-md-2">
+          <select>
+            <option value="siteName">Site Name</option>
+            <option value="turbineSN">Turbine SN</option>
+            <option value="average">Average</option>
+            <option value="median">Median</option>
+            <option value="standardDeviation">Standard Deviation</option>
+            <option value="percentile">Percentile</option>
+          </select>
+        </span>
+        <span class="filter-item col-md-1">
+          <select>
+            <option value="=">=</option>
+            <option value="&gt;">&gt;</option>
+            <option value="&gt;=">&gt;=</option>
+            <option value="&lt;">&lt;</option>
+            <option value="&lt;=">&lt;=</option>
+            <option value="startsWidth">starts with</option>
+            <option value="endsWith">ends width</option>
+            <option value="contains">contains</option>
+            <option value="doesNotContain">does not contain</option>
+          </select>
+        </span>
+        <span class="filter-item">
+          <input type="text" value="sample" class="form-control">
+        </span>
+        <span class="filter-item">
+          <button type="button" class="btn-link" data-toggle="filter-rule-remove"><i class="icon-remove-sign"></i></button>
+        </span>
+      </form>
+    </script>
+    <!-- end template -->
+
+    <button class="btn btn-link btn-large pull-left" data-toggle="filter-rule-add" type="button"><i class="icon-plus-sign"></i> Add Condition</button>
+    <div class="pull-right">
+      <button class="btn btn-inverse">Cancel</button>
+      <button class="btn btn-primary">Apply</button>
+    </div>
+
+  </div>
+</div>
+
+    <div class="btn-group">
+      <button class="btn btn-primary tray-toggle" data-toggle="collapse" data-target=".tray">Filter</button>
+      <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="icon-chevron-down"></i></button>
+      <ul class="dropdown-menu">
+        <li><a><strong>Items</strong></a></li>
+        <li><a>Item 1</a></li>
+        <li><a>Item 2</a></li>
+      </ul>
+    </div>
+    <div class="btn-group btn-filter">
+      <a class="btn btn-default"><i class="icon-star color-red"></i> Filter 001</a>
+      <a class="btn btn-fade btn-default"><i class="icon-remove"></i></a>
+    </div>
+  </dd>
+  <dt>Description</dt>
+  <dd class="description">
+    <p>A Filter Tray contains the IIDS Rule Builder, primarily used for filtering and highlighting tables. It is initially hidden. Bootstrap's <em>collapse</em> functionality is used to hide and show the tray.</p>
+    <p>The IIDS provides a Filter Button to hide and show the tray. The Filter Button is a split button with a dropdown. Buttons for filter presets can stack alongside the filter button. <br/><strong>Note: Presently there is no responsive solution for filter trays so it is recommended they be hidden on mobile.</strong></p>
+  </dd>
+  <dt>Usage</dt>
+  <dd class="usage">
+    <p>Markup:</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="tray collapse"&gt;
+  &lt;div class="tray-inner"&gt;
+    &lt;div class="filter-tray clearfix"&gt;
+      &lt;div class="group-filter-rules"&gt;
+      &lt;/div&gt;
+
+      <!-- client-side template -->
+      &lt;script type="text/template" id="filter-rule-template"&gt;
+      &lt;div class="filter-rule col-sm-9 col-md-9 offset2"&gt;
+
+      &lt;select class="col-sm-2 col-md-2"&gt;
+      &lt;option value="show"&gt;Show Only&lt;/option&gt;
+      &lt;option value="hide"&gt;Hide&lt;/option&gt;
+      &lt;option value="highlight"&gt;Highlight&lt;/option&gt;
+      &lt;/select&gt;
+
+      &lt;select class="col-sm-2 col-md-2"&gt;
+      &lt;option value="siteName"&gt;Site Name&lt;/option&gt;
+      &lt;option value="turbineSN"&gt;Turbine SN&lt;/option&gt;
+      &lt;option value="average"&gt;Average&lt;/option&gt;
+      &lt;option value="median"&gt;Median&lt;/option&gt;
+      &lt;option value="standardDeviation"&gt;Standard Deviation&lt;/option&gt;
+      &lt;option value="percentile"&gt;Percentile&lt;/option&gt;
+      &lt;/select&gt;
+
+      &lt;select class="col-sm-1 col-md-1"&gt;
+      &lt;option value="="&gt;=&lt;/option&gt;
+      &lt;option value="&gt;"&gt;&gt;&lt;/option&gt;
+      &lt;option value="&gt;="&gt;&gt;=&lt;/option&gt;
+      &lt;option value="&lt;"&gt;&lt;&lt;/option&gt;
+      &lt;option value="&lt;="&gt;&lt;=&lt;/option&gt;
+      &lt;option value="startsWidth"&gt;starts with&lt;/option&gt;
+      &lt;option value="endsWith"&gt;ends width&lt;/option&gt;
+      &lt;option value="contains"&gt;contains&lt;/option&gt;
+      &lt;option value="doesNotContain"&gt;does not contain&lt;/option&gt;
+      &lt;/select&gt;
+
+      &lt;input type="text" value="sample" class="col-sm-3 col-md-3"&gt;&lt;/input&gt;
+
+      &lt;a class="remove-filter-rule"&gt;&lt;i class="icon-remove-sign"&gt;&lt;/i&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;/script&gt;
+      <!-- end template -->
+      &lt;div class="filter-actions col-lg-offset-2 col-sm-8 col-md-8 offset2"&gt;
+        &lt;a href="#add-filter-rule" class=" col-sm-2 col-md-2 add-filter-rule"&gt;&lt;i class="icon-plus-sign"&gt;&lt;/i&gt; Add Condition&lt;/a&gt;
+        &lt;div class="action-button-group col-sm-6 col-md-6"&gt;
+          &lt;button class="btn btn-default"&gt;Cancel&lt;/button&gt;
+          &lt;button class="btn btn-primary"&gt;Apply&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="arrow"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;filter-controls&quot;&gt;
+  &lt;div class=&quot;btn-group&quot;&gt;
+    &lt;button class=&quot;btn btn-primary tray-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.tray&quot;&gt;Filter&lt;/button&gt;
+    &lt;button class=&quot;btn btn-primary dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;&lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+    &lt;ul class=&quot;dropdown-menu&quot;&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;strong&gt;Items&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;btn-group btn-filter&quot;&gt;
+  &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;&lt;i class=&quot;icon-star color-danger&quot;&gt;&lt;/i&gt; Filter 001&lt;/a&gt;
+  &lt;a href=&quot;#&quot; class=&quot;btn btn-remove&quot;&gt;&lt;i class=&quot;icon-remove&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+    <p>Script:</p>
+<pre class="prettyprint linenums lang-javascript">
+require( ['trays'], function() {
+  $('.tray').iidsFilterTray();
+});
+</pre>
+
+    <div class="alert alert-info">
+      <strong>Script Requirements:</strong>
+      <ul>
+        <li>bootstrap/bootstrap-collapse</li>
+      </ul>
+    </div>
+
+  </dd>
+
+</dl>
+
+
+<script>
+require(['trays'], function() {
+  $('.tray').iidsFilterTray();
+});
+</script>
+
+<dl class="documentation">
+
+  <dt>Example, filter-tray + datagrid</dt>
+  <dd class="example">
+
+<div id="tray-datagrid" class="tray filter-tray top collapse hidden-phone">
+  <div class="tray-inner">
+
+    <div class="filter-rule-group"></div>
+
+    <!-- client-side template -->
+    <script type="text/template">
+      <form class="inline-form filter-rule">
+        <span class="filter-item col-md-2">
+          <select>
+            <option value="show">Show Only</option>
+            <option value="hide">Hide</option>
+            <option value="highlight">Highlight</option>
+          </select>
+        </span>
+        <span class="filter-item col-md-2">
+          <select>
+            <option value="siteName">Site Name</option>
+            <option value="turbineSN">Turbine SN</option>
+            <option value="average">Average</option>
+            <option value="median">Median</option>
+            <option value="standardDeviation">Standard Deviation</option>
+            <option value="percentile">Percentile</option>
+          </select>
+        </span>
+        <span class="filter-item col-md-1">
+          <select>
+            <option value="=">=</option>
+            <option value="&gt;">&gt;</option>
+            <option value="&gt;=">&gt;=</option>
+            <option value="&lt;">&lt;</option>
+            <option value="&lt;=">&lt;=</option>
+            <option value="startsWidth">starts with</option>
+            <option value="endsWith">ends width</option>
+            <option value="contains">contains</option>
+            <option value="doesNotContain">does not contain</option>
+          </select>
+        </span>
+        <span class="filter-item">
+          <input type="text" value="sample">
+        </span>
+        <span class="filter-item">
+          <button type="button" class="btn-link" data-toggle="filter-rule-remove"><i class="icon-remove-sign"></i></button>
+        </span>
+      </form>
+    </script>
+    <!-- end template -->
+
+    <button class="btn btn-link btn-large pull-left" data-toggle="filter-rule-add" type="button"><i class="icon-plus-sign"></i> Add Condition</button>
+    <div class="pull-right control">
+      <button class="btn btn-inverse cancel">Cancel</button>
+      <button class="btn btn-primary apply">Apply</button>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="btn-group">
+      <button class="btn btn-primary tray-toggle" data-toggle="collapse" data-target="#tray-datagrid">Filter</button>
+      <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="icon-chevron-down"></i></button>
+      <ul class="dropdown-menu">
+        <li><a><strong>Items</strong></a></li>
+        <li><a>Item 1</a></li>
+        <li><a>Item 2</a></li>
+      </ul>
+    </div>
+    <div class="btn-group btn-filter">
+      <a class="btn btn-default"><i class="icon-star color-red"></i> Filter 001</a>
+      <a class="btn btn-fade btn-default"><i class="icon-remove"></i></a>
+    </div>
+
+    <div style="height:20px;"></div>
+
+
+      <table class="table table-bordered" data-table-name="dt-array-results"></table>
+
+
+  </dd>
+
+
+
+  <dt>Description</dt>
+  <dd class="description">
+    <p>In the example, we have a data grid combined with a filter-tray component.  The ideal, is we can qualify a search query url with our rule-builder.  With the modified search query string, we can alter the search SQL server side, by utilizing the datagirds ajax functionality.</p>
+  </dd>
+  <dt>Usage</dt>
+  <dd class="usage">
+    <p>Markup:</p>
+<pre class="prettyprint linenums lang-html">
+&lt;div id="tray-datagrid" class="tray collapse"&gt;
+  &lt;div class="tray-inner"&gt;
+    &lt;div class="filter-tray clearfix"&gt;
+      &lt;div class="group-filter-rules"&gt;
+      &lt;/div&gt;
+
+      <!-- client-side template -->
+      &lt;script type="text/template" id="filter-rule-template"&gt;
+      &lt;div class="filter-rule col-md-9 offset2"&gt;
+
+      &lt;select class="col-md-2"&gt;
+      &lt;option value="show"&gt;Show Only&lt;/option&gt;
+      &lt;option value="hide"&gt;Hide&lt;/option&gt;
+      &lt;option value="highlight"&gt;Highlight&lt;/option&gt;
+      &lt;/select&gt;
+
+      &lt;select class="col-md-2"&gt;
+      &lt;option value="siteName"&gt;Site Name&lt;/option&gt;
+      &lt;option value="turbineSN"&gt;Turbine SN&lt;/option&gt;
+      &lt;option value="average"&gt;Average&lt;/option&gt;
+      &lt;option value="median"&gt;Median&lt;/option&gt;
+      &lt;option value="standardDeviation"&gt;Standard Deviation&lt;/option&gt;
+      &lt;option value="percentile"&gt;Percentile&lt;/option&gt;
+      &lt;/select&gt;
+
+      &lt;select class="col-md-1"&gt;
+      &lt;option value="="&gt;=&lt;/option&gt;
+      &lt;option value="&gt;"&gt;&gt;&lt;/option&gt;
+      &lt;option value="&gt;="&gt;&gt;=&lt;/option&gt;
+      &lt;option value="&lt;"&gt;&lt;&lt;/option&gt;
+      &lt;option value="&lt;="&gt;&lt;=&lt;/option&gt;
+      &lt;option value="startsWidth"&gt;starts with&lt;/option&gt;
+      &lt;option value="endsWith"&gt;ends width&lt;/option&gt;
+      &lt;option value="contains"&gt;contains&lt;/option&gt;
+      &lt;option value="doesNotContain"&gt;does not contain&lt;/option&gt;
+      &lt;/select&gt;
+
+      &lt;input type="text" value="sample" class="col-md-3"&gt;&lt;/input&gt;
+
+      &lt;a class="remove-filter-rule"&gt;&lt;i class="icon-remove-sign"&gt;&lt;/i&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;/script&gt;
+      <!-- end template -->
+      &lt;div class="filter-actions col-md-8 offset2"&gt;
+        &lt;a href="#add-filter-rule" class="col-md-2 add-filter-rule"&gt;&lt;i class="icon-plus-sign"&gt;&lt;/i&gt; Add Condition&lt;/a&gt;
+        &lt;div class="action-button-group col-md-6"&gt;
+          &lt;button class="btn"&gt;Cancel&lt;/button&gt;
+          &lt;button class="btn btn-primary"&gt;Apply&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="arrow"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;filter-controls&quot;&gt;
+  &lt;div class=&quot;btn-group&quot;&gt;
+    &lt;button class=&quot;btn btn-primary tray-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#tray-datagrid&quot;&gt;Filter&lt;/button&gt;
+    &lt;button class=&quot;btn btn-primary dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;&lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+    &lt;ul class=&quot;dropdown-menu&quot;&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;strong&gt;Items&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;btn-group btn-filter&quot;&gt;
+  &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;&lt;i class=&quot;icon-star color-danger&quot;&gt;&lt;/i&gt; Filter 001&lt;/a&gt;
+  &lt;a href=&quot;#&quot; class=&quot;btn btn-remove&quot;&gt;&lt;i class=&quot;icon-remove&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+</pre>
+    <p>Script:</p>
+<pre class="prettyprint linenums lang-javascript">
+&lt;script type="text/javascript" charset="utf-8"&gt;
+
+  var oTable;
+  require([
+        'jquery',
+        'trays',
+        'datagrids'
+    ], function($){
+        init();
+  } );
+
+  function init()
+  {
+    initTrays();
+    initDatagrid();
+  }
+
+
+  function initTrays()
+  {
+    $('#tray-datagrid').iidsFilterTray();
+    $('#tray-datagrid .control .cancel').click(function(e){
+      e.preventDefault();
+    });
+
+    $('#tray-datagrid .control .apply').click(function(e){
+      e.preventDefault();
+
+      $('#tray-datagrid .filter-rule').each(function(item, i ){
+        var results = parseFilterItem(item);
+        /**
+         * NOTE: we could transform the data to json,
+         * OR use the data to create a query string
+         * THEN, reload the data by invoking the oTable.fnReloadAjax call
+         */
+         var newUrl = '../data/spoof-data-1.json';
+        //var json = $.toJSON(results);
+          newUrl += "?key=value&amp;key2=value2&amp;ext";
+        //initDatagrid();
+
+         var instance = $('table[data-table-name="dt-array-results"]').data('iidsBasicDataGrid');
+             instance.reloadAjax(instance.$table.fnSettings(), newUrl, null, null);
+      });
+
+      function parseFilterItem(item)
+      {
+        var results = [];
+        var row = {};
+        var elm = $(item).find("option");
+
+/*
+            insert logic here. add data to the row object, which will be returned in a resutls array
+*/
+            results.push(row);
+            return results;
+      }
+
+    });
+
+  }
+
+  function initDatagrid()
+  {
+    // JavaScript array and columns
+    oTable = $('table[data-table-name="dt-array-results"]').iidsBasicDataGrid({
+    'aoColumns': [
+        { 'sTitle': 'Rendering engine', 'mData': 'engine', 'sClass': 'essential' },
+        { 'sTitle': 'Browser', 'mData': 'browser', 'sClass': 'essential' },
+        { 'sTitle': 'Platform(s)', 'mData': 'platform', 'sClass': 'optional' },
+        { 'sTitle': 'Engine version', 'mData': 'version' },
+        { 'sTitle': 'CSS grade', 'mData': 'grade', 'sClass': 'essential' }
+    ],
+      'sAjaxSource': '../data/spoof-data-0.json',
+      'isResponsive': true
+      });
+
+
+  }
+
+
+
+
+
+
+&lt;/script&gt;
+</pre>
+
+    <div class="alert alert-info">
+      <strong>Script Requirements:</strong>
+      <ul>
+        <li>bootstrap/bootstrap-collapse</li>
+      </ul>
+    </div>
+
+  </dd>
+
+</dl>
+
+
+<script>
+  var oTable;
+  require([
+        'jquery',
+        'trays',
+        'datagrids'
+    ], function($){
+        init();
+  } );
+
+  function init()
+  {
+    initTrays();
+    initDatagrid();
+  }
+
+
+  function initTrays()
+  {
+    $('#tray-datagrid').iidsFilterTray();
+    $('#tray-datagrid .control .cancel').click(function(e){
+      e.preventDefault();
+    });
+
+    $('#tray-datagrid .control .apply').click(function(e){
+      e.preventDefault();
+
+      $('#tray-datagrid .filter-rule').each(function(item, i ){
+        var results = parseFilterItem(item);
+        /**
+         * NOTE: we could transform the data to json,
+         * OR use the data to create a query string
+         * THEN, reload the data by invoking the oTable.fnReloadAjax call
+         */
+         var newUrl = '../data/spoof-data-1.json';
+        //var json = $.toJSON(results);
+          newUrl += "?key=value&amp;key2=value2&amp;ext";
+        //initDatagrid();
+
+         var instance = $('table[data-table-name="dt-array-results"]').data('iidsBasicDataGrid');
+             instance.reloadAjax(instance.$table.fnSettings(), newUrl, null, null);
+      });
+
+      function parseFilterItem(item)
+      {
+        var results = [];
+        var row = {};
+        var elm = $(item).find("option");
+/*
+            insert logic here. add data to the row object, which will be returned in a resutls array
+*/
+            results.push(row);
+            return results;
+      }
+
+    });
+
+  }
+
+  function initDatagrid()
+  {
+    // JavaScript array and columns
+    oTable = $('table[data-table-name="dt-array-results"]').iidsBasicDataGrid({
+    'aoColumns': [
+        { 'sTitle': 'Rendering engine', 'mData': 'engine', 'sClass': 'essential' },
+        { 'sTitle': 'Browser', 'mData': 'browser', 'sClass': 'essential' },
+        { 'sTitle': 'Platform(s)', 'mData': 'platform', 'sClass': 'optional' },
+        { 'sTitle': 'Engine version', 'mData': 'version' },
+        { 'sTitle': 'CSS grade', 'mData': 'grade', 'sClass': 'essential' }
+    ],
+      'sAjaxSource': '../data/spoof-data-0.json',
+      'isResponsive': true
+      });
+
+  }
+
+
+
+
+
+</script>
+
+
+                    <a class="anchor" id="video-player"></a>
+                    <h2 class="voice voice-brand">Video Player</h2>
+                    <dl class="documentation">
+<dt>Example</dt>
+<dd class="example">
+    <p><a href="../examples/media/videoplayer.html" target="_blank">Open fullscreen example.</a></p>
+    <p>
+        <img src="../assets/images/videoplayer_screenshot.jpg" alt="Videoplayer screenshot">
+    </p>
+</dd>
+<dt>Description</dt>
+<dd class="description show">Video Player</dd>
+<dt>Usage</dt>
+<dd class="usage">
+<pre class="prettyprint linenums lang-html">
+&lt;video id="example_video_1" class="video-js vjs-default-skin"
+       controls preload="auto" width="640" height="264"
+       poster="http://video-js.zencoder.com/oceans-clip.png"
+       data-setup&gt;
+    &lt;source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' /&gt;
+    &lt;source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' /&gt;
+    &lt;source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' /&gt;
+&lt;/video&gt;
+</pre>
+
+    <div class="alert alert-info">
+        <strong>Script Requirements:</strong>
+        <ul>
+            <li>videoplayer/js/videoplayer</li>
+        </ul>
+    </div>
+</dd>
+</dl>
+
+
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>
+
+<script>
+            // Increase load time for IE8
+            requirejs.config({
+                waitSeconds: 30
+            });
+
+            // Preload JS libraries and exec page scripts
+            require([
+                    'require',
+                    'jquery',
+                    'ge-bootstrap',
+                    'prettify',
+                    'spinner',
+                    'iids',
+                    'responsive-tables',
+                    'collapsible-list',
+                    'datepicker',
+                    'contextmenu',
+                    'multi-step-navigation',
+                    'toggle-switch',
+                    'slider'
+                ],
+                function(require, $, bootstrap, prettify, spinner) {
+                    $(
+                        function() {
+                            // -------------------
+                            // DOCUMENTATION SETUP
+                            // -------------------
+
+                            // Make code lovely using Google Prettify.
+                            window.prettyPrint && prettyPrint();
+
+                            // Enable ScrollSpy for dynamic navigation highlighting.
+                            $('body').scrollspy({
+                                offset: 120,
+                                target: '.primary-navbar'
+                            });
+
+                            // Extend jQuery with a better easing function, so we can make
+                            // some pretty scrolling animations.
+                            $.extend(
+                                $.easing,
+                                {
+                                    def: 'easeInOutCubic',
+                                    easeInOutCubic: function (x, t, b, c, d) {
+                                        if ((t/=d/2) < 1) return c/2*t*t*t + b;
+                                        return c/2*((t-=2)*t*t + 2) + b;
+                                    }
+                                }
+                                // This easing function is from:
+                                // jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
+                                // Open source under the BSD License.
+                                // Copyright © 2008 George McGinley Smith
+                                // All rights reserved.
+                            );
+
+                            // Finally, add some smooth scrolling to our body when one of the
+                            // primary-navbar links are clicked (even though this isn't in
+                            // Bootstrap, which everyone said it was... we'll rebuild anyway).
+                            $('.primary-navbar a').click(
+                                function( event ) {
+                                    event.preventDefault();
+                                    var offset = $( $(this).attr('href') ).offset();
+                                    if (offset) {
+                                      $( 'html, body' ).animate( { scrollTop: offset.top }, 1000, 'easeInOutCubic' );
+                                    }
+                                }
+                            );
+
+                            // Now, on to...
+
+                            // ---------------------------
+                            // DOCUMENTATION FUNCTIONALITY
+                            // ---------------------------
+
+                            // Enable stateful buttons
+                            $('[rel=stateful], .stateful').click(
+                                function(){
+                                    var $self = $(this);
+                                    $self.button('loading');
+                                    setTimeout(
+                                        function() {
+                                            $self.button('reset');
+                                        },
+                                        3000
+                                    );
+                                }
+                            );
+
+                            // Enable spinners
+                            $('[rel=spinner], .spinner').spin();
+
+                            // Enable tabs (with dropdowns, mainly)
+                            $('.nav-tabs > li > a').click(
+                                function(event) {
+                                    event.preventDefault();
+                                    $(this).tab('show');
+                                }
+                            );
+
+                            // Make accordion carets animate!
+                            $('.accordion .collapse')
+                                .on('show',
+                                    function() {
+                                        $(this).prev('.accordion-heading').find('.accordion-toggle').addClass('in');
+                                    }
+                                )
+                                .on('hide',
+                                    function() {
+                                        $(this).prev('.accordion-heading').find('.accordion-toggle').removeClass('in');
+                                    }
+                                );
+
+                            // Enable context menu
+                            $.contextMenu({
+                              selector: ".contextmenu",
+                              items: {
+                                "action1": {"name": "Action"},
+                                "action2": {"name": "Another action"},
+                                "action3": {"name": "Something else here"},
+                                "sep1": "---------",
+                                "fold1": {
+                                    "name": "Separated link",
+                                    "items": {
+                                        "fold1-key1": {"name": "Action"},
+                                        "fold1-key3": {"name": "Another Action"}
+                                    }
+                                }
+                              }
+                            });
+                            
+                            // Enable sliders
+                            $('input.slider').slider();
+
+                            // Enable multi-step-navigator
+                            $('.multi-step-nav').multiStepNavigation();
+
+                            // Setup of rich popover examples
+                            $('#popover1').popover({
+                              html: true,
+                              title: 'A Title',
+                              content: function() {
+                                return $('#popover1-content-wrapper').html();
+                              }
+                            }).on('click', function(e) {
+                              e.preventDefault();
+                            });
+                      
+                            $('#popover2').popover({
+                              html: true,
+                              placement: 'top',
+                              content: function() {
+                                return $('#popover2-content-wrapper').html();
+                              }
+                            }).on('click', function(e) {
+                              e.preventDefault();
+                            });
+
+                            // Conditionally load D3/Declarative Viz if SVG is supported.
+                            // This should prevent errors from being thrown in IE8
+                            if (Modernizr.svg) {
+
+                              require(['declarative-visualizations'], function(visualizations) {
+
+                                var components = [];
+
+                                $('div[data-visualization]').each(function(i, element) {
+                                  var viz = $(element).attr('data-visualization');
+                                  components.push( visualizations[viz](element) );
+                                });
+
+                            });
+                          // If SVG isn't supported alert the user that some elements won't be loaded
+                          } else {
+                            alert('Your browser does not support SVG.\nAny element using D3.js will be omitted.');
+                          }
+                        }
+                    );
+                }
+            );
+        </script>
+        <script src="../../components/respond/respond.src.js"></script>
+    </body>
+</html>
+

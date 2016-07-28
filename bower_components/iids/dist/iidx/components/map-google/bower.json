@@ -1,0 +1,14 @@
+{
+  "name": "map-google",
+  "version": "0.2.0",
+  "main": "js/googlemaps.js",
+  "author": "General Electric",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "jquery": "https://github.com/components/jquery.git#~1.10.2"
+  }
+}

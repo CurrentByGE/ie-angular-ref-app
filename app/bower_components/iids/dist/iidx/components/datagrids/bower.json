@@ -1,0 +1,34 @@
+{
+  "name": "datagrids",
+  "description": "Customized implementation of DataTables for GE DS.",
+  "version": "1.2.0",
+  "author": "General Electric",
+  "main": [
+    "js/datagrids.js",
+    "less/datagrids.less",
+    "less/datagrids-responsive.less"
+  ],
+  "ignore": [
+    "components",
+    "css",
+    "node_modules",
+    ".*",
+    "js/require.config.js",
+    "Gruntfile.js"
+  ],
+  "dependencies": {
+    "datatables-col-reorder": "https://raw.githubusercontent.com/DataTables/ColReorder/1.1.1/js/dataTables.colReorder.js",
+    "datatables-scroller": "https://raw.github.com/DataTables/Scroller/1.2.1/js/dataTables.scroller.js",
+    "datatables": "git@github.sw.ge.com:DXC/shim-data-tables.git#v1.10.0",
+    "ge-bootstrap": "git@github.sw.ge.com:DXC/ge-bootstrap#master",
+    "modules": "git@github.sw.ge.com:DXC/modules#v1.0.4",
+    "responsive-emitter": "git@github.sw.ge.com:DXC/responsive-emitter#~0.8.1",
+    "requirejs": "https://github.com/jrburke/requirejs-bower.git#~2.1.11",
+    "jquery": "https://github.com/components/jquery.git#~1.10.2",
+    "brandkit": "git@github.sw.ge.com:DXC/brandkit#v2.6.2"
+  },
+  "resolutions":{
+  "ge-bootstrap": "v1.9.4",
+  "brandkit": "v2.6.2"
+  }
+}

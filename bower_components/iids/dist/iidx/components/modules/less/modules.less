@@ -1,0 +1,231 @@
+//-----------------
+// MODULE COMPONENT
+//-----------------
+//
+// What's happening here?
+//
+// Styling rules for the custom component called "module". Generally used
+// as a wrapper for other components to generate structure in the format of
+// header -> body -> footer. Can be actionable, draggable, scrollable or
+// chromeless depending on use and placement within the application.
+//
+// Expects HTML in the following structure:
+// <section class="module[ actionable draggable scrollable chromeless]">
+//   <header class="module-header">Module Name / Actions</header>
+//   <div class="module-body">Wrapped Component</div>
+//   <footer class="module-footer">Links / Miscellaneous</footer>
+// </section>
+//
+// Optionally supported classes:
+// actionable : when action dropdown is present (unused)
+// draggable  : used on dashboard views to enable drag/drop. forces all
+//              modules to a fixed height and a table layout so content
+//              can be centered vertically within the module body
+// scrollable : used for fixed height modules (usually also draggable)
+//              and enables overflowing content to be scrolled within
+//              the module body
+// chromeless : used when a module's default styling should not be applied
+//              and when the wrapped object generally applies it's own
+//              style rules to the module container elements, if present
+
+// Dependencies
+// --------------------------------------------------
+
+
+// Styles
+// --------------------------------------------------
+
+.module {
+  background: @white;
+  .border-radius(@baseBorderRadius);
+  .box-sizing(border-box);
+  padding: 15px;
+  position: relative;
+  .clearfix();
+  .module-header {
+    line-height: @baseLineHeight;
+    margin-bottom: 15px;
+    min-height: @baseLineHeight;
+    .clearfix();
+    > * {
+      // Use the line-height of the header module, not the element.
+      line-height: inherit;
+    }
+    > h1 {
+      // H1 tags overlap at the inherited line-height
+      line-height: 100%;
+    }
+  }
+  .module-body {
+    .clearfix();
+  }
+  .module-body dl:first-child {
+    margin-top: 0;
+  }
+  .module-footer > :first-child {
+    margin-top: 15px;
+  }
+  .module-body div:last-child,
+  .module-body p:last-child,
+  .module-body ul:last-child,
+  .module-body ol:last-child,
+  .module-body dl:last-child,
+  .module-footer *:last-child {
+    margin-bottom: 0;
+  }
+  .module-body > hr {
+    margin: 0 -15px 5px;
+    border: 1px solid @hrBorder;
+  }
+
+  // Draggables
+  &.draggable {
+    padding: 0px;
+
+    // Reset the dimensions of modules since sortables and box-sizing
+    // don't play nice with each other.
+    .box-sizing(content-box);
+    // Forcing the height of draggables because the smaller-size D3 graphs
+    // will make the modules too tall and thus wrap incorrectly.
+    height: @moduleDraggableHeight;
+    .module-header {
+      padding: 15px;
+      .border-radius(@baseBorderRadius @baseBorderRadius 0 0);
+      margin-bottom: 0;
+      &:hover {
+        cursor: move;
+      }
+      &:active {
+        background-color: @grayLightest;
+      }
+    }
+    .module-body {
+      height: @moduleBodyDraggableHeight;
+      padding: 0 15px 0px 15px;
+    }
+
+    .module-footer {
+      padding: 15px;
+      > :last-child {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  // Scrollables
+  &.scrollable {
+    padding: 0px;
+    height: @moduleDraggableHeight;
+
+    .module-header {
+      padding: 15px;
+      margin-bottom: 0;
+    }
+
+    .module-footer {
+      padding: 15px;
+    }
+    // Override other behaviors if we expect this module to be fixed-height scrolling.
+    .module-body {
+      height: @moduleBodyDraggableHeight;
+      padding-left: 15px;
+      display: block;
+      overflow-x: hidden;
+      overflow-y: auto;
+      > div {
+        display: block;
+      }
+    }
+  }
+
+  // Chromeless
+  &.chromeless {
+    background: transparent;
+    padding: 0;
+    .module-header,
+    .module-footer {
+      display: none;
+    }
+  }
+
+  // Spans full width
+  &.fullwidth{
+    padding:0 0 10px;
+  }
+
+  // Sortables
+  &.ui-sortable-placeholder {
+    background-color: @grayLightest;
+    visibility: visible !important;
+    .module-header,
+    .module-body,
+    .module-footer {
+      visibility: hidden;
+    }
+  }
+  &.ui-sortable-helper {
+    border: 1px solid @grayLighter;
+    .module-header {
+      background-color: @grayLightest;
+    }
+  }
+
+  // Nestables
+  &.nestable {
+    margin-bottom: 0;
+  }
+
+  // Collapsibles
+  &.collapsible {
+    padding-top: 0px;
+    .module-header {
+      margin-bottom: 0px;
+      padding-top: 15px;
+      padding-left: 18px;
+      cursor: pointer;
+      i.module-arrow {
+        position: absolute;
+        left: 15px;
+      }
+      &:hover {
+        color: @linkColorHover;
+      }
+    }
+    
+	  .module-body {
+        &.collapse:before,
+        &.collapsing:before {
+          content: " ";
+          padding-top: 15px;
+        }
+
+        margin-bottom: 0; // This is a hack against the current version of Bootstrap that introduces an animation hiccup.
+      }
+  }
+}
+
+
+// GROUP STYLES
+// -----------------
+
+.module-group > .module:first-child {
+  .border-radius(@baseBorderRadius @baseBorderRadius 0 0);
+}
+
+.module-group > .module {
+  .border-radius(0);
+}
+
+.module-group > .module:last-child {
+  .border-radius(0 0 @baseBorderRadius @baseBorderRadius);
+}
+
+.module-group > hr {
+  margin: 0;
+  border: 1px solid @hrBorder;
+}
+
+.module .module-header h4 {
+  margin: 0 10px 0 16px;
+}
+

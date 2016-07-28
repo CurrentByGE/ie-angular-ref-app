@@ -1,0 +1,32 @@
+// Use darker background-color than BS3 default on nav links
+.nav > li > a:hover,
+.nav > li > a:focus,
+.nav > li > a:active {
+	background-color: @grayLighter;
+}
+
+// some links don't get underlined
+.masthead a.brand,
+.nav-pills > li > a,
+.breadcrumb > li > a {
+	text-decoration: none;
+
+}
+
+// Give the tabs something to sit on
+.nav-tabs {
+
+	> li {
+
+		// Active state, and its :hover to override normal :hover
+		&.active > a {
+			&,
+			&:hover,
+			&:active,
+			&:focus {
+				border: 1px solid transparent;
+			}
+		}
+	}
+
+}

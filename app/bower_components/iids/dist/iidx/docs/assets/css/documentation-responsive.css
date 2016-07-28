@@ -1,0 +1,174 @@
+/*
+
+Where did these come from? CDX new stuff?
+
+@btnBorderForRealzy:                @grayLightest;
+
+@btnPrimaryText:                    @white;
+
+@btnPrimaryToggle:                  darken(@blue,50%);
+@btnIconColorPrimary:               @white;
+
+@btnInverseText:                    @btnPrimaryText;
+@btnInverseBackground:              @btnPrimaryBackground;
+@btnInverseBackgroundHighlight:     @btnPrimaryBackgroundHighlight;
+@btnInverseIconColor:               @btnIconColorPrimary;
+
+
+// toggle
+
+@btnToggleText:                     @white;
+@btnToggleBackground:               @blue;
+
+
+// faceted / type ahead
+@dropdownFacetedFacetBackground: @grayLightest;sx
+
+
+
+//Declarative-visualizations
+//gradient colors for each severity type
+//-----------------------------------------
+@blue1:           #1483B2;
+@blue2:           #25AAE1;
+@yellow1:         #D8BB27;
+@yellow2:         #FBDA06;
+@orange1:         #D07931;
+@orange2:         #F58624;
+@red1:            #C62F27;
+@red2:            #EE3D2C;
+@BarLightsOnGray: #e7e6e7;
+@meterBgGray:     #e7e5e7;
+
+
+// Datagrids
+//-------------
+
+//@dataTableRowEvenBgrnd:   #749BCD;
+//@dataTableRowHover:       #B7CBE5;
+//@dataGridbackgroundColor: #EEEEEE;
+*/
+.voice-brand {
+  font-family: "GE Inspira", "ge-inspira", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.voice-data {
+  font-family: Inconsolata, Consolas, monospace;
+}
+.voice-human {
+  font-family: "GE Serif", "ge-serif", Georgia, serif;
+}
+.voice-ui {
+  font-family: "GE Sans", "ge-sans", "GE Inspira", "ge-inspira", Helvetica, Arial, sans-serif;
+}
+.color-black {
+  color: #141414;
+}
+.color-green {
+  color: #46ad00;
+}
+.color-cyan {
+  color: #005cb9;
+}
+.color-blue {
+  color: #005cb9;
+}
+.color-orange {
+  color: #ff9821;
+}
+.color-red {
+  color: #de2533;
+}
+.color-purple {
+  color: #8669ff;
+}
+.color-white {
+  color: #ffffff;
+}
+.ge-logo {
+  background: transparent url("../brandkit/img/ge-monogram-bluesteel.svg") no-repeat;
+  background-size: contain;
+  border: 0;
+  color: transparent;
+  float: left;
+  font: 0/0 a;
+  height: 120px;
+  margin: -55px 15px 15px 15px;
+  width: 120px;
+}
+.brand .primary-brand {
+  font-weight: bold;
+}
+.brand .secondary-brand {
+  font-weight: normal;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 29px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media (max-width: 767px) {
+  table.documentation {
+    display: block;
+  }
+  table.documentation > thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  table.documentation > tbody {
+    display: block;
+  }
+  table.documentation > tbody > tr {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+  }
+  table.documentation > tbody > tr td.description {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    box-ordinal-group: 1;
+    font-size: 15px;
+    width: 100% !important;
+    display: block;
+  }
+  table.documentation > tbody > tr td.example {
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    box-ordinal-group: 2;
+    width: 100% !important;
+    display: block;
+  }
+  table.documentation > tbody > tr td.usage {
+    -webkit-box-ordinal-group: 3;
+    -moz-box-ordinal-group: 3;
+    box-ordinal-group: 3;
+    display: none;
+  }
+  dl.documentation > dt,
+  dl.documentation > dd.description,
+  dl.documentation > dd.usage {
+    display: none;
+  }
+  dl.documentation > .example {
+    border-top: 1px solid #d4d4d4;
+    padding-top: 20px;
+  }
+  dl.documentation > .show,
+  dl.documentation > dd.show {
+    display: block;
+  }
+  dl.documentation > .show.description,
+  dl.documentation > dd.show.description {
+    font-size: 15px;
+  }
+  .example .typeahead.typeahead-faceted.dropdown-menu {
+    width: 97% !important;
+  }
+}
+/*# sourceMappingURL=data:application/json,%7B%22version%22%3A3%2C%22sources%22%3A%5B%22..%2Fcomponents%2Fbrandkit%2Fless%2Fmixins.less%22%2C%22..%2Fcomponents%2Fbrandkit%2Fless%2Fiidx-variables.less%22%2C%22..%2Fcomponents%2Fge-bootstrap%2Fless%2Fmixins.less%22%2C%22..%2Fcomponents%2Fbootstrap%2Fless%2Fmixins%2Fvendor-prefixes.less%22%2C%22..%2Fdocs%2Fassets%2Fless%2Fdocumentation-responsive.less%22%5D%2C%22names%22%3A%5B%5D%2C%22mappings%22%3A%22%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3BAAyCG%2CMAAO%3BEApCJ%2CaC4EoB%2CcAAc%2CcAAc%2C8CD5EhD%3B%3BAAuCH%2CMAAM%3BEApCH%2C6CAAA%3B%3BAAuCH%2CMAAO%3BEApCJ%2CaCkEoB%2CYAAY%2C0BDlEhC%3B%3BAAuCH%2CMAAI%3BEApCD%2CaC6DoB%2CWAAW%2CWAAW%2CcAAc%2C0CD7DxD%3B%3BAA0CH%2CMAAO%3BEACN%2CcAAA%3B%3BAAED%2CMAAO%3BEACN%2CcAAA%3B%3BAAED%2CMAAM%3BEACL%2CcAAA%3B%3BAAED%2CMAAM%3BEACL%2CcAAA%3B%3BAAED%2CMAAQ%3BEACP%2CcAAA%3B%3BAAED%2CMAAK%3BEACJ%2CcAAA%3B%3BAAED%2CMAAQ%3BEACP%2CcAAA%3B%3BAAED%2CMAAO%3BEACN%2CcAAA%3B%3BAAIK%3BEACP%2C4BAA4B%2CsDAA5B%3BEACA%2CwBAAA%3BEACA%2CSAAA%3BEACA%2CkBAAA%3BEACA%2CWAAA%3BEACA%2CWAAA%3BEACA%2CaAAA%3BEACA%2C4BAAA%3BEACA%2CYAAA%3B%3BAAGK%2CMAAe%3BEACpB%2CiBAAA%3B%3BAAGK%2CMAAiB%3BEACtB%2CmBAAA%3B%3BAEsBiB%3BEACjB%2CcAAA%3BEACA%2CWAAA%3BEACA%2CgBAAA%3BEClDA%2C8BAAA%3BEACG%2C2BAAA%3BEACK%2CsBAAA%3B%3BACsBT%2CQA5EyB%3BEAGnB%2CKAAe%3BIAClB%2CcAAA%3B%3BEADG%2CKAAe%2CcAGV%2CQAAG%3BIACT%2CkBAAA%3BIACA%2CYAAA%3BIACA%2CaAAA%3B%3BEANC%2CKAAe%2CcASV%3BIACN%2CcAAA%3B%3BEAVC%2CKAAe%2CcAaV%2CQAAK%3BIACX%2CoBAAA%3BIACA%2CiBAAA%3BIACA%2CYAAA%3BIACA%2C4BAAA%3BIACA%2CyBAAA%3BIACA%2CoBAAA%3B%3BEAnBC%2CKAAe%2CcAaV%2CQAAK%2CKAQT%2CGAAa%3BIACb%2C4BAAA%3BIACA%2CyBAAA%3BIACA%2CoBAAA%3BIACA%2CeAAA%3BIACA%2CsBAAA%3BIACA%2CcAAA%3B%3BEA3BD%2CKAAe%2CcAaV%2CQAAK%2CKAiBT%2CGAAS%3BIACT%2C4BAAA%3BIACA%2CyBAAA%3BIACA%2CoBAAA%3BIACA%2CsBAAA%3BIACA%2CcAAA%3B%3BEAnCD%2CKAAe%2CcAaV%2CQAAK%2CKAyBT%2CGAAO%3BIACP%2C4BAAA%3BIACA%2CyBAAA%3BIACA%2CoBAAA%3BIACA%2CaAAA%3B%3BEAKJ%2CEAAe%2CcACX%3BEADJ%2CEAAe%2CcAEX%2CKAAY%3BEAFhB%2CEAAe%2CcAGX%2CKAAQ%3BIACV%2CaAAA%3B%3BEAJF%2CEAAe%2CcAOJ%3BIACX%2C6BAAA%3BIACA%2CiBAAA%3B%3BEATA%2CEAAe%2CcAWR%3BEAXP%2CEAAe%2CcAYX%2CKAAM%3BIACR%2CcAAA%3B%3BEACC%2CEAdY%2CcAWR%2CQAGS%3BEAAb%2CEAdY%2CcAYX%2CKAAM%2CKAEM%3BIACd%2CeAAA%3B%3BEAMK%2CQACG%2CWAAkB%2CkBAAe%3BIACzC%2CqBAAA%22%7D */

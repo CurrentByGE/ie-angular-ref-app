@@ -1,0 +1,71 @@
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 29px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*
+
+Where did these come from? CDX new stuff?
+
+@btnBorderForRealzy:                @grayLightest;
+
+@btnPrimaryText:                    @white;
+
+@btnPrimaryToggle:                  darken(@blue,50%);
+@btnIconColorPrimary:               @white;
+
+@btnInverseText:                    @btnPrimaryText;
+@btnInverseBackground:              @btnPrimaryBackground;
+@btnInverseBackgroundHighlight:     @btnPrimaryBackgroundHighlight;
+@btnInverseIconColor:               @btnIconColorPrimary;
+
+
+// toggle
+
+@btnToggleText:                     @white;
+@btnToggleBackground:               @blue;
+
+
+// faceted / type ahead
+@dropdownFacetedFacetBackground: @grayLightest;sx
+
+
+
+//Declarative-visualizations
+//gradient colors for each severity type
+//-----------------------------------------
+@blue1:           #1483B2;
+@blue2:           #25AAE1;
+@yellow1:         #D8BB27;
+@yellow2:         #FBDA06;
+@orange1:         #D07931;
+@orange2:         #F58624;
+@red1:            #C62F27;
+@red2:            #EE3D2C;
+@BarLightsOnGray: #e7e6e7;
+@meterBgGray:     #e7e5e7;
+
+
+// Datagrids
+//-------------
+
+//@dataTableRowEvenBgrnd:   #749BCD;
+//@dataTableRowHover:       #B7CBE5;
+//@dataGridbackgroundColor: #EEEEEE;
+*/
+@media (max-width: 767px) {
+  .two-pane .page-header .pull-right {
+    clear: none;
+  }
+  .two-pane .message-pane {
+    border-top: 1px solid #d4d4d4;
+    padding-left: 20px;
+  }
+  .two-pane .module.draggable {
+    height: 177px;
+  }
+}
+/*# sourceMappingURL=data:application/json,%7B%22version%22%3A3%2C%22sources%22%3A%5B%22..%2Fcomponents%2Fge-bootstrap%2Fless%2Fmixins.less%22%2C%22..%2Fcomponents%2Fbootstrap%2Fless%2Fmixins%2Fvendor-prefixes.less%22%2C%22..%2Fdocs%2F_templates%2Ftwo-pane%2Fless%2Ftwo-pane-responsive.less%22%5D%2C%22names%22%3A%5B%5D%2C%22mappings%22%3A%22AAyHmB%3BEACjB%2CcAAA%3BEACA%2CWAAA%3BEACA%2CgBAAA%3BEClDA%2C8BAAA%3BEACG%2C2BAAA%3BEACK%2CsBAAA%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3BAC%2FCT%2CQAjByB%3BEACf%2CSACK%2CaACC%3BIACT%2CWAAA%3B%3BEAHG%2CSAMM%3BIACX%2C6BAAA%3BIACA%2CkBAAA%3B%3BEAGC%2CSADI%2CQACM%3BIACT%2CaAAA%22%7D */

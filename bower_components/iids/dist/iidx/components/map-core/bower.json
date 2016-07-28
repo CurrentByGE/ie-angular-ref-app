@@ -1,0 +1,24 @@
+{
+  "name": "map-core",
+  "version": "0.3.1",
+  "main": "js/map-core.js",
+  "author": "General Electric",
+  "private": true,
+  "dependencies": {
+    "open-layers": "git@github.sw.ge.com:DXC/shim-open-layers.git#~v2.13.1",
+    "declarative-visualizations": "git@github.sw.ge.com:DXC/declarative-visualizations#~1.6.0",
+    "underscore-amd": "https://raw.github.com/amdjs/underscore/1.5.2/underscore-min.js",
+    "hogan": "https://raw.github.com/twitter/hogan.js/v3.0.0/web/builds/2.0.0/hogan-2.0.0.min.amd.js",
+    "map-layerlist": "git@github.sw.ge.com:DXC/map-layerlist#~0.2.0",
+    "map-search": "git@github.sw.ge.com:DXC/map-search#~0.2.0",
+    "map-zoom": "git@github.sw.ge.com:DXC/map-zoom#~0.2.0",
+    "map-markers": "git@github.sw.ge.com:DXC/map-markers#~0.2.0",
+    "map-google": "git@github.sw.ge.com:DXC/map-google.git#~0.2.0",
+    "modernizr": "https://github.com/components/modernizr.git#~2.6.3"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}

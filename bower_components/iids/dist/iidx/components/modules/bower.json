@@ -1,0 +1,27 @@
+{
+  "name": "modules",
+  "description": "Collection of module types for use with ge-bootstrap.",
+  "version": "1.1.0",
+  "author": "General Electric",
+  "main": [
+    "less/hdx-modules.less",
+    "less/iidx-modules.less",
+    "less/hdx-modules-responsive.less",
+    "less/iidx-modules-responsive.less",
+    "js/modules.js"
+  ],
+  "ignore": [
+    "components",
+    "css",
+    "node_modules",
+    ".*",
+    "Gruntfile.js",
+    "js/require.config.js"
+  ],
+  "dependencies": {
+  	"requirejs": "https://github.com/jrburke/requirejs-bower.git#~2.1.11",    
+  	"jquery": "https://github.com/components/jquery.git#~1.10.2",
+   "ge-bootstrap": "git@github.sw.ge.com:DXC/ge-bootstrap#v1.9.4",
+    "jqueryui-sortable-amd": "git@github.sw.ge.com:DXC/jqueryui-sortable-amd#~1.10.2"
+  }
+}

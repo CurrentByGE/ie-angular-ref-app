@@ -1,0 +1,28 @@
+@import "ge-bootstrap/less/hdx-bootstrap-lights-off.less";
+@import "add-widget.less";
+
+// Styles
+// --------------------------------------------------
+
+// Add Widget
+section.module.module-add-widget {
+background-color: @offBlack;
+  a {
+    color: @textColor;
+  }
+  &:hover {
+    background-color: @grayDarkest;
+    a {
+      color: @linkColor;
+      &:hover {
+        color: @linkColor;
+      }
+      &:active {
+        color: darken(@linkColor, 15%);
+      }
+    }
+  }
+  &:active {
+    background-color: @grayDarkest;
+  }
+}

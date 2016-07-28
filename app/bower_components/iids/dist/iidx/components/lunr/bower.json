@@ -1,0 +1,17 @@
+{
+  "name": "ge-lunr",
+  "version": "0.0.1",
+  "authors": [
+    "Martin Wragg <martin.wragg@ge.com>"
+  ],
+  "description": "Fork of Lunr to support GE IIDx Mapping Collection free text search.",
+  "main": "js/lunr.js",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

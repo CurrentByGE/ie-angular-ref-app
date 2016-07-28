@@ -1,0 +1,37 @@
+// Dependencies
+// --------------------------------------------------
+
+
+@import "variables.less";
+
+
+// Styles
+// --------------------------------------------------
+
+// Add Widget
+.module-add-widget {
+  background-color: @grayLightest;
+  .border-radius(@baseBorderRadius);
+  height: @addWidgetHeight;
+  text-align: center;
+  .transition(background-color .2s linear);
+  z-index: 2;
+  a {
+    color: @textColor;
+    line-height: @addWidgetHeight;
+    text-decoration: none;
+  }
+  &:hover {
+    background-color: @white;
+    cursor: pointer;
+    a {
+      color: @linkColor;
+      &:hover {
+        color: @linkColor;
+      }
+      &:active {
+        color: darken(@linkColor,15%);
+      }
+    }
+  }
+}

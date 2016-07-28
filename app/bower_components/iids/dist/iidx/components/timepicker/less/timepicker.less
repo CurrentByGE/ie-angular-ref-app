@@ -1,0 +1,41 @@
+@import "variables.less";
+
+// Styles
+// --------------------------------------------------
+
+//override bootstrap-timepicker css
+
+.bootstrap-timepicker.input-append {
+	input, select, .uneditable-input {
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
+	}
+	.add-on:last-child, .btn:last-child, .btn-group:last-child > .bootstrap-timepicker.dropdown-toggle {
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		border-radius: 0;
+	}
+}
+
+.bootstrap-timepicker.dropdown-menu {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.bootstrap-timepicker-widget {
+	 table td {
+	   	height:25px;
+	   	a {
+			padding:0px;
+		}
+	   	input {
+			width:29px;
+			border-width: 1px;
+			border-style: solid;
+	    //noinspection LessUnresolvedVariable
+	    font-size:@componentFontSize;
+		}
+	}
+}

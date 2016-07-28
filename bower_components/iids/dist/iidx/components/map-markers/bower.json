@@ -1,0 +1,17 @@
+{
+  "name": "map-markers",
+  "version": "0.2.0",
+  "main": "js/map-markers.js",
+  "private": true,
+  "author": "General Electric",
+  "dependencies": {
+    "declarative-visualizations": "git@github.sw.ge.com:DXC/declarative-visualizations#~1.6.0",
+    "map-popovers": "git@github.sw.ge.com:DXC/map-popovers#~0.2.0",
+    "map-core": "git@github.sw.ge.com:DXC/map-core#~0.3.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}

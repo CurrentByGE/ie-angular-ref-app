@@ -1,0 +1,64 @@
+@import  "ge-bootstrap/less/hdx-bootstrap.less";
+@import "hdx-variables.less";
+@import "modules.less";
+
+
+// HDX Add-ons
+section.module {
+  .border-radius(@baseBorderRadius);
+}
+
+section.module > header.module-header,
+section.module > div.module-body {
+  margin: 0 0 7px 0;
+}
+
+section.module.module-patient {
+  background-color: @cyanLight;//lighten(@cyanLight, 23.3%);
+
+  h1 {
+    line-height: 1em;
+    font-weight: normal;
+  }
+
+  .patient-number {
+    font-size: @baseFontSize + 1;
+    line-height: 2em;
+    color: @gray;
+    margin-bottom: 7px;
+  }
+
+  .patient-photo {
+    margin: 0 13px 0 0;
+    border: 1px solid @white;
+    .border-radius(@borderRadiusSmall);
+  }
+
+  > .btn-group > .btn {
+    border-color: @cyan;
+  }
+
+  table.table-overview {
+    th, td {
+      text-align: left;
+      font-family: @brandFontFamily;
+    }
+
+    td {
+      font-size: @baseFontSize + 3;
+      padding-right: 42px;
+      font-weight: bold;
+    }
+
+    th {
+      font-size: @baseFontSize;
+      color: @gray;
+    }
+  }
+}
+
+// Modules
+.module.collapsible .module-header:hover,
+section.module.collapsible .module-header:hover > * {
+  color: @cyan;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "map-google",
+  "version": "0.2.0",
+  "description": "Component to load Google Maps API in an AMD fashion",
+  "main": "js/googlemaps.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.sw.ge.com/DXC/map-google"
+  },
+  "author": "General Electric",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": ">=0.4.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-shell": "^0.7.0",
+    "karma-support": "git+https://github.sw.ge.com/DT/karma-support#v1.0.1"
+  }
+}

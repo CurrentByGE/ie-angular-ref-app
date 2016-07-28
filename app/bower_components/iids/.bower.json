@@ -1,0 +1,30 @@
+{
+  "name": "iidx",
+  "authors": [
+    "Predix Experience"
+  ],
+  "description": "Industrial Internet Design Extension",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "iidx"
+  ],
+  "license": "MIT",
+  "homepage": "predix.io",
+  "ignore": [
+    "test"
+  ],
+  "main": [
+    "iids.js"
+  ],
+  "_release": "3.0",
+  "_resolution": {
+    "type": "tag",
+    "tag": "3.0",
+    "commit": "dfcdc79342e95e35fd636701f1a2e424a4045902"
+  },
+  "_source": "git://github.sw.ge.com/Predix-Experience/iidx",
+  "_target": "3.0",
+  "_originalSource": "git://github.sw.ge.com/Predix-Experience/iidx"
+}

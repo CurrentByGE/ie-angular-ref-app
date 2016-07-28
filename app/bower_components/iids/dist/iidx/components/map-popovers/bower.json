@@ -1,0 +1,15 @@
+{
+  "name": "map-popovers",
+  "version": "0.2.0",
+  "main": "js/map-popovers.js",
+  "private": true,
+  "author": "General Electric",
+  "dependencies": {
+    "map-core": "git@github.sw.ge.com:DXC/map-core#~0.3.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}

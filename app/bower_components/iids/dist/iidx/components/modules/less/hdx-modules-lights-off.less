@@ -1,0 +1,56 @@
+@import "hdx-modules.less";
+
+section.module, .module {
+  background-color: lighten(@black, 11.5%);
+  color: @grayLightest;
+
+  &.module-patient {
+    #gradient > .vertical(darken(@blue, 34%), darken(@blue, 35%));
+
+    h1 {
+      color: lighten(@grayLightest, 5%)
+    }
+
+    .patient-number,
+    table.table-overview th {
+      color: @blueLight;
+    }
+
+    .table-overview td {
+      color: lighten(@grayLightest, 6%);
+    }
+
+    .btn-group > .btn {
+      background: @black;
+      border-color: @blueDark;
+      color: @grayLighter;
+    }
+  }
+}
+
+.module-group > hr {
+  border-color: @grayDarkest;
+}
+
+.module.collapsible .module-header:hover,
+section.module.collapsible .module-header:hover > * {
+  color: @blue;
+}
+.module {
+  // Draggables
+  &.draggable {
+    .module-header {
+      color: @textColor;
+    }
+  }
+  // sortables
+  &.ui-sortable-placeholder {
+    background-color: @grayDarkest;
+  }
+  &.ui-sortable-helper {
+    border: 1px solid @grayDarker;
+    .module-header {
+      background-color: @grayDarkest;
+    }
+  }
+} 

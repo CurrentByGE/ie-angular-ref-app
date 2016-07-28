@@ -1,0 +1,16 @@
+{
+  "name": "map-search",
+  "version": "0.2.0",
+  "main": "js/map-search.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "lunr": "git@github.sw.ge.com:DXC/ge-lunr.git#~0.0.1",
+    "map-core": "git@github.sw.ge.com:DXC/map-core#~0.3.0",
+    "typeahead.js": "~0.10.2",
+    "hogan": "https://raw.github.com/twitter/hogan.js/v3.0.0/web/builds/2.0.0/hogan-2.0.0.min.amd.js"
+  }
+}

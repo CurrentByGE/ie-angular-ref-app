@@ -1,0 +1,19 @@
+{
+  "name": "modules",
+  "description": "Collection of module types for use with ge-bootstrap.",
+  "author": "General Electric",
+  "version": "1.1.0",
+  "private": true,
+  "homepage": "http://gesdh.com/",
+  "dependencies": {
+    "grunt": "~0.4.0",
+    "bower": "~1.2.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-shell": "~0.4.0",
+    "grunt-contrib-less": "~0.8.3",
+    "grunt-contrib-watch": "~0.2.0",
+    "grunt-contrib-jshint": "*",
+    "webdriver-support": "git+https://github.sw.ge.com/DT/webdriver-support.git#v1.1.0",
+    "karma-support": "git+https://github.sw.ge.com/DT/karma-support.git#v1.0.1"
+  }
+}
